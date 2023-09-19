@@ -74,7 +74,7 @@ export default function Products(){
             res.data = res.data.map((val)=>{
               
               if(val.image)
-              val.image = val.image.replace("localhost","192.168.29.69")
+            //  val.image = val.image.replace("localhost","192.168.29.69")
               return val;
             })
             console.log(res.data)

@@ -45,7 +45,7 @@ export default function ProductView(){
       res.data = [res.data]
         res.data = res.data.map((val)=>{
           
-          val.image = val.image.map(val2=>val2.replace("localhost","192.168.29.69"))
+          //val.image = val.image.map(val2=>val2.replace("localhost","192.168.29.69"))
           return val;
         })
         setProductData(res.data[0]);

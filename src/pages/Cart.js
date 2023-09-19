@@ -187,7 +187,7 @@ for(var i=0;i<data.length;++i){
 
       navigate("/cart")
     }
-    val.image = val.image.map(val=>val.replace("localhost","192.168.29.69"))
+   // val.image = val.image.map(val=>val.replace("localhost","192.168.29.69"))
     const [counter,setCounter] = useState(productDataQtyMapping[val._id]);
 
        return(

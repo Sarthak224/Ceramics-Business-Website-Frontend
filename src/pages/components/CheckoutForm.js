@@ -111,7 +111,7 @@ export default function CheckoutForm(){
 		  res.data = [res.data]
 			res.data = res.data.map((val)=>{
 			  
-			  val.image = val.image.replace("localhost","192.168.29.141")
+			//  val.image = val.image.replace("localhost","192.168.29.141")
 			  return val;
 			})
 			setProductData(res.data[0]);
@@ -219,7 +219,7 @@ export default function CheckoutForm(){
 				try {
 					console.log(response)
 					var paymentDetails = response;
-					const verifyUrl = /*"http://localhost:3011"*/"http://192.168.29.141:3011/api/payment/verify";
+					const verifyUrl = /*"http://localhost:3011"*/baseURL+"/api/payment/verify";
 					const  paymentRes  = await axios.post(verifyUrl, {...response,prod_arr:productsOnCart});
 					console.log(paymentRes.data);
 					console.log(paymentDetails)
@@ -273,7 +273,7 @@ export default function CheckoutForm(){
 			body = { product_id };
 			else
 			body = {product_id_list:productsOnCart.map(val=>val)}
-			const orderUrl = /*"http://localhost:3011"*/ "http://192.168.29.141:3011/api/payment/orders";
+			const orderUrl = /*"http://localhost:3011"*/ baseURL+"/api/payment/orders";
 			const { data } = await axios.post(orderUrl, body);
 			console.log(data);
 			initPayment(data.data);
