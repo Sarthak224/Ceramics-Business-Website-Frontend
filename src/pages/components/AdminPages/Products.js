@@ -236,8 +236,9 @@ export default function ProductsAdmin(){
 
 
       var formData = new FormData();
-      console.log(img)
+      console.log(fileData)
       for(var i=0;i<fileData.length;++i){
+        console.log(fileData[i])
         formData.append("productImage", fileData[i]);
       }
       // formData.append('productImage',img);
