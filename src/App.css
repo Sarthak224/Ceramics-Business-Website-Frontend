@@ -375,7 +375,7 @@ z-index: -3;
   /* transform: translate(2.5vw,0) !important; */
   width:95vw;
   max-width: 95vw;
-  max-width: 95vw;
+  max-width: 95vw !important;
 }
 .coupon-form{
   position: relative;
