@@ -96,7 +96,7 @@ return (
       
       return (<div className="carousel-product">
       
-      <img src={val.image[0]} className='rel-product-img'     />
+      <img src={val.image} className='rel-product-img'     />
        <p style={{whiteSpace: "nowrap",
   overflow: "hidden",
   textOverflow: "ellipsis",}}><b>{val.title}</b></p>

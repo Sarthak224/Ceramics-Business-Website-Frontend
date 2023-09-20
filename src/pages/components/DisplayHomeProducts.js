@@ -100,7 +100,7 @@ return (
       
       return (<div className="carousel-product1" >
       
-      <img src={val.image[0]} className='rel-product-img1'     />
+      <img src={val.image} className='rel-product-img1'     />
        <p style={{color: "#665d5dd6",
           fontWeight: "normal",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><b>{val.title}</b></p>
        <p>Rs : <b> &#x20b9; </b> {val.price} <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;{val.original_price}</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>{(((val.original_price-val.price)/val.original_price)*100).toFixed(2)} % Off</span> </p>
