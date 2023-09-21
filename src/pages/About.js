@@ -28,13 +28,13 @@ export default function About(){
 
        <div className='about-sect-2 '>
           <Row className='bg-white'>
-            <Col md="6" className='about-col mobile-col-hide'>
+            <Col md="6" className='about-col mobile-col-hide' style={{padding:"0px"}} >
                <img src={about1} style={{width:"100%",height:"100%",maxHeight:"480px"}} /> 
             </Col>
             <Col className='about-col mobile-col-background1' md="6" style={{alignItems:"left"}}>
             <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
            <p className='frs' style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <Button  className='about-btn'>Go to</Button>
+                <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
            
             </Col>
 
@@ -43,9 +43,9 @@ export default function About(){
           <Col className='about-col mobile-col-background2' md="6" style={{alignItems:"left"}}>
           <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
            <p className='frs'  style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <Button  className='about-btn'>Go to</Button>
+                <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
             </Col>
-          <Col md="6" className='about-col mobile-col-hide'>
+          <Col md="6" className='about-col mobile-col-hide' style={{padding:"0px"}}>
           <img src={about2} style={{width:"100%",height:"100%",maxHeight:"480px"}} /> 
 
           </Col>
