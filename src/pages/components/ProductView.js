@@ -220,10 +220,10 @@ function addProductToCart(){
 
 <div className='carousel-cont-main1 ' style={{/*backgroundColor:"#f6f6f6",*/padding:"10px 10px",alignItems:"center",position:"relative"}}>
 <div style={{position:"absolute",width:"100%",height:"100%",display:"flex",justifyContent:"space-between"}}>      
-      <div  style={{position:"",left:"5px",top:"-30px",height:"100%",width:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}><b> <ChevronLeft size={30} /> </b></div>
-      <div  style={{marginLeft:"auto",position:"",left:"90%",top:"-30px",height:"100%",width:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}><b> <ChevronRight size={30} /> </b></div>
+      <div className='btn-left' style={{position:"",left:"5px",top:"-30px",height:"100%",width:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}><b> <ChevronLeft size={30} /> </b></div>
+      <div className='btn-right' style={{marginLeft:"auto",position:"",left:"90%",top:"-30px",height:"100%",width:"30px",display:"flex",justifyContent:"center",alignItems:"center"}}><b> <ChevronRight size={30} /> </b></div>
       </div>
-        <div className='carousel-cont-main ' style={{/*backgroundColor:"#f6f6f6",*/padding:"10px 10px",alignItems:"center",position:"relative"}}>
+        <div className='carousel-cont-main img-nav-carousel' style={{/*backgroundColor:"#f6f6f6",*/padding:"10px 10px",alignItems:"center",position:"relative"}}>
      
     {productData.image.map((val,i)=>{
       
@@ -346,6 +346,21 @@ return (
         .on('mousemove', function(e){
           $(this).children('.carousel-inner').children('.carousel-item').children('img').css({'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +'%'});
         })
+
+        $('.btn-left').click(function(){  
+          $('.img-nav-carousel').animate({
+              scrollLeft: this.scrollTop - 230
+          }, 600);
+      });
+      $('.btn-right').click(function(){    
+
+          $('.img-nav-carousel').animate({
+              scrollLeft: this.scrollTop + 230
+          }, 600);
+      });
+
+
+
       })
       
 

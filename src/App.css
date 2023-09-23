@@ -1414,6 +1414,11 @@ margin: auto;
   width:60vw;
 }
 
+.btn-left:hover,.btn-right:hover{
+  background-color: #474a4d29;
+  padding:6px;
+}
+
 @media screen and (max-width:1150px) {
 
   .mobile-col-background1,.mobile-col-background2{
