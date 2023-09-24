@@ -62,7 +62,7 @@ export default function Navbar(){
         <div   className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center",marginRight:"10px",}}>
       
           
-        <h6  className='frs' style={{marginTop:"3px",marginRight:"10px",fontSize:"17px"}}>Menu</h6>
+        <h6  className='frs' style={{marginTop:"3px",marginRight:"10px",fontSize:"12px"}}>Menu</h6>
         <Menu size={26} style={{cursor:"pointer"}} className='nav-icon' onClick={()=>setOpenMenu(true)}  />
         <Sidebar openMenu ={openMenu} setOpenMenu={setOpenMenu} />
         </div>
