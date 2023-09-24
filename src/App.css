@@ -1085,6 +1085,8 @@ ul{
   width:100%;
   top:0;
   z-index: 10;
+    background: /*linear-gradient(45deg, #e29d58, #d7ab82)*/linear-gradient(45deg,#dba46c,#643c16);
+
 }
 
 .ftr{
