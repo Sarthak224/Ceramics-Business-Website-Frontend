@@ -25,6 +25,17 @@
   size:27px;
   margin:-1px 5px;
 }
+/* .navbar-layout-main{
+ 
+  display: flex;
+  flex-direction: row;
+  background-color: #D5A372;
+  box-shadow: 0 5px 5px 0 rgba(171, 169, 169, 0.272), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index: 10;
+} */
 .navbar-layout-main{
  
   display: flex;
@@ -35,6 +46,8 @@
   width:100%;
   top:0;
   z-index: 10;
+  background: /*linear-gradient(45deg, #e29d58, #d7ab82)*/linear-gradient(45deg, #be7e3e, #d2a47a)
+
 }
 .carousel-product{
   padding:20px;
@@ -1317,7 +1330,7 @@ margin: auto;
     width: 101px;
     margin: auto; */
     height: 315px;
-    width: 310px;
+    width: 313px;
     margin: auto;
     margin-left: -19px;
     margin-top: -19px;

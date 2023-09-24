@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import logo from '../../logo.svg';
+import logo from '../../logo.png';
 export default function Footer(){
     return(
         <footer class="footer">
  <div className=' nav-middle' style={{textAlign:"center",margin:" -10px auto"}}>
           <div className='nav-comp nav-color' style={{marginRight:"0%",marginBottom:"20px"}}>
-		    <img src={logo} width={80} height={80}  />
-            <span className='brand-text ' style={{marginRight:"10%",marginBottom:"0px"}}>React Pottery</span>
+		    <img src={logo} width={92} height={92}  />
+            {/* <span className='brand-text ' style={{marginRight:"10%",marginBottom:"0px"}}>React Pottery</span> */}
           </div>
 		</div>
   	 <div class="container">
