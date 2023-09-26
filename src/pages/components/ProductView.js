@@ -371,7 +371,7 @@ return (
        console.log(productData)
     return(
       <>
-        {productData!=null && !errorComponent? <div style={{overflowX:"hidden"}}><Row style={{marginTop:"80px",
+        {productData!=null && !errorComponent? <div style={{overflowX:"hidden"}}><Row style={{marginTop:"110px",
          }}>
             <Col className="pview-col1" md="5" style={{textAlign:"left",margin:"70px 37px",minWidth:"43%"}}>
              {/* <img src={productData.image[0]} className='p-view-image' style={{width:"57vw",height:"57vw",maxWidth:"449px",maxHeight:"446px"}} /> */}

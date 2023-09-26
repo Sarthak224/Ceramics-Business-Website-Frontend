@@ -6,7 +6,7 @@ export default function Checkout(){
     var product_id = searchParams.get("product_id");
     
     return(
-      <div style={{marginTop:"80px"}}>
+      <div style={{marginTop:"120px"}}>
           <div className='order-steps-header' style={{width:"100%",padding:"30px",margin:"0px auto",marginBottom:"50px",backgroundColor:"#f6f6f6c4"}} >
              
              <div style={{textAlign:"center"}}><div className='circle-1 '>1</div><span><b>Your Cart</b></span></div>

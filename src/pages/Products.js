@@ -385,7 +385,7 @@ export default function Products(){
     const notifySuccess = () => toast.success("Successfully added on Cart.");
 
     return(
-    <div className="product-sect-main" style={{marginTop:"90px",}}>
+    <div className="product-sect-main" style={{marginTop:"120px",}}>
     <h3 className="product-title-main frs" style={{marginBottom:"40px",position:"relative",textAlign:"center",marginTop:"40px"}}><span style={{backgroundColor:"#ffffff",padding:"0px 20px",marginBottom:"0px"}}>Our Products</span></h3>
     {/* Filter Sect */}
     {/* <div className='filter-parent-sect' style={{width:"90%",textAlign:"left",display:"flex",marginBottom:"10px",marginTop:"25px"}}>

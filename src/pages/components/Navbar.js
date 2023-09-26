@@ -38,7 +38,7 @@ export default function Navbar(){
         <Link className='nav-link' to={"/home"} onClick={applyOverlay}><span className='nav-link1'>{/*Home width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-home" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Home </span></Link>
         </div>
         <div className='nav-comp nav-color nav-middle' style={{width:"30%"}}>
-            <img src={logo} width={92} height={92}  />
+            <img src={logo} width={122} height={122}  />
             {/* <span className='brand-text '>React Pottery</span> */}
         </div>
         <div className='nav-comp nav-color' style={{width:"35%",justifyContent:"start",alignItems:"center"}}>
