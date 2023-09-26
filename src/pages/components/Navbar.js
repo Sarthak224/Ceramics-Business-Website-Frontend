@@ -56,7 +56,7 @@ export default function Navbar(){
         <div className="navbar-layout-main-mobile">
      
         <div className='nav-comp nav-color nav-middle' >
-            <img src={logo} width={80} height={80}  />
+            <img src={logo} width={122} height={122}  />
             {/* <span className='brand-text '>React Pottery</span> */}
         </div>
         <div   className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center",marginRight:"10px",}}>
