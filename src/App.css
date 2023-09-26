@@ -1352,6 +1352,9 @@ margin: auto;
 .carousel-product-navigate:hover{
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
+.admin-sidebar-links a{
+  text-decoration: none;
+}
 .carousel-purchase-btn{
   margin-top: 40px;
   padding: 10px 20px;
