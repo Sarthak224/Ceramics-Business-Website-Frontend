@@ -1112,7 +1112,7 @@ ul{
   position:fixed;
   right:-120%;
   top:0;
-  background-color:#D5A372;
+  background-color:#d5a372b8;
   color:white;
   width:269px;
   height:100vh;
@@ -1135,11 +1135,11 @@ ul{
 
 
 .sidebar-item{
-  border-bottom: 2px solid #c5c5c55e;
+  border-bottom: 1px solid #c5c5c55e;
   padding: 7px;
   text-align: left;
   font-size: 19px;
-  margin:2px 10px;
+  margin:31px 10px;
 
 }
 .sidebar-item .sidebar-link .nav-link1{
