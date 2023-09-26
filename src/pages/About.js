@@ -8,7 +8,7 @@ import Categories from './components/Categories'
 
 export default function About(){
     return(
-        <div style={{  marginTop: "80px"
+        <div style={{  marginTop: "110px"
     }}>
     <div className="about-page-top-sect">
      <div style={{margin:"2%",display:"block",textAlign:"left"}}>
