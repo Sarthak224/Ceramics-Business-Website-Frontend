@@ -458,11 +458,12 @@ export default function ProductsAdmin(){
         <h5 style={{margin:"10px",fontSize:"15px"}}>Product Image <span style={{color:"red"}}>*</span></h5>
 
 <input type="file" name="productImage" multiple="multiple" onChange={(e)=>{
- var fileData = e.target.files[0];
+ var fileData = e.target.files;
+ //setCurrentFileData(e.target.files)
 
- updateProductImage(fileData);
-  
+ setCurrentFileData(e.target.files)
 }}/>
+<Button onClick={()=>{if(fileData.length>0)updateProductImage(fileData)}}>Upload Image</Button>
         </ModalBody>
       </Modal>
 
