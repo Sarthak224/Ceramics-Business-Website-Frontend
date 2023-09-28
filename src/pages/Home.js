@@ -224,7 +224,7 @@ export default function Home(){
             <img src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
           </div>
 
-          <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
+          <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='text-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
               </div>  
@@ -265,7 +265,7 @@ export default function Home(){
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
           <h2 className='ftr italic' style={{margin:"40px"}} >Lorem Ipsum</h2>
-            <p className="sect-font ftr italic" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
+            <p className="sect-font ftr italic text-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
               </div>  

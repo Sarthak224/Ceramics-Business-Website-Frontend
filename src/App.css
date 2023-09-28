@@ -1765,6 +1765,10 @@ input:focus{
 .category-subrow1 , .category-subrow2{
   height: 100%;
 }*/
+.text-mobile{
+  font-size: 16px !important;
+}
+
 .list-grid-mobile view{
   justify-content: space-evenly !important;
 

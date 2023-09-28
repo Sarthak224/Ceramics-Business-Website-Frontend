@@ -14,13 +14,13 @@ export default function About(){
      <div style={{margin:"2%",display:"block",textAlign:"left"}}>
     <h1 className='down-top-animate delay-1 ftr italic' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Lorem Ipsum</h1>
     </div>
-    <p className='ftr italic' style={{fontSize:"20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+    <p className='ftr italic text-mobile' style={{fontSize:"20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
     </div>  
 
     <div className='about-body'>
        <div className='about-sect-1 '>
         <h1  ><b>About us</b></h1>
-        <p style={{marginBottom:"50px"}}>
+        <p className='text-mobile' style={{marginBottom:"50px"}}>
        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
        </p>
        </div>
@@ -33,7 +33,7 @@ export default function About(){
             </Col>
             <Col className='about-col mobile-col-background1' md="6" style={{alignItems:"left"}}>
             <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
-           <p className='frs' style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           <p className='frs text-mobile' style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
            
             </Col>
@@ -42,7 +42,7 @@ export default function About(){
           <Row className='bg-white'>
           <Col className='about-col mobile-col-background2' md="6" style={{alignItems:"left"}}>
           <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
-           <p className='frs'  style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+           <p className='frs text-mobile'  style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
             </Col>
           <Col md="6" className='about-col mobile-col-hide' style={{padding:"0px"}}>
