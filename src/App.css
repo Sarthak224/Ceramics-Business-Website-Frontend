@@ -36,6 +36,7 @@
   top:0;
   z-index: 10;
 } */
+/*
 .navbar-layout-main{
  
   display: flex;
@@ -46,7 +47,21 @@
   width:100%;
   top:0;
   z-index: 10;
-  background: /*linear-gradient(45deg, #e29d58, #d7ab82)*//*linear-gradient(45deg, #be7e3e, #d2a47a)*/linear-gradient(45deg,#dba46c,#643c16);
+  background: /*linear-gradient(45deg, #e29d58, #d7ab82)*//*linear-gradient(45deg, #be7e3e, #d2a47a)*+/linear-gradient(45deg,#dba46c,#643c16);
+
+}*/
+.navbar-layout-main{
+ 
+  display: flex;
+  flex-direction: row;
+  background-color: #D5A372;
+  /* box-shadow: 0 5px 5px 0 rgba(171, 169, 169, 0.272), 0 6px 20px 0 rgba(0, 0, 0, 0); */
+  box-shadow: 0 5px 5px 0 hsl(0deg 7.3% 64.66% / 27.2%), 0 6px 20px 0 #7d7272;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index: 10;
+  background: /*linear-gradient(45deg, #e29d58, #d7ab82)*+/linear-gradient(45deg, #be7e3e, #d2a47a)*/linear-gradient(0deg,#ffffff,#ffffff,#cccccc);
 
 }
 .carousel-product{
@@ -63,12 +78,25 @@ font-weight: normal;
 
 
 }
-.nav-link{
+/* .nav-link{
   text-decoration: none;
   color:#edf1f3;
   display: block;
   cursor: pointer;
+} */
+
+.nav-link{
+  text-decoration: none;
+  color:/*#edf1f3;*/#1b1b1b !important;
+  display: block;
+  cursor: pointer;
 }
+.nav-link i{
+  color:/*#edf1f3;*/#1b1b1b !important;
+
+}
+
+
 
 .container-with-dots{
   margin:0% 8%;
@@ -1078,6 +1106,17 @@ ul{
     width: 100%;
 }
 }
+/* .navbar-layout-main-mobile{
+  display: none;
+  background-color: #D5A372;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index: 10;
+    background: /*linear-gradient(45deg, #e29d58, #d7ab82)*+/linear-gradient(45deg,#dba46c,#643c16);
+
+} */
+
 .navbar-layout-main-mobile{
   display: none;
   background-color: #D5A372;
@@ -1085,8 +1124,8 @@ ul{
   width:100%;
   top:0;
   z-index: 10;
-    background: /*linear-gradient(45deg, #e29d58, #d7ab82)*/linear-gradient(45deg,#dba46c,#643c16);
-
+  background: /*linear-gradient(45deg, #e29d58, #d7ab82)*+/linear-gradient(45deg,#dba46c,#643c16)*/linear-gradient(0deg,#ffffff,#ffffff,#cccccc);
+  box-shadow: 0 5px 5px 0 hsl(0deg 7.3% 64.66% / 27.2%), 0 6px 20px 0 #7d7272;
 }
 
 .ftr{
