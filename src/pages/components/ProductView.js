@@ -11,6 +11,8 @@ import NotificationPopup from './NotificationPopup';
 import { useDispatch } from 'react-redux';
 import { assignCartQty } from '../../redux/actions/navigation';
 import DisplayCarousel from './DisplayCarousel';
+import notFoundImage from '../utils/Icons/not-load-img.png'
+
 import {
   Carousel,
   CarouselItem,
@@ -181,7 +183,11 @@ function addProductToCart(){
             onExited={() => setAnimating(false)}
             key={item.src}
           >
-            <img   className='p-view-image product-photo' style={{width:"57vw",height:"57vw",maxWidth:"469px",maxHeight:"446px"}}  src={item.src} alt={item.altText} />
+            <img onError={({ currentTarget }) => {
+               currentTarget.onerror = null; // prevents looping
+               currentTarget.src=""+notFoundImage;
+               currentTarget.setAttribute("class",'error-img');
+  }}  className='p-view-image product-photo' style={{width:"57vw",height:"57vw",maxWidth:"469px",maxHeight:"446px"}}  src={item.src} alt={item.altText} />
             {/* <CarouselCaption
               captionText={item.caption}
               captionHeader={item.caption}
@@ -229,7 +235,13 @@ function addProductToCart(){
       
       return (<div onClick={()=>goToIndex(i)} className="carousel-product-navigate" style={{padding:"13px",margin:"15px",  /*boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"*/}} >
       
-      <img src={val} className='rel-product-img-navigate'     />
+      <img onError={({ currentTarget }) => {
+               currentTarget.onerror = null; // prevents looping
+               currentTarget.src=""+notFoundImage;
+               currentTarget.setAttribute("class",'error-img');
+               currentTarget.style.maxHeight="113px";
+               currentTarget.style.maxWidth="99px"
+  }} src={val} className='rel-product-img-navigate'     />
        
     </div>)
     })}
