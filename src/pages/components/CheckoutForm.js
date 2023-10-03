@@ -244,7 +244,7 @@ export default function CheckoutForm(){
 					if(orderResp.status==200){
 						dispatch(assignOverlay(false))
 
-						localStorage.setItem("billing_details",formik.values)
+						localStorage.setItem("billing_details",JSON.stringify(formik.values))
 						navigate("/checkout/success",{checkoutSuccess:true})
 
 					// setOpenPaymentAlertModal(true);
@@ -313,6 +313,7 @@ export default function CheckoutForm(){
 			const resp = await axios.post(orderUrl, dataObject);
 			if(resp.status==200){
 				dispatch(assignOverlay(false))
+				localStorage.setItem("billing_details",JSON.stringify(formik.values))
 
 				navigate("/checkout/success",{checkoutSuccess:true})
 
@@ -328,8 +329,31 @@ export default function CheckoutForm(){
 	}
 
 	useEffect(()=>{
-		formik.validateForm();
-	},[])
+		try{
+			var billing = localStorage.getItem("billing_details")
+			if(billing){
+				
+				billing = JSON.parse(billing);
+				console.log(billing)
+				  formik.setFieldValue("firstname",billing.firstname);
+				 //setReRender(!rerender)
+				//  console.log(formik)
+				// formik.set
+				formik.setFieldValue("lastname",billing.lastname)
+				formik.setFieldValue("address",billing.address)
+				formik.setFieldValue("zipcode",billing.zipcode)
+				formik.setFieldValue("phone",billing.phone)
+				formik.setFieldValue("email",billing.email)
+				formik.setFieldValue("state",billing.state)
+				formik.setFieldValue("city",billing.city)
+				formik.setErrors({})
+			}
+			else
+			formik.validateForm();
+		}catch(e){
+			formik.validateForm();
+
+		}	},[])
     return(
         <div className='frs'>
 			{productsOnCart && productsOnCart.length>0?<div>
@@ -339,39 +363,39 @@ export default function CheckoutForm(){
 				   <Row>
 					<Col md="6">
                    <h3>Firstname <span style={{color:"red"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Firstname' name="firstname" onChange={formik.handleChange}/>{" "}
+				   <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Firstname' value={formik.values.firstname} name="firstname" onChange={formik.handleChange}/>{" "}
                   {formik.errors.firstname && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.firstname}</p>}
                     </Col>
 					<Col md="6">
 					<h3>Lastname <span style={{color:"red"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Lastname' name="lastname" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Lastname' name="lastname" value={formik.values.lastname} onChange={formik.handleChange}/>{" "}
 					{formik.errors.lastname && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.lastname}</p>}
 					</Col>
 					</Row>
 				    <h3>Address <span style={{color:"red"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Address' name="address" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Address' name="address" value={formik.values.address} onChange={formik.handleChange}/>{" "}
 					{formik.errors.address && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.address}</p>}
 					<Row>
 					<Col md="6">
                     <h3>State <span style={{color:"red"}}>*</span></h3>
 
-                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter State' name="state" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter State' name="state" value={formik.values.state} onChange={formik.handleChange}/>{" "}
 					{formik.errors.state && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.state}</p>}
 					</Col>
 					<Col md="6">
                     <h3>Town/City <span style={{color:"red"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Town/City' name="city" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''} type="text" placeholder='Enter Town/City' name="city" value={formik.values.city} onChange={formik.handleChange}/>{" "}
 					{formik.errors.city && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.city}</p>}
                     </Col>
 					</Row>
                     <h3>Zipcode <span style={{color:"red"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''}  type="number" placeholder='Enter Zipcode' name="zipcode" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''}  type="number" placeholder='Enter Zipcode' name="zipcode" value={formik.values.zipcode} onChange={formik.handleChange}/>{" "}
 					{formik.errors.zipcode && <p  style={{color:"red",margin:"7px 6px ",textAlign:"left",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.zipcode}</p>}
                     <h3>Phone <span style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''}  type="number" placeholder='Enter Phone'name="phone" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''}  type="number" placeholder='Enter Phone'name="phone" value={formik.values.phone} onChange={formik.handleChange}/>{" "}
 					{formik.errors.phone && <p style={{color:"red",margin:"7px 6px ",textAlign:"left",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.phone}</p>}
                     <h3>Emai <span style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>*</span></h3>
-                    <Input className={formik.errors.firstname?'input-err':''} type="email" placeholder='Enter Email' name="email" onChange={formik.handleChange}/>{" "}
+                    <Input className={formik.errors.firstname?'input-err':''} type="email" placeholder='Enter Email' name="email" value={formik.values.email} onChange={formik.handleChange}/>{" "}
 					{formik.errors.email && <p style={{color:"red",marginBottom:"7px",textAlign:"left",margin:"7px 6px ",fontSize:"12px",fontWeight:"lighter"}}>{formik.errors.email}</p>}
  
                   
