@@ -22,7 +22,8 @@ export default function CheckoutForm(){
 	const [paymentAlert,setPaymentAlert] = useState("Payment Failed...");
 	const [cartData,setCartData] = useState([]);
 	const [orderType,setOrderType] = useState(null);
-    
+	const [rerender,setReRender] = useState(false);
+
 
     var navigate = useNavigate();
 
@@ -307,6 +308,7 @@ export default function CheckoutForm(){
 				order_notes:formik.values.order_notes,
 				// subtotal:data.amount,
 				products:productsDataForApi,
+				product_id_list:[...productsOnCart]
 
 			}
 			const orderUrl = /*"http://localhost:3011"*/ baseURL+"/api/orders/placeCodOrder";
@@ -336,7 +338,7 @@ export default function CheckoutForm(){
 				billing = JSON.parse(billing);
 				console.log(billing)
 				  formik.setFieldValue("firstname",billing.firstname);
-				 //setReRender(!rerender)
+				 setReRender(!rerender)
 				//  console.log(formik)
 				// formik.set
 				formik.setFieldValue("lastname",billing.lastname)
