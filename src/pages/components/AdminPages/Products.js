@@ -353,23 +353,23 @@ export default function ProductsAdmin(){
       }}    >
         <ModalBody >
         <h5 style={{margin:"10px",fontSize:"15px"}}>Product Title <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Title' name="title" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Title' value={formik.values.title} name="title" onChange={formik.handleChange}/>{" "}
                   {formik.errors.title && <p style={{color:"red"}}>{formik.errors.title}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Price <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Price' name="price" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Price' name="price" value={formik.values.price}  onChange={formik.handleChange}/>{" "}
 					{formik.errors.price && <p style={{color:"red"}}>{formik.errors.price}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Description <span style={{color:"red"}}>*</span></h5>
-                    <Input type="textarea" rows="4" placeholder='Enter Description' name="description" onChange={formik.handleChange}/>{" "}
+                    <Input type="textarea" rows="4" placeholder='Enter Description' value={formik.values.description}  name="description" onChange={formik.handleChange}/>{" "}
 					{formik.errors.description && <p style={{color:"red"}}>{formik.errors.description}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Category <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Category' name="category" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Category' value={formik.values.category}  name="category" onChange={formik.handleChange}/>{" "}
 					{formik.errors.category && <p style={{color:"red"}}>{formik.errors.category}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Original Price <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter original price' name="originalPrice" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter original price' value={formik.values.originalPrice}  name="originalPrice" onChange={formik.handleChange}/>{" "}
 					{formik.errors.originalPrice && <p style={{color:"red"}}>{formik.errors.originalPrice}</p>}
           <h5 style={{margin:"10px",fontSize:"15px"}}>Product Quantity <span style={{color:"red"}}>*</span></h5>
 
-          <Input type="text" placeholder='Enter Quantity' name="qty" onChange={formik.handleChange}/>{" "}
+          <Input type="text" placeholder='Enter Quantity' value={formik.values.qty}  name="qty" onChange={formik.handleChange}/>{" "}
 					{formik.errors.qty && <p style={{color:"red"}}>{formik.errors.qty}</p>}
            
            <h5 style={{margin:"10px",fontSize:"15px"}}>Product Image <span style={{color:"red"}}>*</span></h5>
@@ -415,23 +415,23 @@ export default function ProductsAdmin(){
       >
         <ModalBody >
         <h5 style={{margin:"10px",fontSize:"15px"}}>Product Title <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Title' name="title" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Title' name="title" value={formik.values.title}  onChange={formik.handleChange}/>{" "}
                   {formik.errors.title && <p style={{color:"red"}}>{formik.errors.title}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Price <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Price' name="price" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Price' name="price" value={formik.values.price}  onChange={formik.handleChange}/>{" "}
 					{formik.errors.price && <p style={{color:"red"}}>{formik.errors.price}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Description <span style={{color:"red"}}>*</span></h5>
-                    <Input type="textarea" rows="4" placeholder='Enter Description' name="description" onChange={formik.handleChange}/>{" "}
+                    <Input type="textarea" rows="4" placeholder='Enter Description' value={formik.values.description}  name="description" onChange={formik.handleChange}/>{" "}
 					{formik.errors.description && <p style={{color:"red"}}>{formik.errors.description}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Category <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Category' name="category" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter Category' name="category" value={formik.values.category}  onChange={formik.handleChange}/>{" "}
 					{formik.errors.category && <p style={{color:"red"}}>{formik.errors.category}</p>}
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Original Price <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter original price' name="originalPrice" onChange={formik.handleChange}/>{" "}
+                    <Input type="text" placeholder='Enter original price' value={formik.values.originalPrice}  name="originalPrice" onChange={formik.handleChange}/>{" "}
 					{formik.errors.originalPrice && <p style={{color:"red"}}>{formik.errors.originalPrice}</p>}
           <h5 style={{margin:"10px",fontSize:"15px"}}>Product Quantity <span style={{color:"red"}}>*</span></h5>
 
-          <Input type="text" placeholder='Enter Quantity' name="qty" onChange={formik.handleChange}/>{" "}
+          <Input type="text" placeholder='Enter Quantity' name="qty" value={formik.values.qty}  onChange={formik.handleChange}/>{" "}
 					{formik.errors.qty && <p style={{color:"red"}}>{formik.errors.qty}</p>}
            
                     {/* <h5 style={{margin:"10px",fontSize:"15px"}}>Zipcode <span style={{color:"red"}}>*</span></h5>
