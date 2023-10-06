@@ -53,13 +53,14 @@ export default function Cart(){
          newProducts = productsOnCart.filter((val)=>{
         //  console.log(res.data,val,res.data[""+val.product_id])
            if(!res.data[""+val.product_id]){
-            cartChanged = true
+            cartChanged = true;
            }
            else{
             return val;
            }
       })
       if(cartChanged){
+        console.log("Carts diff",newProducts,productsOnCart,res.data)
         localStorage.setItem("cart",JSON.stringify(newProducts))
         alert("Some products are out of stock")
         setReset(!reset)
