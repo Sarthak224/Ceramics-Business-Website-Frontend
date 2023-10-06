@@ -435,10 +435,10 @@ export default function Products(){
 
                 <h3 className="product-title frs">{val.title}</h3>
                 <span style={{padding:"1px"}}><span><b>Price</b></span>: &#x20b9; {val.price}</span><span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}> {(((val.original_price-val.price)/val.original_price)*100).toFixed(2)} % Off </span><br/>
-                <p style={{padding:"1px",color:"rgb(109 91 91)",marginTop:"5px", marginBottom:"0px"}} className="f1" >Qty: <b style={{fontSize:"12px",color:"black"}}>{val.qty>10?"in Stock":val.qty==0?<span style={{color:"red",fontWeight:"bold"}}>Out of Stock</span>:<span style={{color:"red",fontWeight:"bold"}}>only {val.qty} left</span>}</b></p>
+                <p style={{padding:"1px",color:"rgb(109 91 91)",marginTop:"5px", marginBottom:"0px"}} className="f1" >Qty: <b style={{fontSize:"12px",color:"black"}}>{val.qty>10?"in Stock":val.qty<=0?<span style={{color:"red",fontWeight:"bold"}}>Out of Stock</span>:<span style={{color:"red",fontWeight:"bold"}}>only {val.qty} left</span>}</b></p>
 
                 <Link style={{color:"white",textDecoration:"none"}} to={"/product-view?product_id="+val.detail_id+"&product="+val.title}><button disabled={val.qty==0?true:false} className="add-cart-btn vertical-btn-marg" >View <i class="fas fa-shopping-cart" style={{color: "#f5f5f5"}}></i></button></Link>
-                <button onClick={()=>{setProductData(val);setCartPopup(true)}} style={{marginTop:"5px",marginBottom:"10px"}} disabled={val.qty==0?true:false} className="add-cart-btn vertical-btn-marg" ><span onClick={(e)=>e.preventDefault()} style={{color:"white",textDecoration:"none",}} >Add Cart <i class="fas fa-shopping-cart" style={{color: "#f5f5f5"}}></i></span></button>
+                <button onClick={()=>{setProductData(val);setCartPopup(true)}} style={{marginTop:"5px",marginBottom:"10px"}} disabled={val.qty<=0?true:false} className="add-cart-btn vertical-btn-marg" ><span onClick={(e)=>e.preventDefault()} style={{color:"white",textDecoration:"none",}} >Add Cart <i class="fas fa-shopping-cart" style={{color: "#f5f5f5"}}></i></span></button>
 
                 </div>
             </div>
