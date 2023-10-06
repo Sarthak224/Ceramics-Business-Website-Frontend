@@ -1,9 +1,50 @@
 import { useSearchParams } from "react-router-dom";
 import CheckoutForm from "./components/CheckoutForm";
+import { baseURL } from "./utils/utils";
+import axios from 'axios';
+import {useState,useEffect} from 'react';
 
 export default function Checkout(){
     const [searchParams, setSearchParams] = useSearchParams();
     var product_id = searchParams.get("product_id");
+    var [reset,setReset] = useState(false)
+    async function verifyProductsOnCart(){
+     
+      var productsOnCart = localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
+      try{
+        
+        var url = baseURL;
+        var res = await axios.post(baseURL+"/api/cart/verifyCart",{product_id_list:productsOnCart});
+        if(res.data){
+          //  res.data = [res.data]
+           var newProducts = [];
+           var cartChanged = false
+           newProducts = productsOnCart.filter((val)=>{
+             if(res.data[val.product_id]){
+              cartChanged = true
+              return val;
+             }
+        })
+        if(cartChanged){
+          localStorage.setItem("cart",JSON.stringify(newProducts))
+          setReset(!reset)
+        }
+          //  setProductData(res.data[0]);
+        }
+  
+      }catch(e){
+
+      }
+      
+
+    }
+
+    useEffect(()=>{
+
+     verifyProductsOnCart();
+
+
+    },[])
     
     return(
       <div style={{marginTop:"120px"}}>

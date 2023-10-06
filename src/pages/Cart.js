@@ -27,9 +27,61 @@ export default function Cart(){
 
   var dispatch = useDispatch();
   const navigate = useNavigate();
+
+  
   
   var productsOnCart = localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
   
+  var [reset,setReset] = useState(false)
+  var dispatch = useDispatch();
+
+  async function verifyProductsOnCart(){
+     
+
+    var productsOnCart = localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
+    try{
+      
+      dispatch(assignOverlay(true))
+      var url = baseURL;
+      var res = await axios.post(baseURL+"/api/cart/verifyCart",{product_id_list:productsOnCart});
+      if(res.data){
+        
+        //  res.data = [res.data]
+         var newProducts = [];
+         var cartChanged = false
+         console.log(res.data)
+         newProducts = productsOnCart.filter((val)=>{
+        //  console.log(res.data,val,res.data[""+val.product_id])
+           if(!res.data[""+val.product_id]){
+            cartChanged = true
+           }
+           else{
+            return val;
+           }
+      })
+      if(cartChanged){
+        localStorage.setItem("cart",JSON.stringify(newProducts))
+        alert("Some products are out of stock")
+        setReset(!reset)
+      }
+
+        //  setProductData(res.data[0]);
+      }
+
+    }catch(e){
+
+    }
+    
+      dispatch(assignOverlay(false))
+
+  }
+
+  useEffect(()=>{
+
+   verifyProductsOnCart();
+
+
+  },[])
 
   //Function to list all unique id's
   function getUniqueProductIds(){
