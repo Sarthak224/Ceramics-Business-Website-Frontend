@@ -319,18 +319,7 @@ font-weight: normal;
   vertical-align: baseline;
   white-space: nowrap;
 }
-@media screen and (max-width:500px){
-  /* .category-subrow1 .item, .category-subrow2 .item{
-    width:90%;
-}
 
-.category-subrow1 , .category-subrow2{
-  height: 100%;
-}*/
-.text-mobile{
-  font-size: 16px !important;
-}
-}
 
 .page-not-found-img{
   width:380px;
@@ -2167,4 +2156,16 @@ transform: scale(0.8);
   .nav-middle span{
     font-size: 20px !important;
   }
+}
+@media screen and (max-width:500px){
+  /* .category-subrow1 .item, .category-subrow2 .item{
+    width:90%;
+}
+
+.category-subrow1 , .category-subrow2{
+  height: 100%;
+}*/
+.text-mobile{
+  font-size: 16px !important;
+}
 }
