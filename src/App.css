@@ -319,6 +319,18 @@ font-weight: normal;
   vertical-align: baseline;
   white-space: nowrap;
 }
+@media screen and (max-width:500px){
+  /* .category-subrow1 .item, .category-subrow2 .item{
+    width:90%;
+}
+
+.category-subrow1 , .category-subrow2{
+  height: 100%;
+}*/
+.text-mobile{
+  font-size: 16px !important;
+}
+}
 
 .page-not-found-img{
   width:380px;
@@ -1100,9 +1112,9 @@ ul{
     margin-bottom: 30px;
     
 }
-.text-mobile{
-  font-size: 2.1vw !important;
-}
+  .text-mobile{
+    font-size: 1.66vw !important;
+  }
 
 }
 @media(max-width: 574px){
