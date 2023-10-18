@@ -24,8 +24,8 @@ export default function ContactUs() {
 
 
                     <div className="frs" style={{ marginTop: "0px", marginBottom: "0px", width: "60%", marginLeft: "auto", marginRight: "auto" }}>
-                        <p style={{ textAlign: "left" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>2littleclay@gmail.com</span></p>
-                        <p style={{ textAlign: "left" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>+91 9738999999</span></p>
+                        <p style={{ textAlign: "left" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>***@mail.com</span></p>
+                        <p style={{ textAlign: "left" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>**********</span></p>
                         <p style={{ textAlign: "left" }}>Uttarakhand, Dehradun</p>
 
                     </div>
