@@ -3,46 +3,59 @@ import CheckoutForm from "./components/CheckoutForm";
 import { baseURL } from "./utils/utils";
 import axios from 'axios';
 import {useState,useEffect} from 'react';
+import { useDispatch } from "react-redux";
+import { assignOverlay } from "../redux/actions/navigation";
 
 export default function Checkout(){
     const [searchParams, setSearchParams] = useSearchParams();
     var product_id = searchParams.get("product_id");
     var [reset,setReset] = useState(false)
-    async function verifyProductsOnCart(){
+
+    const dispatch = useDispatch();
+
+     async function verifyProductsOnCart(){
      
-      var productsOnCart = localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
-      try{
-        
-        var url = baseURL;
-        var res = await axios.post(baseURL+"/api/cart/verifyCart",{product_id_list:productsOnCart});
-        if(res.data){
-          //  res.data = [res.data]
-           var newProducts = [];
-           var cartChanged = false
-           newProducts = productsOnCart.filter((val)=>{
-             if(res.data[val.product_id]){
-              cartChanged = true
-              return val;
-             }
-        })
-        if(cartChanged){
 
-          localStorage.setItem("cart",JSON.stringify(newProducts))
-          alert("Some products are out of stock")
-
-          setReset(!reset)
-          window.location.reload();
-
-        }
-          //  setProductData(res.data[0]);
-        }
-  
-      }catch(e){
-
-      }
+    var productsOnCart = localStorage.getItem("cart")?JSON.parse(localStorage.getItem("cart")):[];
+    try{
       
+     
+      dispatch(assignOverlay(true))
+      var url = baseURL;
+      var res = await axios.post(baseURL+"/api/cart/verifyCart",{product_id_list:productsOnCart});
+      if(res.data){
+        
+        //  res.data = [res.data]
+         var newProducts = [];
+         var cartChanged = false
+         console.log(res.data)
+         newProducts = productsOnCart.filter((val)=>{
+        //  console.log(res.data,val,res.data[""+val.product_id])
+           if(!res.data[""+val.product_id]){
+            cartChanged = true;
+           }
+           else{
+            return val;
+           }
+      })
+      if(cartChanged){
+        console.log("Carts diff",newProducts,productsOnCart,res.data)
+        localStorage.setItem("cart",JSON.stringify(newProducts))
+        alert("Some products are out of stock")
+        setReset(!reset)
+        window.location.reload();
+      }
+
+        //  setProductData(res.data[0]);
+      }
+
+    }catch(e){
 
     }
+    
+      dispatch(assignOverlay(false))
+
+  }
 
     useEffect(()=>{
 
