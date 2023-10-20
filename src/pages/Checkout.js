@@ -26,8 +26,13 @@ export default function Checkout(){
              }
         })
         if(cartChanged){
+
           localStorage.setItem("cart",JSON.stringify(newProducts))
+          alert("Some products are out of stock")
+
           setReset(!reset)
+          window.location.reload();
+
         }
           //  setProductData(res.data[0]);
         }
