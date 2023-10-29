@@ -205,7 +205,7 @@ export default function Home(){
         }}>
         <div className="home-top-sect">
          <div style={{margin:"10%",display:"block",textAlign:"left"}}>
-        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>Vinkee Bhasiin Ceramics</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
+        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Handmade Creations <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>{/*Vinkee Bhasiin Ceramics*/}</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
         <Button  color="" className='button-17 down-top-animate delay-2' style={{background:"#D5A372",color:"white",}}><Link className="nav-link" to={"/products"}>View Products <ShoppingBag className='nav-icon' size={17} /></Link></Button>
         </div>
         </div>
