@@ -12,17 +12,15 @@ export default function About(){
     }}>
     <div className="about-page-top-sect">
      <div style={{margin:"2%",display:"block",textAlign:"left"}}>
-    <h1 className='down-top-animate delay-1 ftr italic' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Lorem Ipsum</h1>
+    <h1 className='down-top-animate delay-1 ftr italic' style={{color:"#999999",fontWeight:"normal",lineHeight:"3.8rem",textAlign:"center"}}>Join Us on this Artistic Journey</h1>
     </div>
-    <p className='ftr italic text-mobile' style={{fontSize:"20px"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    </div>  
+    <p className='ftr italic text-mobile' style={{fontSize:"20px",margin:"0% 10%"}}>We invite you to immerse yourself in the world of Vinkee Bhasiin Ceramics, where every piece carries a story and each touch evokes wonder. Thank you for being a part of this artistic expedition. </p></div>  
 
     <div className='about-body'>
        <div className='about-sect-1 '>
-        <h1  ><b>About us</b></h1>
+        <h1  ><b>A Self-Taught Odyssey</b></h1>
         <p className='text-mobile' style={{marginBottom:"50px"}}>
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-       </p>
+       Largely self-taught, I've embraced curiosity as my guiding force in this artistic exploration. This approach has led to a richly diverse portfolio, ranging from functional tableware to sculptural masterpieces. Each piece bears the mark of a personal journey, a testament to the power of self-discovery in art. </p>
        </div>
 
 
@@ -32,8 +30,8 @@ export default function About(){
                <img src={about1} style={{width:"100%",height:"100%",maxHeight:"599px"}} /> 
             </Col>
             <Col className='about-col mobile-col-background1' md="6" style={{alignItems:"left"}}>
-            <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
-           <p className='frs text-mobile' style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h1 className='frs' style={{margin:"10px 50px"}}><b>Simplicity and Craftsmanship at the Core</b></h1>
+           <p className='frs text-mobile' style={{padding:"60px",textAlign:"left"}}>  At the heart of Vinkee Bhasiin Ceramics lies a dedication to simplicity, handcraftsmanship, and the celebration of functional beauty. With a delicate balance of traditional techniques and contemporary sensibilities, each creation is an embodiment of meticulous care and devotion.</p>
                 <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
            
             </Col>
@@ -41,8 +39,8 @@ export default function About(){
           </Row>
           <Row className='bg-white'>
           <Col className='about-col mobile-col-background2' md="6" style={{alignItems:"left"}}>
-          <h1 className='frs' style={{margin:"10px 50px"}}><b>About us</b></h1>
-           <p className='frs text-mobile'  style={{padding:"60px",textAlign:"left"}}>      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <h1 className='frs' style={{margin:"10px 50px"}}><b>Natural Charm and Unique Character</b></h1>
+           <p className='frs text-mobile'  style={{padding:"60px",textAlign:"left"}}>   Every piece exudes a natural, distinctive charm. It is a reflection of a thoughtful design process, one that ensures no two creations are alike. Each work of art carries a unique character, an imprint of its journey from raw clay to finished masterpiece.</p>
                 <Button color="" style={{backgroundColor:"#D5A372",color:"#fff",padding:"5px 15px",marginBottom:"30px"}}  className='about-btn'>Go to</Button>
             </Col>
           <Col md="6" className='about-col mobile-col-hide' style={{padding:"0px"}}>

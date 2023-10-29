@@ -94,7 +94,7 @@ useEffect(()=>{
 
 
 return (
-      <div className='carousel-cont-main' style={{flexWrap:"wrap",justifyContent:"space-around"}}>  
+      <div className='carousel-cont-main' style={{flexWrap:"wrap"}}>  
     
     {latestProducts.map(val=>{
       

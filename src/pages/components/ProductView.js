@@ -200,6 +200,7 @@ function addProductToCart(){
       return (
         <div>
         <Carousel
+          interval={5000}
           activeIndex={activeIndex}
           next={next}
           previous={previous}

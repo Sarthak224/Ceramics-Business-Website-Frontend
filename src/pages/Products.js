@@ -416,7 +416,7 @@ export default function Products(){
     {/* <hr className='img-sep'  /> */}
       <div style={{display:"flex",flexDirection:"row",flexWrap:"nowrap"}}>
       {!(errorComponent) && <ProductSidebar  sidebarClass = {sidebarClass}   setSidebarClass={setSidebarClass}/>}
-      <div className="product-sect-main" style={{width:"100%",position:"relative"}}>
+      <div className="product-sect-main" style={{width:"100%",position:"relative",justifyContent:"start"}}>
         <div style={{width:"100%",textAlign:"left",marginLeft:"30px",display:"flex",alignItems:"center"}}>
         <Menu className="prod-sidebar-open-btn" size={20} style={{cursor:"pointer"}} onClick={()=>setSidebarClass("prod-sidebar-active")} /> <span className="frs prod-sidebar-open-text" style={{marginTop:"6px",marginLeft:"20px"}}>Open Filters</span>
         </div>

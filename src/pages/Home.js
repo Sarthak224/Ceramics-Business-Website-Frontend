@@ -204,7 +204,7 @@ export default function Home(){
         }}>
         <div className="home-top-sect">
          <div style={{margin:"10%",display:"block",textAlign:"left"}}>
-         <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>VB Ceramics</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
+         <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to <span style={{color: "#3081c8",fontWeight: "normal"}} className='ftr'>Vinkee Bhasiin Ceramics</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
 
         {/* <h1 className='down-top-animate delay-1 ' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to our  React Pottery<br/><span className='' style={{color:"white"}}> Built in React!</span> <span className="theme-text ">React</span></h1> */}
         <Button  color="" className='button-17 down-top-animate delay-2' style={{background:"#D5A372",color:"white",}}><Link className="nav-link" to={"/products"}>View Products <ShoppingBag className='nav-icon' size={17} /></Link></Button>
@@ -225,8 +225,8 @@ export default function Home(){
           </div>
 
           <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='text-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
+             Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.
+ </p>              </div>
               </div>  
 
 
@@ -264,9 +264,9 @@ export default function Home(){
           </div>
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
-          <h2 className='ftr italic' style={{margin:"40px"}} >Lorem Ipsum</h2>
+          <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2>
             <p className="sect-font ftr italic text-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            Our commitment extends beyond aesthetics; it encompasses environmental responsibility. We strive to leave a gentle footprint on the earth, consciously minimizing our impact. This dedication is woven into the very fabric of Vinkee Bhasiin Ceramics, reflecting a belief in sustainable artistry.</p>
               </div>
               </div>  
         </div>

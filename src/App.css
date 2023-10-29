@@ -6,6 +6,14 @@
   font-family: 'Quicksand', sans-serif;
 
 }
+.carousel-item{
+
+    transition: -webkit-transform .2s ease-in-out !important;
+    transition: transform .2s ease-in-out !important;
+    transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out !important;
+
+
+}
 
 .App-logo {
   height: 40vmin;
