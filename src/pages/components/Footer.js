@@ -43,10 +43,10 @@ export default function Footer(){
   	 		<div class="footer-col">
   	 			<h4 style={{position:"relative"}}>follow us</h4>
   	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+  	 				<a  href="https://www.facebook.com/people/Vinkee-Bhasiin-Ceramics/100063774127500/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  	 				{/* <a href="#"><i class="fab fa-twitter"></i></a> */}
+  	 				<a  href="https://www.instagram.com/vinkeebhasiin/" target="_blank"><i class="fab fa-instagram"></i></a>
+  	 				{/* <a href="#"><i class="fab fa-linkedin-in"></i></a> */}
   	 			</div>
   	 		</div>
   	 	</div>

@@ -1,6 +1,7 @@
 import { Button } from 'reactstrap'
-import homeP1 from '../home_about1.svg'
-import about1 from '../About-1.jpg'
+import about1 from '../home_about1.svg'
+import homeP1 from '../About.jpg'
+
 import {ShoppingBag,ShoppingCart} from 'react-feather'
 import Carousel from "react-multi-carousel";
 import {div} from "react-multi-carousel"
@@ -204,9 +205,7 @@ export default function Home(){
         }}>
         <div className="home-top-sect">
          <div style={{margin:"10%",display:"block",textAlign:"left"}}>
-         <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>VB Ceramics</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
-
-        {/* <h1 className='down-top-animate delay-1 ' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to our  React Pottery<br/><span className='' style={{color:"white"}}> Built in React!</span> <span className="theme-text ">React</span></h1> */}
+        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"bold",lineHeight:"4.8rem"}}>Welcome to <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>Vinkee Bhasiin Ceramics</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
         <Button  color="" className='button-17 down-top-animate delay-2' style={{background:"#D5A372",color:"white",}}><Link className="nav-link" to={"/products"}>View Products <ShoppingBag className='nav-icon' size={17} /></Link></Button>
         </div>
         </div>
@@ -216,16 +215,33 @@ export default function Home(){
         <div style={{display:"flex",flexDirection:"column",marginTop:"90px"}}>
             
         </div>
+
+        {/* <div className='sect-1' ref={sect3Ref} style={{justifyContent:"space-around",backgroundColor:"#ffffff",marginTop:"150px"}} >
+          <div className="col1 temp-col21"  style={{width:"47vw",display:"flex",justifyContent:"center",alignItems:"center" ,padding:"10px"}}>
+            <img src={homeP1} style={{width:"100%",height:"120%"}} />
+          </div>
+
+          <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",minWidth:"300px"}}>
+          <h2 className='ftr italic' style={{margin:"40px"}} >About Me</h2>
+            <p className="sect-font ftr italic" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
+            Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.             </p>
+              </div>
+              </div>      */}
+
+
         <h2 className='ftr italic' >About us</h2>
             {/* <hr className='row-sep' /> */}
+
+      
+          
             
             <div className='sect-1 remove-from-screen' ref={sect1Ref} style={{justifyContent:"space-around"}} >
           <div className="col1"  style={{display:"flex",justifyContent:"center",alignItems:"center" ,/*width:"40vw",height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"10px"}}>
             <img src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
           </div>
 
-          <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='text-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
+          Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.             </p>
               </div>
               </div>  
 
@@ -260,13 +276,13 @@ export default function Home(){
 
 <div className='sect-1 remove-from-screen show-background-home-bottom' ref={sect3Ref} style={{justifyContent:"space-around",backgroundColor:"#ffffff",marginTop:"150px"}} >
           <div className="col1 temp-col21"  style={{width:"47vw",display:"flex",justifyContent:"center",alignItems:"center" ,/*width:"40vw",height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"10px"}}>
-            <img src={about1} style={{width:"99%",height:"89%"}} />
+            <img src={about1} style={{width:"100%",height:"120%"}} />
           </div>
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
-          <h2 className='ftr italic' style={{margin:"40px"}} >Lorem Ipsum</h2>
-            <p className="sect-font ftr italic text-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2>
+            <p className="sect-font ftr italic" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
+            Our commitment extends beyond aesthetics; it encompasses environmental responsibility. We strive to leave a gentle footprint on the earth, consciously minimizing our impact. This dedication is woven into the very fabric of Vinkee Bhasiin Ceramics, reflecting a belief in sustainable artistry.                    </p>
               </div>
               </div>  
         </div>

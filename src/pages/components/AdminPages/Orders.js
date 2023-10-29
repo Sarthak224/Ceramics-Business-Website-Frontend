@@ -141,7 +141,7 @@ export default function Orders(){
                 <td>{val.lastname}</td>
                 <td>{val.email}</td>
                 <td><OrderStatusDropdown val = {val}/></td>
-                <td><b>&#8377;</b> {val.subtotal/100}</td>
+                <td><b>&#8377;</b> {val.subtotal}</td>
                 <td><i class='fas fa-clipboard-list' style={{'font-size':'24px'}} onClick={()=>{
                   setCurrentOrder(val);
                   setOpenOrderDetailsPopup(true)
@@ -224,7 +224,7 @@ export default function Orders(){
                 </div>
                 <h6 style={{fontWeight:"bold",marginLeft:"10px",textAlign:"left"}}>Other Details:-</h6>
                  <div style={{marginLeft:"23px",marginTop:"23px"}}>
-                 <p><b>Subtotal: </b> <b>&#8377;</b> {(currentOrder.subtotal/100).toFixed(2)}</p>
+                 <p><b>Subtotal: </b> <b>&#8377;</b> {(currentOrder.subtotal).toFixed(2)}</p>
                  <p><b>Name on order: </b> {currentOrder.firstname+" "+currentOrder.lastname}</p>
                  <p><b>Order Notes: </b> {currentOrder.order_notes}</p>
                  <p><b>Order Payment Type: </b> {currentOrder.order_type}</p>
