@@ -2107,3 +2107,20 @@ transform: scale(0.8);
     font-size: 20px !important;
   }
 }
+
+
+.product-sidebar-filter{
+  width:390px;
+  height:100%;
+  background-color: #fff;
+  /* border-right: 1px solid rgba(215, 207, 207, 0.52); */
+  margin-top: -20px;
+  transition:0.3s ease;
+  overflow-x: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  .product-sidebar-filter::-webkit-scrollbar{
+   display: none;
+  }
