@@ -386,7 +386,7 @@ export default function Products(){
 
     return(
     <div className="product-sect-main" style={{marginTop:"120px",}}>
-    <h3 className="product-title-main frs" style={{marginBottom:"40px",position:"relative",textAlign:"center",marginTop:"40px"}}><span style={{backgroundColor:"#ffffff",padding:"0px 20px",marginBottom:"0px"}}>Our Products</span></h3>
+    <h3 className="product-title-main frs" style={{marginBottom:"40px",position:"relative",textAlign:"center",marginTop:"40px",marginLeft:"auto",marginRight:"auto"}}><span style={{backgroundColor:"#ffffff",padding:"0px 20px",marginBottom:"0px"}}>Our Products</span></h3>
     {/* Filter Sect */}
     {/* <div className='filter-parent-sect' style={{width:"90%",textAlign:"left",display:"flex",marginBottom:"10px",marginTop:"25px"}}>
     <span className="product-title" style={{marginTop:"1px"}}>Filters:</span>
