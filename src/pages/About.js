@@ -10,19 +10,19 @@ export default function About(){
     return(
         <div style={{  marginTop: "110px"
     }}>
-    <div className="about-page-top-sect">
+ <div className="about-page-top-sect">
      <div style={{margin:"2%",display:"block",textAlign:"left"}}>
-    <h1 className='down-top-animate delay-1 ftr italic' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Join Us on this Artistic Journey</h1>
+    <h1 className='down-top-animate delay-1 ftr italic category-main-sect-title' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem",textAlign:"center"}}>Join Us on this Artistic Journey</h1>
     </div>
-    <p className='ftr italic text-mobile' style={{fontSize:"20px"}}>We invite you to immerse yourself in the world of Vinkee Bhasiin Ceramics, where every piece carries a story and each touch evokes wonder. Thank you for being a part of this artistic expedition.</p>
+    <p className='ftr italic para-mobile' style={{fontSize:"20px",margin:"0% 10%"}}>We invite you to immerse yourself in the world of Vinkee Bhasiin Ceramics, where every piece carries a story and each touch evokes wonder. Thank you for being a part of this artistic expedition. </p>
     </div>  
 
     <div className='about-body'>
        <div className='about-sect-1 '>
-        <h1  ><b>A Self-Taught Odyssey</b></h1>
-        <p className='text-mobile' style={{marginBottom:"50px"}}>
+        <h1 className='category-main-sect-title'  ><b>A Self-Taught Odyssey</b></h1>
+        <p className='para-mobile' style={{marginBottom:"50px"}}>
         Largely self-taught, I've embraced curiosity as my guiding force in this artistic exploration. This approach has led to a richly diverse portfolio, ranging from functional tableware to sculptural masterpieces. Each piece bears the mark of a personal journey, a testament to the power of self-discovery in art.
-       </p>
+        </p>
        </div>
 
 

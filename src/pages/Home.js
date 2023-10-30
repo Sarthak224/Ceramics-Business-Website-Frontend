@@ -205,7 +205,7 @@ export default function Home(){
         }}>
         <div className="home-top-sect">
          <div style={{margin:"10%",display:"block",textAlign:"left"}}>
-        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Handmade Creations <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'>{/*Vinkee Bhasiin Ceramics*/}</span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
+        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Handmade Products <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'></span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
         <Button  color="" className='button-17 down-top-animate delay-2' style={{background:"#D5A372",color:"white",}}><Link className="nav-link" to={"/products"}>View Products <ShoppingBag className='nav-icon' size={17} /></Link></Button>
         </div>
         </div>
@@ -240,7 +240,7 @@ export default function Home(){
             <img src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
           </div>
 
-          <div className="col1 ftr italic" style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
+          <div className="col1 ftr italic " style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='para-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
           Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.             </p>
               </div>
               </div>  
@@ -281,7 +281,7 @@ export default function Home(){
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
           <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2>
-            <p className="sect-font ftr italic" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
+            <p className="sect-font ftr italic para-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
             Our commitment extends beyond aesthetics; it encompasses environmental responsibility. We strive to leave a gentle footprint on the earth, consciously minimizing our impact. This dedication is woven into the very fabric of Vinkee Bhasiin Ceramics, reflecting a belief in sustainable artistry.                    </p>
               </div>
               </div>  

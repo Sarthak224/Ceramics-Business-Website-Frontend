@@ -1748,7 +1748,21 @@ input:focus{
 }
 
 
+.category-main-sect-title{
+  font-size: 27px !important;
+}
 
+.category-main-sect-title1{
+  font-size: 21px !important;
+}
+
+.category-main-sect-subtitle1{
+  font-size: 15px !important;
+}
+
+.para-mobile{
+  font-size: 15px !important;
+}
 
 
 .buy-carousel-icn{
