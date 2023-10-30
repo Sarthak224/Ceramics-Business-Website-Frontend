@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../../logo-new-preview (3).png';
+import logo from '../../logo.png';
 import { useState } from 'react';
 import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Row } from 'reactstrap';
 import axios from 'axios';
