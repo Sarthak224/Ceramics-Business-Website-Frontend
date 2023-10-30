@@ -1106,11 +1106,14 @@ ul{
     width: 100%;
 }
 }
-.client-order-view .modal-header{
+.client-order-view .modal-header,.client-order-view .modal-footer{
   background-color: #d49529c2;
   color: #f1f1f1;
 }
 
+.client-order-view .modal-body{
+  background: linear-gradient(45deg, rgba(243, 200, 109, 0.39), rgba(237, 184, 65, 0.12));
+}
 
 .navbar-layout-main-mobile{
   display: none;

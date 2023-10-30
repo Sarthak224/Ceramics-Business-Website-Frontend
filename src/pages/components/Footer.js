@@ -150,19 +150,19 @@ export default function Footer(){
    <Modal className='client-order-view' isOpen={orders}>
 	<ModalHeader>Your Orders</ModalHeader>
 	<ModalBody>
-	 <div style={orderData && orderData.length>0? {maxHeight:"430px",overflow:"auto"}:{display:"none"}}>
+	 <div style={orderData && orderData.length>0? {maxHeight:"490px",overflow:"auto"}:{display:"none"}}>
              
 
 
               <div>
               {/* <h6 style={{fontWeight:"bold",marginLeft:"10px",textAlign:"left"}}>Your Orders:-</h6> */}
-              <div style={{marginLeft:"3px",marginTop:"23px",marginBottom:"23px"}}>
+              <div style={{marginLeft:"0px",marginTop:"23px",marginBottom:"23px"}}>
                   
                 {orderData && orderData.map((currentOrder,index)=>{
 
-				return <div className='ftr' style={{marginBottom:"40px",paddingBottom:"40px",borderBottom:"3px solid #d2af47",borderTop:"3px solid #d2af47",background: "linear-gradient(45deg, #f3c86d63, #edb8411f)",padding:"14px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",margin: "0px 10px"}}>
-			   <h3 style={{marginBottom:"20px",paddingBottom:"20px",borderBottom:"1px solid #cac8ee",backgroundColor: "#3534352b",marginTop:"10px",
-                padding: "20px",color: "rgb(80 79 79)"}}><span  style={{fontWeight:"normal"}}> Order: </span> {index+1}:</h3>
+				return <div className='ftr' style={{marginBottom:"40px",paddingBottom:"40px",borderBottom:"3px solid #d2af47",borderTop:"3px solid #d2af47",background: /*"linear-gradient(45deg, #f3c86d63, #edb8411f)"*/"#fff",padding:"14px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",margin: "10px 10px"}}>
+			   <h3 style={{fontSize:"21px",marginBottom:"20px",paddingBottom:"20px",borderBottom:"1px solid #cac8ee",backgroundColor: "#3534352b",marginTop:"10px",
+                padding: "20px",color: "rgb(80 79 79)"}}><span  style={{fontWeight:"normal"}}> Order: </span> #{index+1}: ({currentOrder.date})</h3>
 					<span><b>Status:</b></span><div style={(currentOrder.order_status=="Delivered")?{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"rgb(102 151 222)",color:"#fff"}:(currentOrder.order_status=="Shipped")?{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"#333",color:"#fff"}:{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"rgb(64 183 60 / 80%)",color:"#fff"}}>{currentOrder.order_status} {currentOrder.order_status=="Confirmed"?<i className="fas fa-check" style={{color:"#fff",marginLeft:"13px"}}></i>:(currentOrder.order_status=="Shipped")?<i className="fas fa-truck" style={{color: "#ffffff",marginLeft:"13px"}}></i>:<i className="fas fa-check-circle" style={{color: "#ffffff",marginLeft:"13px"}}></i>}</div>
 				
 			    <h5 style={{fontWeight:"normal",textAlign:"center",marginBottom:"10px",borderBottom:"1px solid #c5c5c5",paddingBottom:"15px"}}>Billing Details</h5>
