@@ -147,7 +147,7 @@ export default function Footer(){
 	</ModalFooter>
    </Modal>
 
-   <Modal isOpen={orders}>
+   <Modal className='client-order-view' isOpen={orders}>
 	<ModalHeader>Your Orders</ModalHeader>
 	<ModalBody>
 	 <div style={orderData && orderData.length>0? {maxHeight:"430px",overflow:"auto"}:{display:"none"}}>
@@ -156,7 +156,7 @@ export default function Footer(){
 
               <div>
               {/* <h6 style={{fontWeight:"bold",marginLeft:"10px",textAlign:"left"}}>Your Orders:-</h6> */}
-              <div style={{marginLeft:"23px",marginTop:"23px",marginBottom:"23px"}}>
+              <div style={{marginLeft:"3px",marginTop:"23px",marginBottom:"23px"}}>
                   
                 {orderData && orderData.map((currentOrder,index)=>{
 

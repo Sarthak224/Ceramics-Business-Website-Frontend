@@ -1106,6 +1106,12 @@ ul{
     width: 100%;
 }
 }
+.client-order-view{
+  background-color: #d49529c2;
+  color: #f1f1f1;
+}
+
+
 .navbar-layout-main-mobile{
   display: none;
   background-color: #D5A372;
