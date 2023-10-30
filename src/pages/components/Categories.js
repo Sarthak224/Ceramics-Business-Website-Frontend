@@ -8,11 +8,11 @@ export default function Categories(){
     return(
         <div className="categories-main-sect" style={{marginTop:"90px"}}>
           <div>
-            <h2 className='ftr' style={{fontWeight:"normal",fontSize:"39px",fontStyle:"italic"}}>Categories</h2>
+            <h2 className='ftr category-main-sect-title' style={{fontWeight:"normal",fontSize:"39px",fontStyle:"italic"}}>Categories</h2>
             <div className="categories-box-parent" style={{margin:"auto"}}>
             <Col md="7" className="category-col" style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column"}}>
-            <h2 style={{fontWeight:"bold",fontSize:"32px",color:"rgb(153, 153, 153)"}}>All Categories</h2>
-            <h2 style={{fontWeight:"bold",fontSize:"19px",color:"#ffffff"}}>See our categories </h2>
+            <h2 className='category-main-sect-title1' style={{fontWeight:"bold",fontSize:"32px",color:"rgb(153, 153, 153)"}}>All Categories</h2>
+            <h2 className='category-main-sect-subtitle1' style={{fontWeight:"bold",fontSize:"19px",color:"#ffffff"}}>See our categories </h2>
 
             </Col>
             <Col md="3" className="category-col2">
