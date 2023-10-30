@@ -224,7 +224,7 @@ export default function Orders(){
                 </div>
                 <h6 style={{fontWeight:"bold",marginLeft:"10px",textAlign:"left"}}>Other Details:-</h6>
                  <div style={{marginLeft:"23px",marginTop:"23px"}}>
-                 <p><b>Subtotal: </b> <b>&#8377;</b> {(currentOrder.subtotal).toFixed(2)}</p>
+                 <p><b>Subtotal: </b> <b>&#8377;</b> {currentOrder.subtotal && (currentOrder.subtotal).toFixed(2)}</p>
                  <p><b>Name on order: </b> {currentOrder.firstname+" "+currentOrder.lastname}</p>
                  <p><b>Order Notes: </b> {currentOrder.order_notes}</p>
                  <p><b>Order Payment Type: </b> {currentOrder.order_type}</p>
