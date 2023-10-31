@@ -2322,3 +2322,32 @@ ol.progtrckr li.progtrckr-todo:before {
   width:95vw;
   max-width: 95vw !important;
 }
+
+
+
+.client-order-view1 .modal-content{
+  width:95vw;
+  max-width: 800px;
+}
+.client-order-view1{
+  /* transform: translate(2.5vw,0) !important; */
+  width:95vw;
+  max-width: 800px !important;
+}
+
+.client-order-view1 .modal-header,.client-order-view1 .modal-footer{
+  background-color: #d49529c2;
+  color: #f1f1f1;
+}
+
+.client-order-view1 .modal-header .modal-title{
+
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
+.client-order-view1 .modal-body{
+  /* background: linear-gradient(45deg, rgba(243, 200, 109, 0.39), rgba(237, 184, 65, 0.12)); */
+  background: #e3e4e49e;
+
+}
