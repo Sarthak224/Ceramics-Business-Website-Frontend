@@ -1111,6 +1111,12 @@ ul{
   color: #f1f1f1;
 }
 
+.client-order-view .modal-header .modal-title{
+
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+}
 .client-order-view .modal-body{
   background: linear-gradient(45deg, rgba(243, 200, 109, 0.39), rgba(237, 184, 65, 0.12));
 }
@@ -2148,3 +2154,171 @@ transform: scale(0.8);
   .product-sidebar-filter::-webkit-scrollbar{
    display: none;
   }
+
+
+/* ol.progress-step[data-steps="2"] li { width: 49%; }
+ol.progress-step[data-steps="3"] li { width: 33%; }
+ol.progress-step[data-steps="4"] li { width: 24%; }
+ol.progress-step[data-steps="5"] li { width: 19%; }
+ol.progress-step[data-steps="6"] li { width: 16%; }
+ol.progress-step[data-steps="7"] li { width: 14%; }
+ol.progress-step[data-steps="8"] li { width: 12%; }
+ol.progress-step[data-steps="9"] li { width: 11%; }
+
+.progress-step {
+    width: 100%;
+    list-style: none;
+    list-style-image: none;
+    margin: 20px 0 20px 0;
+    padding: 0;
+}
+
+.progress-step li {
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.progress-step .name {
+    display: block;
+    vertical-align: bottom;
+    text-align: center;
+    margin-bottom: 1em;
+    color: black;
+    opacity: 0.3;
+}
+
+.progress-step .step {
+    color: black;
+    border: 3px solid silver;
+    background-color: silver;
+    border-radius: 50%;
+    line-height: 1.2;
+    width: 1.2em;
+    height: 1.2em;
+    display: inline-block;
+    z-index: 0;
+}
+
+.progress-step .step span {
+    opacity: 0.3;
+}
+
+.progress-step .active .name,
+.progress-step .active .step span {
+    opacity: 1;
+}
+
+.progress-step .step:before {
+    content: "";
+    display: block;
+    background-color: silver;
+    height: 0.4em;
+    width: 50%;
+    position: absolute;
+    bottom: 0.6em;
+    left: 0;
+    z-index: -1;
+}
+
+.progress-step .step:after {
+    content: "";
+    display: block;
+    background-color: silver;
+    height: 0.4em;
+    width: 50%;
+    position: absolute;
+    bottom: 0.6em;
+    right: 0;
+    z-index: -1;
+}
+
+.progress-step li:first-of-type .step:before {
+    display: none;
+}
+
+.progress-step li:last-of-type .step:after {
+    display: none;
+}
+
+.progress-step .done .step,
+.progress-step .done .step:before,
+.progress-step .done .step:after,
+.progress-step .active .step,
+.progress-step .active .step:before {
+    background-color: rgb(205, 177, 50);
+}
+
+.progress-step .done .step,
+.progress-step .active .step {
+    border: 3px solid rgb(205, 177, 50);
+} */
+
+ol.progtrckr {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ol.progtrckr li {
+  display: inline-block;
+  text-align: center;
+  line-height: 3em;
+}
+
+ol.progtrckr[data-progtrckr-steps="2"] li { width: 49%; }
+ol.progtrckr[data-progtrckr-steps="3"] li { width: 33%; }
+ol.progtrckr[data-progtrckr-steps="4"] li { width: 24%; }
+ol.progtrckr[data-progtrckr-steps="5"] li { width: 19%; }
+ol.progtrckr[data-progtrckr-steps="6"] li { width: 16%; }
+ol.progtrckr[data-progtrckr-steps="7"] li { width: 14%; }
+ol.progtrckr[data-progtrckr-steps="8"] li { width: 12%; }
+ol.progtrckr[data-progtrckr-steps="9"] li { width: 11%; }
+
+ol.progtrckr li.progtrckr-done {
+  color: black;
+  border-bottom: 4px solid yellowgreen;
+}
+ol.progtrckr li.progtrckr-todo {
+  color: silver; 
+  border-bottom: 4px solid silver;
+}
+
+ol.progtrckr li:after {
+  content: "\00a0\00a0";
+}
+ol.progtrckr li:before {
+  position: relative;
+  bottom: -2.5em;
+  float: left;
+  left: 50%;
+  line-height: 1em;
+}
+ol.progtrckr li.progtrckr-done:before {
+  content: "\2713";
+  color: white;
+  background-color: yellowgreen;
+  height: 1.2em;
+  width: 1.2em;
+  line-height: 1.2em;
+  border: none;
+  border-radius: 1.2em;
+}
+ol.progtrckr li.progtrckr-todo:before {
+  content: "\039F";
+  color: silver;
+  background-color: white;
+  font-size: 1.5em;
+  bottom: -1.6em;
+}
+
+
+.client-order-view .modal-content{
+  width:95vw;
+  max-width: 95vw;
+}
+.client-order-view{
+  /* transform: translate(2.5vw,0) !important; */
+  width:95vw;
+  max-width: 95vw !important;
+}
