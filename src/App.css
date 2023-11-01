@@ -1812,6 +1812,29 @@ font-size: 13px;
   font-size: 15px !important;
 }
 
+.list-grid-mobile view{
+  justify-content: space-evenly !important;
+
+}
+
+
+.category-main-sect-title{
+  font-size: 27px !important;
+  line-height: 3rem !important;
+}
+
+.category-main-sect-title1{
+  font-size: 21px !important;
+}
+
+.category-main-sect-subtitle1{
+  font-size: 15px !important;
+}
+
+.para-mobile{
+  font-size: 15px !important;
+}
+
 
 .buy-carousel-icn{
 font-size: 10px;
@@ -2383,3 +2406,10 @@ ol.progtrckr li.progtrckr-todo:before {
   background: #e3e4e49e;
 
 }
+
+.client-order-view1 .col-md-2,.client-order-view1 .col-md-4,.client-order-view1 .col-md-6{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
