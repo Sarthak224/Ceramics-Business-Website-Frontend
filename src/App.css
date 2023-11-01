@@ -1748,6 +1748,10 @@ input:focus{
   }
 }
 
+.view-mobile{
+  display:none !important;
+}
+
 @media screen and (max-width:500px){
   /* .category-subrow1 .item, .category-subrow2 .item{
     width:90%;
@@ -1756,6 +1760,34 @@ input:focus{
 .category-subrow1 , .category-subrow2{
   height: 100%;
 }*/
+
+
+
+  /* .category-subrow1 .item, .category-subrow2 .item{
+    width:90%;
+}
+
+.category-subrow1 , .category-subrow2{
+  height: 100%;
+}*/
+
+.client-order-view .modal-body{
+  padding:10px 0px;
+}
+.order-title{
+  font-size: 17px !important;
+}
+
+.client-order-view .modal-body .progtrckr-done, .client-order-view .modal-body .progtrckr-todo{
+font-size: 13px;
+}
+
+.view-pc{
+ display: none !important;
+}
+.view-mobile{
+  display:block !important;
+}
 
 .list-grid-mobile view{
   justify-content: space-evenly !important;

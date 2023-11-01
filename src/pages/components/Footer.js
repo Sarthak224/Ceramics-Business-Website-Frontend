@@ -162,7 +162,7 @@ export default function Footer(){
                 {currentOrderData && 
 
 			    <div className='ftr' style={{marginBottom:"40px",paddingBottom:"40px",borderBottom:"3px solid #d2af47",borderTop:"3px solid #d2af47",background: /*"linear-gradient(45deg, #f3c86d63, #edb8411f)"*/"#fff",padding:"14px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",margin: "10px 10px"}}>
-			   <h3 style={{fontSize:"21px",marginBottom:"20px",paddingBottom:"20px",borderBottom:"1px solid #cac8ee",backgroundColor: "#3534352b",marginTop:"10px",
+			   <h3 className='order-title' style={{fontSize:"21px",marginBottom:"20px",paddingBottom:"20px",borderBottom:"1px solid #cac8ee",backgroundColor: "#3534352b",marginTop:"10px",
                 padding: "20px",color: "rgb(80 79 79)"}}><span  style={{fontWeight:"normal"}}> Order Date: #</span> : ({currentOrderData.date})</h3>
 				<DeliveryProgress step={currentOrderData.order_status=="Confirmed"?1:currentOrderData.order_status=="Shipped"?2:3} />
 					<span><b>Status:</b></span><div style={(currentOrderData.order_status=="Delivered")?{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"rgb(102 151 222)",color:"#fff"}:(currentOrderData.order_status=="Shipped")?{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"#333",color:"#fff"}:{display:"block",padding:"10px 20px", margin:"30px 10px",borderRadius:"10px",backgroundColor:"rgb(64 183 60 / 80%)",color:"#fff"}}>{currentOrderData.order_status} {currentOrderData.order_status=="Confirmed"?<i className="fas fa-check" style={{color:"#fff",marginLeft:"13px"}}></i>:(currentOrderData.order_status=="Shipped")?<i className="fas fa-truck" style={{color: "#ffffff",marginLeft:"13px"}}></i>:<i className="fas fa-check-circle" style={{color: "#ffffff",marginLeft:"13px"}}></i>}</div>
@@ -274,13 +274,22 @@ export default function Footer(){
 						<Row>
 						<Col md="6" style={{maxWidth:"120px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><img src={val.products[0].image[0]} width="80" height="80" /></Col>
 						<Col md="6" style={{maxWidth:"180px"}} ><p className='ftr' style={{maxWidth:"180px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginBottom:"2px"}}>{val.products[0].title} {val.products.length>0?' and more...':''}</p><span className='frs' style={{fontSize:"13px"}}><b>Date: </b>{val.date}</span> </Col>
+						
 						</Row>
-						</Col>
-						<Col md="2" style={{    margin: "15px 0px",color: "#0d0b0bb0"}} ><b style={{textAlign:"center"}}>{val.products.length}</b> <span className='frs' style={{marginLeft:"5px"}}>products total.</span></Col>
-						<Col md="2"><span></span><a  className='' 
-						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className="fas fa-check-circle" style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						<hr className='view-mobile' style={{width:"90%", margin:"10px auto",borderTop:"2px solid #c5c5c5",marginTop:"30px"}} />
+
 						</Col>
 
+						<Col md="2" className='view-mobile' style={{    margin: "1px 10px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center",fontSize:"18px"}}>Total:</b> <span className='frs' style={{marginLeft:"5px"}}>{val.products.length} products</span></p></Col>
+
+						<Col className='view-mobile' md="2"><span></span><a  className='' 
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"70%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className="fas fa-check-circle" style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						</Col>
+						<Col className='view-pc' md="2" style={{    margin: "15px 0px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center"}}>{val.products.length}</b> <span className='frs' style={{marginLeft:"5px"}}>products total.</span></p></Col>
+						<Col className='view-pc' md="2"><span></span><a  className='' 
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className="fas fa-check-circle" style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						</Col>
+                        
 						<Col md="4"><a  className='frs' onClick={()=>{
 							showOrders(true);
 							setCurrentOrderData(val);
