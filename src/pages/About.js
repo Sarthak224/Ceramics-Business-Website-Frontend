@@ -10,6 +10,14 @@ export default function About(){
     return(
         <div style={{  marginTop: "110px"
     }}>
+        <Helmet>
+     <meta name="description" content="     Largely self-taught, I've embraced curiosity as my guiding force in this artistic exploration. This approach has led to a richly diverse portfolio, ranging from functional tableware to sculptural masterpieces. Each piece bears the mark of a personal journey, a testament to the power of self-discovery in art." />
+
+          <meta name="description" content="We invite you to immerse yourself in the world of Vinkee Bhasiin Ceramics, where every piece carries a story and each touch evokes wonder. Thank you for being a part of this artistic expedition." />
+          
+          <meta name="keywords" content="Ceramics, Pottery, vinkee bhasiin ceramics" />
+
+        </Helmet>
  <div className="about-page-top-sect">
      <div style={{margin:"2%",display:"block",textAlign:"left"}}>
     <h1 className='down-top-animate delay-1 ftr italic category-main-sect-title' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem",textAlign:"center"}}>Join Us on this Artistic Journey</h1>

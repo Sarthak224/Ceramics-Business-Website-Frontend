@@ -203,6 +203,14 @@ export default function Home(){
     return(
         <div style={{  marginTop: "80px"
         }}>
+           <Helmet>
+     <meta name="description" content="     Largely self-taught, I've embraced curiosity as my guiding force in this artistic exploration. This approach has led to a richly diverse portfolio, ranging from functional tableware to sculptural masterpieces. Each piece bears the mark of a personal journey, a testament to the power of self-discovery in art." />
+
+          <meta name="description" content="We invite you to immerse yourself in the world of Vinkee Bhasiin Ceramics, where every piece carries a story and each touch evokes wonder. Thank you for being a part of this artistic expedition." />
+          
+          <meta name="keywords" content="Ceramics, Pottery, vinkee bhasiin ceramics" />
+
+        </Helmet>
         <div className="home-top-sect">
          <div style={{margin:"10%",display:"block",textAlign:"left"}}>
         <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Handmade Products <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'></span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
