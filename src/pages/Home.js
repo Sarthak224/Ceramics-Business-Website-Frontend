@@ -1,7 +1,7 @@
 import { Button } from 'reactstrap'
 import about1 from '../home_about1.svg'
 import homeP1 from '../About.jpg'
-
+import { Helmet } from 'react-helmet-async';
 import {ShoppingBag,ShoppingCart} from 'react-feather'
 import Carousel from "react-multi-carousel";
 import {div} from "react-multi-carousel"

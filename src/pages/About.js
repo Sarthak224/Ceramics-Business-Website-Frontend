@@ -5,6 +5,7 @@ import about1 from '../About-1.jpg'
 import about2 from '../About-2.jpg'
 import about3 from '../About-3.jpg'
 import Categories from './components/Categories'
+import { Helmet } from 'react-helmet-async';
 
 export default function About(){
     return(
