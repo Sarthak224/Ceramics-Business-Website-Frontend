@@ -19,6 +19,7 @@ import p3 from '../product-3.png';
 import Categories from './components/Categories';
 import DisplayCarousel from './components/DisplayCarousel';
 import DisplayHomeProducts from './components/DisplayHomeProducts';
+import { Helmet } from 'react-helmet-async'
 
 export default function Home(){
 
