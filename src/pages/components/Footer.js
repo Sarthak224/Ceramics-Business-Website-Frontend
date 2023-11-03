@@ -13,10 +13,13 @@ export default function Footer(){
 	const [orderData,setOrderData] = useState(false);
 	const [currentOrderData,setCurrentOrderData] = useState(false);
 	const [ordersList,setOrdersList] = useState(false)
+	const [otp,setOtp] = useState("");
+	const [otpModal,setOtpModal] = useState(false);
+	const [defaultEmail,setEmail] = useState("");
+
 	var billing_details = localStorage.getItem("billing_details");
-    var defaultEmail="";
-	if(billing_details){
-      defaultEmail = JSON.parse(billing_details).email;
+	if(billing_details && defaultEmail==""){
+      setEmail(JSON.parse(billing_details).email);
 	}
 
     console.log(orderData)
@@ -38,6 +41,53 @@ export default function Footer(){
 		}
 
 
+	}
+
+
+
+	async function generateOtp(){
+		try{
+			
+
+            var res = await axios.post(baseURL+"/api/contact-us/verifyEmail",{
+				email:defaultEmail
+			},{ headers: {
+				'Content-Type': 'application/json;charset=UTF-8',
+				"Access-Control-Allow-Origin": "*",
+			}});
+			if(res.data){
+				// alert("")
+				setOtpModal(true);
+			}
+
+		}
+		catch(e){
+			alert("error while verifying email");
+		} 
+	}
+
+
+	async function verifyOtp(){
+		try{
+			
+
+            var res = await axios.post(baseURL+"/api/contact-us/verifyEmailOtp",{
+				email:defaultEmail,
+				otp
+			},{ headers: {
+				'Content-Type': 'application/json;charset=UTF-8',
+				"Access-Control-Allow-Origin": "*",
+			}});
+			if(res.data){
+				// alert("")
+				getClientOrders();
+				setOtpModal(false)
+			}
+
+		}
+		catch(e){
+			alert("Verification Failed");
+		} 
 	}
 
 
@@ -85,8 +135,8 @@ export default function Footer(){
     	 	<div class="footer-col">
   	 			<h4 style={{position:"relative"}}>follow us</h4>
   	 			<div class="social-links">
-  	 				<a href="https://www.facebook.com/people/Vinkee-Bhasiin-Ceramics/100063774127500/"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="https://www.instagram.com/vinkeebhasiin/"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.facebook.com/people/Vinkee-Bhasiin-Ceramics/100063774127500/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.instagram.com/vinkeebhasiin/" target="_blank"><i class="fab fa-instagram"></i></a>
   	 			</div>
   	 		</div>
   	 	</div>
@@ -99,7 +149,7 @@ export default function Footer(){
    <Modal isOpen={ordersMenu}>
 	<ModalHeader>Enter your Email address</ModalHeader>
 	<ModalBody>
-     <Input placeholder="Enter email address.." value={defaultEmail} onChange={e=>{defaultEmail=e.target.value}} />
+     <Input placeholder="Enter email address.." value={defaultEmail} onChange={e=>{setEmail(e.target.value)}} />
 	 {/* <div style={orderData && orderData.length<=0? {maxHeight:"380px",overflow:"auto"}:{display:"none"}}>
               <div>
               <h6 style={{fontWeight:"bold",marginLeft:"10px",textAlign:"left"}}>Products:-</h6>
@@ -142,7 +192,7 @@ export default function Footer(){
 	 </div>*/}
 	</ModalBody>
 	<ModalFooter>
-		<Button onClick={()=>getClientOrders()}>Show orders</Button>
+		<Button onClick={()=>{/*getClientOrders() */generateOtp();setOtpModal(true)}}>Show orders</Button>
 		<Button onClick={()=>showOrdersMenu(false)}>close</Button>
 
 	</ModalFooter>
@@ -312,6 +362,19 @@ export default function Footer(){
 	</ModalFooter> */}
    </Modal>
 
+
+  <Modal isOpen={otpModal}>
+	<ModalBody>
+		<Input placeholder="enter otp"  type="number" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
+	</ModalBody>
+	<ModalFooter ><Button onClick={()=>{
+		verifyOtp();
+	}}>Apply</Button>
+	<Button onClick={()=>{
+		setOtpModal(false);
+	}}>Cancel</Button>
+	</ModalFooter>
+  </Modal>
 
 
 

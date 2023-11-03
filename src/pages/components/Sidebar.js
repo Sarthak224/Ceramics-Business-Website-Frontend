@@ -14,5 +14,6 @@ export default function Sidebar(props){
       <div className="sidebar-item" onClick={()=>props.setOpenMenu(false)}>   <Link className='sidebar-link' to={"/cart"}><span className='nav-link1'> {/*ShoppingCart width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-cart-arrow-down" style={{color: "#f3f7fe",marginRight:"5px",position:'relative'}}>{cartQty>0?<span className='frs' style={{position:"absolute",backgroundColor:"#f24242",width:"13px",height:"13px",borderRadius:"50%",top:"-10px",fontSize:"11px",fontWeight:"100",textAlign:"center"}}>{productsOnCart.length}</span>:null}</i><span> Cart</span></span></Link></div>
       <div className="sidebar-item" onClick={()=>props.setOpenMenu(false)}>   <Link className='sidebar-link' to={"/AboutUs"}>  <span className='nav-link1'> {/*<User width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-user" style={{color: "#f3f7fe",marginRight:"5px"}}></i><span></span>About us</span></Link></div>
      </div>
+     
     )
 }
