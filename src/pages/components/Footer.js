@@ -16,6 +16,7 @@ export default function Footer(){
 	const [otp,setOtp] = useState("");
 	const [otpModal,setOtpModal] = useState(false);
 	const [defaultEmail,setEmail] = useState("");
+	const [msgModal,setMsgModal] = useState(false);
 
 	var billing_details = localStorage.getItem("billing_details");
 	if(billing_details && defaultEmail==""){
@@ -44,8 +45,33 @@ export default function Footer(){
 	}
 
 
+	async function verifyEmailToken(){
+		try{
+			
+
+            var res = await axios.post(baseURL+"/api/contact-us/verifyEmailToken",{
+			},{
+				headers:{
+				  "authorization" : "bearer "+localStorage.getItem('email-token'),
+				}});
+			if(res.data){
+				// alert("")
+				// setOtpModal(true);
+				getClientOrders();
+				return;
+			}
+		}
+		catch(e){
+			// alert("error while verifying email");
+		} 
+		generateOtp();
+
+	}
+
+
 
 	async function generateOtp(){
+		setMsgModal(true);
 		try{
 			
 
@@ -80,6 +106,7 @@ export default function Footer(){
 			}});
 			if(res.data){
 				// alert("")
+				localStorage.setItem("email-token",res.data.token)
 				getClientOrders();
 				setOtpModal(false)
 			}
@@ -192,7 +219,7 @@ export default function Footer(){
 	 </div>*/}
 	</ModalBody>
 	<ModalFooter>
-		<Button onClick={()=>{/*getClientOrders() */generateOtp();setOtpModal(true)}}>Show orders</Button>
+		<Button onClick={()=>{/*getClientOrders() */verifyEmailToken();}}>Show orders</Button>
 		<Button onClick={()=>showOrdersMenu(false)}>close</Button>
 
 	</ModalFooter>
@@ -364,6 +391,7 @@ export default function Footer(){
 
 
   <Modal isOpen={otpModal}>
+	<ModalHeader>Verify otp</ModalHeader>
 	<ModalBody>
 		<Input placeholder="enter otp"  type="number" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
 	</ModalBody>
@@ -375,7 +403,16 @@ export default function Footer(){
 	}}>Cancel</Button>
 	</ModalFooter>
   </Modal>
+  
 
+  <Modal centered={true} isOpen={msgModal}>
+	<ModalBody>
+		<h4 style={{fontWeight:"normal",color:"#333"}}>An email will be sent with otp for verification in the given email address</h4>
+	</ModalBody>
+	<ModalFooter>
+		<Button onClick={()=>setMsgModal(false)}>Ok</Button>
+	</ModalFooter>
+  </Modal>
 
 
   </footer>
