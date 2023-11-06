@@ -2413,3 +2413,27 @@ ol.progtrckr li.progtrckr-todo:before {
   flex-direction: column;
 }
 
+.message-modal .modal-body{
+  padding:0px !important
+}
+
+.otp-modal .modal-content{
+  background-image: linear-gradient(
+    rgba(164, 154, 154, 0.596), 
+    rgba(0, 0, 0, 0.54)
+  ), url('home_top_label.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color:#f1f1f1 !important;
+
+
+}
+
+.otp-modal .modal-header,.otp-modal .modal-footer{
+border:none;
+}
+.otp-modal .modal-header .modal-title{
+  width:100%;
+  text-align: center;
+}

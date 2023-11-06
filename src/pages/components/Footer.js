@@ -5,7 +5,8 @@ import { Button, Col, Input, Modal, ModalBody, ModalFooter, ModalHeader, Row } f
 import axios from 'axios';
 import { baseURL } from '../utils/utils';
 import DeliveryProgress from './DeliveryProgress';
-
+import mailIcon from '../../mail.png';
+import { X } from 'react-feather';
 export default function Footer(){
 	
 	const [ordersMenu,showOrdersMenu] = useState(false);
@@ -50,21 +51,25 @@ export default function Footer(){
 			
 
             var res = await axios.post(baseURL+"/api/contact-us/verifyEmailToken",{
+				checkUserSession:true,
+				email:defaultEmail
 			},{
 				headers:{
 				  "authorization" : "bearer "+localStorage.getItem('email-token'),
 				}});
-			if(res.data){
+			if(res.data && res.status == 200){
 				// alert("")
 				// setOtpModal(true);
+				//alert("")
 				getClientOrders();
-				return;
+				return res.data.email;
 			}
 		}
 		catch(e){
 			// alert("error while verifying email");
 		} 
 		generateOtp();
+		return false;
 
 	}
 
@@ -135,8 +140,8 @@ export default function Footer(){
   	 				<li><Link to='/AboutUs'>About us</Link></li>
   	 				<li><Link to="/products">See our Products</Link></li>
   	 				<li><Link to="/contact-us">Connect</Link></li>
-					<li style={{cursor:"pointer"}} onClick={()=>showOrdersMenu(true)}>Orders</li>
-
+					<li style={{cursor:"pointer"}} onClick={async()=>{var response = await verifyEmailToken();if(response){}else showOrdersMenu(true)}}>Orders</li>
+                    
   	 				{/* <li><a href="#">affiliate program</a></li> */}
   	 			</ul>
   	 		</div>
@@ -167,13 +172,14 @@ export default function Footer(){
   	 			</div>
   	 		</div>
   	 	</div>
+		<p style={{color:"#909090"}}>Icons by Icons8 , Images by FreePik</p>
   	 </div>
 
 
 
 
 
-   <Modal isOpen={ordersMenu}>
+   <Modal className='otp-modal' isOpen={ordersMenu}>
 	<ModalHeader>Enter your Email address</ModalHeader>
 	<ModalBody>
      <Input placeholder="Enter email address.." value={defaultEmail} onChange={e=>{setEmail(e.target.value)}} />
@@ -219,7 +225,7 @@ export default function Footer(){
 	 </div>*/}
 	</ModalBody>
 	<ModalFooter>
-		<Button onClick={()=>{/*getClientOrders() */verifyEmailToken();}}>Show orders</Button>
+		<Button color="primary" onClick={()=>{/*getClientOrders() */verifyEmailToken();}}>Show orders</Button>
 		<Button onClick={()=>showOrdersMenu(false)}>close</Button>
 
 	</ModalFooter>
@@ -390,12 +396,13 @@ export default function Footer(){
    </Modal>
 
 
-  <Modal isOpen={otpModal}>
-	<ModalHeader>Verify otp</ModalHeader>
+  <Modal className='otp-modal'  isOpen={otpModal}>
+	<ModalHeader className='frs'>Verify otp</ModalHeader>
 	<ModalBody>
+		<p style={{textAlign:"center"}}>Enter the otp to verify your email</p>
 		<Input placeholder="enter otp"  type="number" value={otp} onChange={(e)=>setOtp(e.target.value)}/>
 	</ModalBody>
-	<ModalFooter ><Button onClick={()=>{
+	<ModalFooter ><Button color='primary' onClick={()=>{
 		verifyOtp();
 	}}>Apply</Button>
 	<Button onClick={()=>{
@@ -405,13 +412,25 @@ export default function Footer(){
   </Modal>
   
 
-  <Modal centered={true} isOpen={msgModal}>
+  <Modal className='message-modal' centered={true} isOpen={msgModal}>
 	<ModalBody>
-		<h4 style={{fontWeight:"normal",color:"#333"}}>An email will be sent with otp for verification in the given email address</h4>
+		{/* <h4 style={{fontWeight:"normal",color:"#333"}}>An email will be sent with otp for verification in the given email address</h4> */}
+	    <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",position:"relative",marginBottom:"60px"}}>
+		<div style={{position:"absolute",right:"10px",top:"10px"}}><X onClick={()=>setMsgModal(false)} /></div>
+		<div style={{borderBottomLeftRadius: "100%",
+    borderBottomRightRadius: "3%",width:"100%",background:"linear-gradient(45deg, #b68a1c, #c8916c0d)",textAlign:"center"}}>
+		<h1 style={{margin:"20px 0px",fontWeight:"bold",color:"rgb(59 57 57 / 74%)"}} className='frs'>You got a mail</h1>
+		<p>On : <b>{defaultEmail}</b></p>
+				{/* <i class="fas fa-envelope-open-text" style={{"color": "rgb(222 222 211)",fontSize:"142px"}}></i> */}
+              <img src={mailIcon} width="142" height="142" />
+	</div>
+	<h6>Please Check your E-mail for the  OTP Verification</h6>
+		</div>
+	
 	</ModalBody>
-	<ModalFooter>
+	{/* <ModalFooter>
 		<Button onClick={()=>setMsgModal(false)}>Ok</Button>
-	</ModalFooter>
+	</ModalFooter> */}
   </Modal>
 
 
