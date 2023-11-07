@@ -7,6 +7,11 @@ import { baseURL } from '../utils/utils';
 import DeliveryProgress from './DeliveryProgress';
 import mailIcon from '../../mail.png';
 import { X } from 'react-feather';
+import notFoundImage from '../utils/Icons/not-load-img.png'
+
+
+
+
 export default function Footer(){
 	
 	const [ordersMenu,showOrdersMenu] = useState(false);
@@ -244,7 +249,7 @@ export default function Footer(){
                   
                 {currentOrderData && 
 
-			    <div className='ftr' style={{marginBottom:"40px",paddingBottom:"40px",borderBottom:"3px solid #d2af47",borderTop:"3px solid #d2af47",background: /*"linear-gradient(45deg, #f3c86d63, #edb8411f)"*/"#fff",padding:"14px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",margin: "10px 10px"}}>
+			    <div className='ftr order-view-mobile' style={{marginBottom:"40px",paddingBottom:"40px",borderBottom:"3px solid #d2af47",borderTop:"3px solid #d2af47",background: /*"linear-gradient(45deg, #f3c86d63, #edb8411f)"*/"#fff",padding:"14px",boxShadow: "rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px",margin: "10px 10px"}}>
 			   <h3 className='order-title' style={{fontSize:"21px",marginBottom:"20px",paddingBottom:"20px",borderBottom:"1px solid #cac8ee",backgroundColor: "#3534352b",marginTop:"10px",
                 padding: "20px",color: "rgb(80 79 79)"}}><span  style={{fontWeight:"normal"}}> Order Date: #</span> : ({currentOrderData.date})</h3>
 				<DeliveryProgress step={currentOrderData.order_status=="Confirmed"?1:currentOrderData.order_status=="Shipped"?2:3} />
@@ -355,8 +360,14 @@ export default function Footer(){
 					  <Row>
 						<Col md="4" style={{marginBottom:"10px"}}>
 						<Row>
-						<Col md="6" style={{maxWidth:"120px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><img src={val.products[0].image[0]} width="80" height="80" /></Col>
-						<Col md="6" style={{maxWidth:"180px"}} ><p className='ftr' style={{maxWidth:"180px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginBottom:"2px"}}>{val.products[0].title} {val.products.length>0?' and more...':''}</p><span className='frs' style={{fontSize:"13px"}}><b>Date: </b>{val.date}</span> </Col>
+						<Col md="6" style={{maxWidth:"120px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><img src={val.products[0].image[0]}   onError={({ currentTarget }) => {
+               currentTarget.onerror = null; // prevents looping
+               currentTarget.src=""+notFoundImage;
+               currentTarget.setAttribute("class",'error-img');
+               currentTarget.style.maxHeight="87px";
+               currentTarget.style.maxWidth="76px"
+  }}  width="80" height="80" /></Col>
+						<Col md="6" style={{maxWidth:"180px"}} ><p className='ftr' style={{maxWidth:"180px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginBottom:"2px"}}>{val.products[0].title} {val.products.length>0?' and more...':''}</p><span className='frs' style={{fontSize:"13px",color:"#033561",}}><b style={{color:"#333"}}>Date: </b>{val.date}</span> </Col>
 						
 						</Row>
 						<hr className='view-mobile' style={{width:"90%", margin:"10px auto",borderTop:"2px solid #c5c5c5",marginTop:"30px"}} />
@@ -365,12 +376,12 @@ export default function Footer(){
 
 						<Col md="2" className='view-mobile' style={{    margin: "1px 10px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center",fontSize:"18px"}}>Total:</b> <span className='frs' style={{marginLeft:"5px"}}>{val.products.length} products</span></p></Col>
 
-						<Col className='view-mobile' md="2"><span></span><a  className='' 
-						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"70%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className="fas fa-check-circle" style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						<Col className={'view-mobile' } md="2"><span></span><a  className={''+ ' '+ ('theme-'+val.order_status)} 
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"70%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
 						</Col>
 						<Col className='view-pc' md="2" style={{    margin: "15px 0px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center"}}>{val.products.length}</b> <span className='frs' style={{marginLeft:"5px"}}>products total.</span></p></Col>
-						<Col className='view-pc' md="2"><span></span><a  className='' 
-						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className="fas fa-check-circle" style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						<Col className={'view-pc'} md="2"><span></span><a  className={''+ ' '+ ('theme-'+val.order_status)} 
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
 						</Col>
                         
 						<Col md="4"><a  className='frs' onClick={()=>{
@@ -422,7 +433,7 @@ export default function Footer(){
 		<h1 style={{margin:"20px 0px",fontWeight:"bold",color:"rgb(59 57 57 / 74%)"}} className='frs'>You got a mail</h1>
 		<p>On : <b>{defaultEmail}</b></p>
 				{/* <i class="fas fa-envelope-open-text" style={{"color": "rgb(222 222 211)",fontSize:"142px"}}></i> */}
-              <img src={mailIcon} width="142" height="142" />
+              <img src={mailIcon}  width="142" height="142" />
 	</div>
 	<h6>Please Check your E-mail for the  OTP Verification</h6>
 		</div>

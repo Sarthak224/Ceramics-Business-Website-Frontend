@@ -151,7 +151,7 @@ export default function Home(){
       
        <div className="carousel-product">
         
-         <img src={p1} className='rel-product-img'     />
+         <img loading='lazy'  src={p1} className='rel-product-img'     />
           <p><b>Product1 vase</b></p>
           <p>Rs : <b> &#x20b9; </b> 299 <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;499</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>50 % Off</span> </p>
           <button className="add-cart-btn carousel-purchase-btn" >Buy Now <ShoppingCart size={17} /></button>
@@ -160,7 +160,7 @@ export default function Home(){
        </div>
        <div className="carousel-product">
       
-         <img src={p2}   className='rel-product-img'          />
+         <img loading='lazy'  src={p2}   className='rel-product-img'          />
          <p><b>Product2 vase</b></p>
          <p>Rs : <b> &#x20b9; </b> 299 <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;499</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>50 % Off</span> </p>
          <button className="add-cart-btn carousel-purchase-btn" >Buy Now <ShoppingCart size={17} /></button>
@@ -170,7 +170,7 @@ export default function Home(){
        </div>
        <div className="carousel-product">
        
-         <img src={p3}  className='rel-product-img'      />
+         <img loading='lazy'  src={p3}  className='rel-product-img'      />
          <p><b>Product3 vase</b></p>
          <p>Rs : <b> &#x20b9; </b> 299 <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;499</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>50 % Off</span> </p>
          <button className="add-cart-btn carousel-purchase-btn" >Buy Now <ShoppingCart size={17} /></button>
@@ -180,7 +180,7 @@ export default function Home(){
        </div>
        <div className="carousel-product">
        
-         <img src={p1}  className='rel-product-img'       />
+         <img loading='lazy'  src={p1}  className='rel-product-img'       />
          <p><b>Product4 vase</b></p>
          <p>Rs : <b> &#x20b9; </b> 299 <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;499</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>50 % Off</span> </p>
          <button className="add-cart-btn carousel-purchase-btn" >Buy Now <ShoppingCart size={17} /></button>
@@ -190,7 +190,7 @@ export default function Home(){
        </div>
        <div className="carousel-product">
        
-         <img src={p2}   className='rel-product-img'         />
+         <img loading='lazy'  src={p2}   className='rel-product-img'         />
          <p><b>Product5 vase</b></p>
          <p>Rs : <b> &#x20b9; </b> 299 <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;499</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>50 % Off</span> </p>
          <button className="add-cart-btn carousel-purchase-btn" >Buy Now <ShoppingCart size={17} /></button>
@@ -227,7 +227,7 @@ export default function Home(){
 
         {/* <div className='sect-1' ref={sect3Ref} style={{justifyContent:"space-around",backgroundColor:"#ffffff",marginTop:"150px"}} >
           <div className="col1 temp-col21"  style={{width:"47vw",display:"flex",justifyContent:"center",alignItems:"center" ,padding:"10px"}}>
-            <img src={homeP1} style={{width:"100%",height:"120%"}} />
+            <img loading='lazy'  src={homeP1} style={{width:"100%",height:"120%"}} />
           </div>
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",minWidth:"300px"}}>
@@ -246,7 +246,7 @@ export default function Home(){
             
             <div className='sect-1 remove-from-screen' ref={sect1Ref} style={{justifyContent:"space-around"}} >
           <div className="col1"  style={{display:"flex",justifyContent:"center",alignItems:"center" ,/*width:"40vw",height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"10px"}}>
-            <img src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
+            <img loading='lazy'  src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
           </div>
 
           <div className="col1 ftr italic " style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='para-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
@@ -260,9 +260,9 @@ export default function Home(){
               <div className="sect1"  ref={sect2Ref} >
 {/* 
               <div style={{display:'flex',justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
-                <img src={logo1}  style={{width:"150px",height:"50px",margin:"50px"}}/>
-                <img src={logo2}  style={{width:"150px",height:"50px",margin:"50px"}}/>
-                <img src={logo3}  style={{width:"150px",height:"50px",margin:"50px"}}/>
+                <img loading='lazy'  src={logo1}  style={{width:"150px",height:"50px",margin:"50px"}}/>
+                <img loading='lazy'  src={logo2}  style={{width:"150px",height:"50px",margin:"50px"}}/>
+                <img loading='lazy'  src={logo3}  style={{width:"150px",height:"50px",margin:"50px"}}/>
 
               </div> */}
 
@@ -285,7 +285,7 @@ export default function Home(){
 
 <div className='sect-1 remove-from-screen show-background-home-bottom' ref={sect3Ref} style={{justifyContent:"space-around",backgroundColor:"#ffffff",marginTop:"150px"}} >
           <div className="col1 temp-col21"  style={{width:"47vw",display:"flex",justifyContent:"center",alignItems:"center" ,/*width:"40vw",height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"10px"}}>
-            <img src={about1} style={{width:"100%",height:"120%"}} />
+            <img loading='lazy'  src={about1} style={{width:"100%",height:"120%"}} />
           </div>
 
           <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
