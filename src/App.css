@@ -2444,6 +2444,14 @@ ol.progtrckr li.progtrckr-todo:before {
  border-bottom:5px solid rgb(51, 51, 51) !important;
 }
 
+.theme-Failed{
+  border-bottom:5px solid rgb(236, 22, 22) !important;
+}
+
+.themeicn-Failed{
+  color:rgb(236, 22, 22) !important;
+}
+
 .themeicn-Delivered{
  color:rgb(102, 151, 222) !important;
 }

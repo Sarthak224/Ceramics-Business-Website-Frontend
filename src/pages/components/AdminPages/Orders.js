@@ -78,7 +78,7 @@ export default function Orders(){
 
     return(
         <div>
-               {!openStatusDropdown?<div style={{display:"flex",alignItems:"center"}}><Button color="" style={(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"red","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundColor:"green",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"black",color:"white",height:"38px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div style={{display:"flex",alignItems:"center"}}><Select  options={[
+               {!openStatusDropdown?<div style={{display:"flex",alignItems:"center"}}><Button color="" style={(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"blue","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundColor:"green",color:"#fff",borderRadius:"0px"}:val.order_status=="Failed"?{backgroundColor:"red",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"black",color:"white",height:"38px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div style={{display:"flex",alignItems:"center"}}><Select  options={[
             {
                 value:"Shipped",
                 label:"Shipped"
@@ -90,6 +90,10 @@ export default function Orders(){
             {
                 value:"Confirmed",
                 label:"Confirmed"
+            },
+            {
+              value:"Failed",
+              label:"Failed"
             }
 
          

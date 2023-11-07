@@ -377,11 +377,11 @@ export default function Footer(){
 						<Col md="2" className='view-mobile' style={{    margin: "1px 10px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center",fontSize:"18px"}}>Total:</b> <span className='frs' style={{marginLeft:"5px"}}>{val.products.length} products</span></p></Col>
 
 						<Col className={'view-mobile' } md="2"><span></span><a  className={''+ ' '+ ('theme-'+val.order_status)} 
-						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"70%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"70%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={val.order_status=="Failed"?"fas fa-exclamation-triangle"+ ' '+ ('themeicn-'+val.order_status):"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
 						</Col>
 						<Col className='view-pc' md="2" style={{    margin: "15px 0px",color: "#0d0b0bb0"}} ><p><b style={{textAlign:"center"}}>{val.products.length}</b> <span className='frs' style={{marginLeft:"5px"}}>products total.</span></p></Col>
 						<Col className={'view-pc'} md="2"><span></span><a  className={''+ ' '+ ('theme-'+val.order_status)} 
-						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
+						style={{display:"block",textAlign:"center",color:"#333",cursor:"pointer",backgroundColor:"#fff",padding:"10px 10px",borderRadius:"5px",margin:"5px auto",borderBottom:"5px solid yellowgreen",width:"50%",minWidth:"140px",boxShadow: "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px"}}>{val.order_status}<i className={val.order_status=="Failed"?"fas fa-exclamation-triangle"+ ' '+ ('themeicn-'+val.order_status):"fas fa-check-circle"+ ' '+ ('themeicn-'+val.order_status)} style={{color: "yellowgreen",marginLeft:"13px"}}></i></a>
 						</Col>
                         
 						<Col md="4"><a  className='frs' onClick={()=>{
