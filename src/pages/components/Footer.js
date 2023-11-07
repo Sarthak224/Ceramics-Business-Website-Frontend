@@ -360,14 +360,14 @@ export default function Footer(){
 					  <Row>
 						<Col md="4" style={{marginBottom:"10px"}}>
 						<Row>
-						<Col md="6" style={{maxWidth:"120px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><img src={val.products[0].image[0]}   onError={({ currentTarget }) => {
+						<Col md="6" style={{maxWidth:"100px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><img src={val.products[0].image[0]}   onError={({ currentTarget }) => {
                currentTarget.onerror = null; // prevents looping
                currentTarget.src=""+notFoundImage;
                currentTarget.setAttribute("class",'error-img');
                currentTarget.style.maxHeight="87px";
                currentTarget.style.maxWidth="76px"
   }}  width="80" height="80" /></Col>
-						<Col md="6" style={{maxWidth:"180px"}} ><p className='ftr' style={{maxWidth:"180px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginBottom:"2px"}}>{val.products[0].title} {val.products.length>0?' and more...':''}</p><span className='frs' style={{fontSize:"13px",color:"#033561",}}><b style={{color:"#333"}}>Date: </b>{val.date}</span> </Col>
+						<Col md="6" style={{maxWidth:"123px"}} ><p className='ftr' style={{maxWidth:"180px",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginBottom:"2px"}}>{val.products[0].title} {val.products.length>0?' and more...':''}</p><span className='frs' style={{fontSize:"13px",color:"#033561",}}><b style={{color:"#333"}}>Date: </b>{val.date}</span> </Col>
 						
 						</Row>
 						<hr className='view-mobile' style={{width:"90%", margin:"10px auto",borderTop:"2px solid #c5c5c5",marginTop:"30px"}} />
