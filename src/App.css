@@ -1772,6 +1772,11 @@ input:focus{
   height: 100%;
 }*/
 
+.order-view-mobile{
+  margin:0 !important;
+  padding:4px !important
+}
+
 .client-order-view .modal-body{
   padding:10px 0px;
 }
