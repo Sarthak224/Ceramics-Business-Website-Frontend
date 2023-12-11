@@ -416,7 +416,7 @@ export default function Products(){
     {/* <hr className='img-sep'  /> */}
       <div style={{display:"flex",flexDirection:"row",flexWrap:"nowrap"}}>
       {!(errorComponent) && <ProductSidebar  sidebarClass = {sidebarClass}   setSidebarClass={setSidebarClass}/>}
-      <div className="product-sect-main" style={{width:"100%",position:"relative"}}>
+      <div className="product-sect-main" style={{width:"calc(99vw - 390px)",position:"relative",margin:"auto"}}>
         <div style={{width:"100%",textAlign:"left",marginLeft:"30px",display:"flex",alignItems:"center"}}>
         <Menu className="prod-sidebar-open-btn" size={20} style={{cursor:"pointer"}} onClick={()=>setSidebarClass("prod-sidebar-active")} /> <span className="frs prod-sidebar-open-text" style={{marginTop:"6px",marginLeft:"20px"}}>Open Filters</span>
         </div>
@@ -444,13 +444,13 @@ export default function Products(){
             </div>
         )
       }):(errorComponent)?
-      <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column"}}>
+      <div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column",margin:"auto"}}>
      <i class="fas fa-exclamation-triangle" style={{color:"#afb7c5",fontSize:"155px"}}></i>
      <p style={{color: "#333",fontWeight:"bold",fontSize:"21px",marginTop:"40px"}}>Unable to Load Products...</p><p className="refresh-text" onClick={()=>{setPage(new Number(page));setErrorComponent(false)}}>Retry <RefreshCw size={10} /> </p>
-      </div>:(products.length==0 && !loader)?<div className="product-not-found-sect" style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column"}}>
+      </div>:(products.length==0 && !loader)?<div className="product-not-found-sect" style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column",margin:"auto"}}>
       <i class="fas fa-search-minus" style={{"color": "#c9c9d6",marginBottom:"20px",fontSize:"37px"}}></i> 
              <p style={{color:"#afb7c5",marginTop:"15px"}}>No products Found</p>
-        </div>:<div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column"}}>
+        </div>:<div style={{display:"flex",justifyContent:"center",alignItems:"center",height:"70vh",flexDirection:"column",margin:"auto"}}>
         <BeatLoader size={25} loading={true} color="#965c22" />
         <p style={{color:"#afb7c5",marginTop:"15px"}}>Loading Products...</p>
         </div>
