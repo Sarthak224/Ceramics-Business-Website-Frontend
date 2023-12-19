@@ -212,14 +212,22 @@ export default function Home(){
           <meta name="keywords" content="Ceramics, Pottery, vinkee bhasiin ceramics" />
 
         </Helmet>
-        <div className="home-top-sect">
-         <div style={{margin:"10%",display:"block",textAlign:"left"}}>
-        <h1 className='down-top-animate delay-1 ftr' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem"}}>Handmade Products <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'></span><br/><span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
+        <div>
+        <div className="home-top-sect" style={{position:"relative"}}>
+        
+        </div>
+        <div style={{margin:"10% 0%",display:"block",textAlign:"center", position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",width:"80%"}}>
+         <h1 className='down-top-animate delay-1 fminerva banner-heading' style={{color:"#999999",fontWeight:"normal",lineHeight:"7.8rem"}}>Welcome to Vinkee Bhasiin Cermamics <span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'></span></h1>
+
+        <h1 className='down-top-animate delay-1 fminerva' style={{color:"#999999",fontWeight:"normal",lineHeight:"4.8rem",fontSize:"28px"}}><span style={{color: "#3081c8",fontWeight: "bold"}} className='ftr'></span>{/*<br/>*/}<span className='' style={{color:"white"}}> Shop Now!</span> <span className="theme-text ">New</span></h1>
         <Button  color="" className='button-17 down-top-animate delay-2' style={{background:"#D5A372",color:"white",}}><Link className="nav-link" to={"/products"}>View Products <ShoppingBag className='nav-icon' size={17} /></Link></Button>
         </div>
         </div>
 
-        <Categories/>
+        {/* <Categories/> */}
         {/* Section 1 */}
         <div style={{display:"flex",flexDirection:"column",marginTop:"90px"}}>
             
@@ -238,10 +246,32 @@ export default function Home(){
               </div>      */}
 
 
-        <h2 className='ftr italic' >About us</h2>
             {/* <hr className='row-sep' /> */}
 
-      
+            <h1 className='down-top-animate delay-1 fminerva' style={{
+
+color: "rgb(153, 153, 153)",
+fontWeight: "normal",
+lineHeight: "3.8rem",
+marginBottom: "135px",
+
+
+
+            }}><span>Welcome </span><br/> <span style={{color: "rgb(226 143 23)",
+            fontWeight: "normal",fontSize:"31PX"}} className='ftr italic'>Creation with my hands</span></h1>
+
+
+
+<h1 className='down-top-animate delay-1 ftr' style={{
+
+color: "rgb(153, 153, 153)",
+fontWeight: "normal",
+lineHeight: "3.8rem",
+marginBottom: "15px",
+
+
+
+            }}><span>Meet me Vinkee </span></h1>
           
             
             <div className='sect-1 remove-from-screen' ref={sect1Ref} style={{justifyContent:"space-around"}} >
@@ -249,7 +279,11 @@ export default function Home(){
             <img loading='lazy'  src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
           </div>
 
-          <div className="col1 ftr italic " style={{display:"flex",justifyContent:"center",alignItems:"center",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}><p className='para-mobile' style={{fontSize: "19px",fontWeight: "normal", fontStyle:"italic"}}>
+          <div className="col1 ftr " style={{display:"flex",justifyContent:"space-evenly",alignItems:"center",flexDirection:"column",textAlign:"left",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
+          <div className='home-about-heading-sect'>
+          <h2 className='fminerva' style={{textAlign:"left",width:"100%",marginLeft:"30PX"}} >About us</h2>
+         </div>
+            <p className='para-mobile ftr' style={{fontSize: "17px",fontWeight: "normal", fontStyle:""}}>
           Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.             </p>
               </div>
               </div>  
@@ -288,9 +322,13 @@ export default function Home(){
             <img loading='lazy'  src={about1} style={{width:"100%",height:"120%"}} />
           </div>
 
-          <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
-          <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2>
-            <p className="sect-font ftr italic para-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
+          <div className=" temp-col22" style={{backgroundColor:"",width:"47vw",display:"flex",justifyContent:"space-evenly",alignItems:"center",flexDirection:"column",/*width:"40vw",height:"40vw",*/minWidth:"300px"}}>
+          {/* <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2> */}
+          <div className='home-about-heading-sect'>
+          <h2 className='fminerva' style={{textAlign:"left",width:"100%",marginLeft: "66px",
+    fontSize: "23px",paddingRight:"30px"}} >Environmental Consciousness</h2>
+         </div>
+            <p className="sect-font ftr  para-mobile" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
             Our commitment extends beyond aesthetics; it encompasses environmental responsibility. We strive to leave a gentle footprint on the earth, consciously minimizing our impact. This dedication is woven into the very fabric of Vinkee Bhasiin Ceramics, reflecting a belief in sustainable artistry.                    </p>
               </div>
               </div>  

@@ -1,1 +1,1 @@
-export const baseURL="https://api.vinkeebhasiinceramics.com";
+export const baseURL="http://localhost:3011"//"https://api.vinkeebhasiinceramics.com";
