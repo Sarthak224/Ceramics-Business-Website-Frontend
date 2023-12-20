@@ -204,7 +204,7 @@ export default function Home(){
      } 
 
     return(
-        <div style={{  marginTop: "80px"
+        <div style={{  marginTop: "80px",backgroundColor:"rgb(255, 248, 240)"
         }}>
            <Helmet>
      <meta name="description" content="     Largely self-taught, I've embraced curiosity as my guiding force in this artistic exploration. This approach has led to a richly diverse portfolio, ranging from functional tableware to sculptural masterpieces. Each piece bears the mark of a personal journey, a testament to the power of self-discovery in art." />
@@ -291,6 +291,19 @@ marginBottom: "100px",
               </div>
               </div>  
 
+
+              <div className='sect-1'  style={{justifyContent:"space-around",background: "#fff8f0",marginBottom:"100px",marginTop:"0px",marginBottom:"0px"}} >
+          <div className="col1 h-sect1-col1"  style={{display:"flex",justifyContent:"center",alignItems:"center" ,width:"58vw",/*height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"0px",height:"fit-content"}}>
+          </div>
+
+          <div className="col1 h-sect1-col2 ftr " style={{display:"flex",justifyContent:"space-evenly",alignItems:"center",flexDirection:"column",textAlign:"left",width:"40vw",/*height:"40vw",*/height:"fit-content",minWidth:"300px",padding: "44px",marginBottom:"0"}}>
+          <div className='home-about-heading-sect'>
+          
+            <p className='para-mobile ftr italic' style={{fontSize: "17px",fontWeight: "normal", color:"black",textDecoration:"underline"}}><Link to="https://www.instagram.com/vinkeebhasiin/">Follow me on instagram</Link></p>
+            </div>
+             
+              </div>
+              </div>  
 
 
 <div className='home-grid-2'>
