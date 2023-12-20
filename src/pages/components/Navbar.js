@@ -37,14 +37,15 @@ export default function Navbar(){
         {/* <div className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center"}}>
         </div> */}
         <div className='nav-comp nav-color' style={{width:"95%",justifyContent:"end",alignItems:"center"}}>
-        <Link className='nav-link' to={"/cart"} onClick={applyOverlay}><span className='nav-link1'>{/*<ShoppingCart width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-cart-arrow-down" style={{color: "#f3f7fe",marginRight:"5px",position:"relative"}}>{cartQty>0?<span className='frs' style={{position:"absolute",backgroundColor:"#f24242",width:"13px",height:"13px",borderRadius:"50%",top:"-10px",fontSize:"11px",fontWeight:"100",textAlign:"center"}}>{productsOnCart.length}</span>:null}</i>Cart </span></Link>
 
         <Link className='nav-link' to={"/home"} onClick={applyOverlay}><span className='nav-link1'>{/*Home width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-home" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Home </span></Link>
+        <Link className='nav-link' to={"/AboutUs"} onClick={applyOverlay}>  <span className='nav-link1'> {/*<User width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-user" style={{color: "#f3f7fe",marginRight:"5px"}} ></i>About</span></Link>
         
         <Link className='nav-link' to={"/products"} onClick={applyOverlay}><span className='nav-link1'> {/*<ShoppingBag width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-shopping-bag" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Products</span></Link>
 
+        <Link className='nav-link' to={"/cart"} onClick={applyOverlay}><span className='nav-link1'>{/*<ShoppingCart width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-cart-arrow-down" style={{color: "#f3f7fe",marginRight:"5px",position:"relative"}}>{cartQty>0?<span className='frs' style={{position:"absolute",backgroundColor:"#f24242",width:"13px",height:"13px",borderRadius:"50%",top:"-10px",fontSize:"11px",fontWeight:"100",textAlign:"center"}}>{productsOnCart.length}</span>:null}</i>Cart </span></Link>
 
-         <Link className='nav-link' to={"/AboutUs"} onClick={applyOverlay}>  <span className='nav-link1'> {/*<User width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-user" style={{color: "#f3f7fe",marginRight:"5px"}} ></i>About</span></Link>
+       
 
         
         </div>

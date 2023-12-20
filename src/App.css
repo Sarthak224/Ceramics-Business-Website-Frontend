@@ -57,12 +57,12 @@ font-weight: normal;
 /*Edited css for navbar*/
 .nav-link{
   text-decoration: none;
-  color:/*#edf1f3;*/#1b1b1b !important;
+  color:/*#edf1f3;*+/#1b1b1b*/rgb(130 12 17) !important;
   display: block;
   cursor: pointer;
 }
 .nav-link i{
-  color:/*#edf1f3;*/#1b1b1b !important;
+  color:/*#edf1f3;*+/#1b1b1b*/rgb(130 12 17) !important;
 
 }
 
@@ -262,6 +262,21 @@ font-weight: normal;
   margin-bottom:20px;
 }
 
+.view-abt-btn{
+  
+    border: none;
+    padding: 10px 21px;
+    margin-top: 30px;
+    border-radius: 4px;
+    background-color: #f1bc76;
+    color: #fff;
+
+}
+
+.view-abt-btn:hover{
+  background-color: #d58c2dbd;
+
+}
 /* CSS */
 .add-cart-btn {
   background-color:  #D5A372;
@@ -571,6 +586,21 @@ z-index: -3;
   
 }
 
+.home-grid-2{
+  display: grid;
+  grid-template-columns: 34% 32% 34%;
+  background-color: rgb(255, 248, 240);
+}
+.home-grid-2 .mid-col{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.home-grid-2 img{
+  height:100%;
+  max-height:420px;
+}
 .banner-heading{
   line-height: 2.8rem;
   margin-bottom: 7.8rem;
@@ -594,8 +624,8 @@ margin:0px 30px;
 transition: 0.3s ease;
 }
 .col1{
-  width:40vw;
-  height:40vw;
+  width: 49vw;
+  height: 49vw;
   min-width: 300px;
 }
 .col1-vid{
@@ -1049,7 +1079,7 @@ width:108px;
   display:flex;
   flex-direction:row;
   justify-content:space-between;
-  padding:20px;
+  margin: 20px 0px;
   flex-wrap: wrap;
 }
 ul{
@@ -1385,6 +1415,8 @@ transform: scale(1.2);
 .home-img1{
   width: 100%;
   height: 100%;
+  object-fit: cover;
+
 }
 
 .vertical-btn-marg{
@@ -1513,7 +1545,15 @@ margin: auto;
 }
 @media screen and (max-width:1150px) {
 
-
+.h-sect1-col1,.h-sect1-col2{
+  width:100% !important;
+}
+.home-grid-2{
+  grid-template-columns: 100%;
+}
+.home-grid-2 .mid-col{
+min-height: 380px;
+}
   .mobile-col-background1,.mobile-col-background2{
     margin:21px 0px !important;
   }
@@ -2094,7 +2134,7 @@ transform: scale(0.8);
 
 .home-img1{
   width:100%;
-  height:60%;
+  height:100%;
 }
 
 .prod-desc{
@@ -2226,7 +2266,7 @@ transform: scale(0.8);
   .col1{
     width:60vh;
     justify-content: space-between !important;
-    min-height: 70vh;
+    min-height: 101vh;
   }
 
 }
