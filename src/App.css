@@ -741,7 +741,7 @@ transition: 0.3s ease;
 }
 
 .about-body{
-  background-color: #d78b3f4f;
+  background-color: #fff8f0;
   display: flex;
   justify-content: center;
   color: #343434 !important;
@@ -758,7 +758,7 @@ transition: 0.3s ease;
   background-image: linear-gradient(
     rgba(30, 29, 29, 0.732), 
     rgba(0, 0, 0, 0.284)
-  ), url('home-main.jpg');
+  ), url('home-top-sect-new1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -769,8 +769,8 @@ transition: 0.3s ease;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  filter: blur(1px);
-  -webkit-filter: blur(2px);
+  /* filter: blur(1px);
+  -webkit-filter: blur(2px); */
   position: relative;
   
 }
