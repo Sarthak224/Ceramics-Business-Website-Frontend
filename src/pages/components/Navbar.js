@@ -2,7 +2,7 @@ import logo from '../../logo.png'
 import {Home,Menu,ShoppingBag,ShoppingCart,User} from 'react-feather'
 import { Link } from 'react-router-dom'
 import Sidebar from './Sidebar'
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {useLocation} from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import { assignOverlay } from '../../redux/actions/navigation';
@@ -11,6 +11,8 @@ export default function Navbar(){
 
     const [openMenu,setOpenMenu] = useState(false);
     const location = useLocation();
+    let prevScroll = useRef(0);
+    const [navbarHide,setNavbarHide] = useState(false);
 
     var productsOnCart = JSON.parse(localStorage.getItem("cart"));
 
@@ -26,10 +28,29 @@ export default function Navbar(){
        // setOpenMenu(false);
 
     },[location])
-   
+
+    useEffect(() => {
+        window.onscroll = function() {
+        //   console.log(window)
+          var currentScrollPos = window.pageYOffset;
+          console.log(prevScroll , currentScrollPos , window.scrollY,80)
+          if (prevScroll.current < currentScrollPos && currentScrollPos>80) {
+             setNavbarHide(true);
+             console.log(true);
+          } else {
+            console.log(false);
+
+            setNavbarHide(false);
+          }
+          prevScroll.current=currentScrollPos
+         //setPrevScroll(currentScrollPos);
+        }
+        return () => {}
+});
+//    alert(navbarHide)
     return (
-        <div>
-        <div className="navbar-layout-main" style={{justifyContent:"space-between"}}>
+        <div  >
+        <div  className="navbar-layout-main"  style={navbarHide?{top:"-100px",transition:"0.3s ease"}:{justifyContent:"space-between",transition:"0.3s ease"}}>
             <div className='nav-comp nav-color' style={{width:"30%",justifyContent:"start"}}>
             <img className='nav-main-icn' loading='lazy' src={logo} width={122} height={122}  style={{marginTop:"-26px"}} />
             <h2 className='fminerva' style={{fontSize: "18px",color: "#820c11",minWidth:"242px"}}>Vinkee Bhasiin Ceramics</h2>
