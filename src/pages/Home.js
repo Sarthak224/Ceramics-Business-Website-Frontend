@@ -3,6 +3,8 @@ import about1 from '../home_about1.svg'
 import homeP1 from '../home-12.jpg'
 import homeP2 from '../home-c21.jpg'
 import homeP3 from '../home-c22.jpg'
+import tableware from '../tableware.jpg'
+import art from '../art.jpg'
 
 import {ShoppingBag,ShoppingCart} from 'react-feather'
 import Carousel from "react-multi-carousel";
@@ -263,10 +265,27 @@ fontWeight: "normal",
 lineHeight: "3.8rem",
 marginBottom: "100px",
 
-
+          
 
             }}><span>Meet me Vinkee </span></h1> */}
-          
+          <div className='tableware-art-sect'>
+            <div className='tcol1'>
+               <div className='overlay'>
+               </div>
+               <div className='capt fminerva'>
+                <h3>Tableware</h3>
+               </div>
+            </div>
+            <div className='tcol2'>
+            <div className='overlay'>
+               </div>
+               <div className='capt fminerva'>
+                <h3>Art</h3>
+               </div>
+
+            </div>
+
+          </div>
             
             <div className='sect-1 remove-from-screen' ref={sect1Ref} style={{justifyContent:"space-around",background: "#fff8f0",marginBottom:"100px",marginTop:"0px",marginBottom:"0px"}} >
           <div className="col1 h-sect1-col1"  style={{display:"flex",justifyContent:"center",alignItems:"center" ,width:"58vw",/*height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding:"0px"}}>
