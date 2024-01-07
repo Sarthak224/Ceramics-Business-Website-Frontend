@@ -53,6 +53,15 @@ export default function ProductSidebar(props){
         <Button color="" disabled={disabledButtons.includes(3)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setPriceRange({min:900,max:1500});disableButton(3)}}>&#8377;900 - &#8377;1500 </Button>
         <Button color="" disabled={disabledButtons.includes(4)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setPriceRange({min:1500,max:2500});disableButton(4)}}>&#8377;1500 - &#8377;2500</Button>
 
+
+        <h1>Category Filter</h1>
+         <div style={{display:"flex",flexWrap:"wrap"}}>
+        <Button color="" disabled={disabledButtons.includes(1)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setFilters({...filters,category:"All"})}}>All</Button>
+        <Button color="" disabled={disabledButtons.includes(2)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setFilters({...filters,category:"Functional"})}}>Functional</Button>
+        <Button color="" disabled={disabledButtons.includes(3)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setFilters({...filters,category:"Art"})}}>Art</Button>
+        <Button color="" disabled={disabledButtons.includes(4)?true:false} className="button-17" style={{padding:"0px 20px",margin:"10px"}} onClick={()=>{setFilters({...filters,category:"Bright and Colorful"})}}>Bright and Colorful</Button>
+        </div>
+
         <hr className="img-sep" />
         <Button color="" style={{color:"#fff",backgroundColor:"#D5A372",marginLeft:"30px"}} className="button-7" onClick={()=>{setFilters({});setDisabledButtons([]);}}>Reset Filters <Filter size={20} /></Button>
 

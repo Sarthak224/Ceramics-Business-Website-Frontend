@@ -53,7 +53,7 @@ export default function Navbar(){
         <div  className="navbar-layout-main"  style={navbarHide?{top:"-100px",transition:"0.3s ease"}:{justifyContent:"space-between",transition:"0.3s ease"}}>
             <div className='nav-comp nav-color' style={{width:"30%",justifyContent:"start"}}>
             <img className='nav-main-icn' loading='lazy' src={logo} width={122} height={122}  style={{marginTop:"-26px"}} />
-            <h2 className='fminerva' style={{fontSize: "18px",color: "#820c11",minWidth:"242px"}}>Vinkee Bhasiin Ceramics</h2>
+            {/* <h2 className='fminerva' style={{fontSize: "18px",color: "#820c11",minWidth:"242px"}}>Vinkee Bhasiin Ceramics</h2> */}
         </div>
         <div className='nav-layout-sub-main'>
         {/* <div className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center"}}>
@@ -94,8 +94,8 @@ export default function Navbar(){
                <div   className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center",marginRight:"10px",}}>
              
                  
-               <h6  className='frs' style={{marginTop:"3px",marginRight:"10px",fontSize:"12px",color:"#1b1b1b"}}>Menu</h6>
-               <Menu size={26} style={{cursor:"pointer",color:"#1b1b1b"}} className='nav-icon' onClick={()=>setOpenMenu(true)}  />
+               <h6  className='frs' style={{marginTop:"3px",marginRight:"10px",fontSize:"12px",color:"rgb(212 206 206)"}}>Menu</h6>
+               <Menu size={26} style={{cursor:"pointer",color:"rgb(212 206 206)"}} className='nav-icon' onClick={()=>setOpenMenu(true)}  />
                <Sidebar openMenu ={openMenu} setOpenMenu={setOpenMenu} />
                </div>
                </div>

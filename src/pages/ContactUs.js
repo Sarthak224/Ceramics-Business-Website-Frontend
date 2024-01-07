@@ -6,9 +6,10 @@ export default function ContactUs() {
             <Row>
                 <Col md="6">
                     <div className="liner-container" style={{ marginBottom: "49px" }}>
-
+                        <div>
                         <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "23px" }}>Contact Details</h4>
-
+                        <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "13px" }}>For all enquiries please use the form below to get in touch</h4>
+                        </div>
                     </div>
                 </Col>
                 <Col md="6">
@@ -35,14 +36,20 @@ export default function ContactUs() {
 
 
                     <div className="contact-form-body frs" style={{marginTop:"0px"}}>
+                        <Row>
+                        <Col md="6">
                         <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Firstname  <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="text" />
+                        </Col>
 
+                        <Col md="6">
                         <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Lastname <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="text" />
+                        </Col>
 
+                         </Row>
                         <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>E-mail <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="email" />
