@@ -2,7 +2,7 @@ import { Button, Col, Input, Row } from "reactstrap";
 
 export default function ContactUs() {
     return (
-        <div style={{marginTop:"110px"}}>
+        <div style={{marginTop:"90px",background:"#333"}}>
             <Row>
                 <Col md="6">
                     <div className="liner-container" style={{ marginBottom: "49px" }}>
@@ -13,7 +13,7 @@ export default function ContactUs() {
                     </div>
                 </Col>
                 <Col md="6">
-                    <div className="liner-container" style={{ marginBottom: "29px" }}>
+                    <div className="liner-container" style={{ marginBottom: "29px",marginTop:"19px" }}>
 
                         <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "23px" }}>General Inquiries</h4>
                     </div>
@@ -25,9 +25,9 @@ export default function ContactUs() {
 
 
                     <div className="frs" style={{ marginTop: "0px", marginBottom: "0px", width: "60%", marginLeft: "auto", marginRight: "auto" }}>
-                        <p style={{ textAlign: "left" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>***@mail.com</span></p>
-                        <p style={{ textAlign: "left" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>**********</span></p>
-                        <p style={{ textAlign: "left" }}>Uttarakhand, Dehradun</p>
+                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>***@mail.com</span></p>
+                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>**********</span></p>
+                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}>Uttarakhand, Dehradun</p>
 
                     </div>
 
@@ -38,28 +38,34 @@ export default function ContactUs() {
                     <div className="contact-form-body frs" style={{marginTop:"0px"}}>
                         <Row>
                         <Col md="6">
-                        <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Firstname  <span style={{ color: "red" }}>*</span></h5>
+                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Firstname  <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="text" />
                         </Col>
 
                         <Col md="6">
-                        <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Lastname <span style={{ color: "red" }}>*</span></h5>
+                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Lastname <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="text" />
                         </Col>
 
                          </Row>
-                        <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>E-mail <span style={{ color: "red" }}>*</span></h5>
+                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>E-mail <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="email" />
 
-                        <h5 style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Your Message <span style={{ color: "red" }}>*</span></h5>
+                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Your Message <span style={{ color: "red" }}>*</span></h5>
 
                         <Input type="textarea" rows="5" />
 
-                        <Button className="button-7" color="" style={{margin:"10px 0px",width:"100%",backgroundColor:"#D5A372",color:"white"}}> Send </Button>
+                        <Button className="button-7" color="" style={{margin:"10px 0px",width:"100%",backgroundColor:"#D5A372",color:"white",marginTop:"10%"}}> Send </Button>
                     </div>
+
+                    <div class="social-links contact-footer-br">
+                    <span className="fminerva" style={{color:"#f1f1f1"}}>Follow us on</span><br/>
+  	 				<a href="https://www.facebook.com/people/Vinkee-Bhasiin-Ceramics/100063774127500/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.instagram.com/vinkeebhasiin/" target="_blank"><i class="fab fa-instagram"></i></a>
+  	 			</div>
 
                 </Col>
 
