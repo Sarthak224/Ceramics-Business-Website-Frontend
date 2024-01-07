@@ -1,7 +1,7 @@
 import { Button } from 'reactstrap'
 import about1 from '../home_about1.svg'
 import about from '../About.jpg'
-
+import topImg from '../top-img1.jpg'
 import homeP1 from '../home-12.jpg'
 import homeP2 from '../home-c21.jpg'
 import homeP3 from '../home-c22.jpg'
@@ -262,7 +262,7 @@ export default function Home() {
 
         </div>
         <div className='image-col'>
-          <img loading='lazy' src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
+          <img loading='lazy' src={topImg} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
 
         </div>
       </div>
