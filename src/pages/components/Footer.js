@@ -177,7 +177,7 @@ export default function Footer(){
   	 			</div>
   	 		</div>
   	 	</div>
-		<p style={{color:"#909090"}}>Icons by Icons8 , Images by FreePik</p>
+		{/* <p style={{color:"#909090"}}>Icons by Icons8 , Images by FreePik</p> */}
   	 </div>
 
 

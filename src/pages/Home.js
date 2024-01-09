@@ -318,7 +318,7 @@ marginBottom: "100px",
 
 
           <div className='capt fminerva'>
-            <img loading='lazy' src={about} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "18%" }} />
+            <img loading='lazy' src={art} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "18%" }} />
           </div>
 
 
@@ -372,15 +372,13 @@ marginBottom: "100px",
 
         <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0" }}>
           <div className='home-about-heading-sect'>
-            <h2 className='fminerva' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Welcome! <br /> <span style={{
+            <h2 className='fminerva' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Embracing Challenges, Igniting Motivation <br /> <span style={{
               color: "rgb(226 143 23)",
               fontWeight: "normal", fontSize: "21PX"
-            }} className='ftr italic'>Creation with my hands</span></h2>
+            }} className='ftr italic'> </span></h2>
           </div>
           <p className='para-mobile ftr' style={{ fontSize: "17px", fontWeight: "normal", fontStyle: "" }}>
-            Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity.
-            From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation.
-            {/* Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.    */}
+          In this creative odyssey, every setback is a stepping stone. Challenges are not obstacles, but rather sparks that ignite a new wave of motivation. Each hurdle fuels the determination to transcend boundaries, resulting in creations that resonate with authenticity and resilience.{/* Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.    */}
           </p>
         </div>
       </div>

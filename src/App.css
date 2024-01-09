@@ -919,7 +919,7 @@ transition: 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  /* padding: 40px; */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -1683,6 +1683,7 @@ margin: auto;
   height: 115px;
   width: 88px;
   margin: auto;
+  object-fit: contain;
   /* margin-left: -19px;
   margin-top: -19px;
   margin-bottom: 36px; */
@@ -2115,6 +2116,51 @@ input:focus{
 .category-subrow1 , .category-subrow2{
   height: 100%;
 }*/
+.tableware-art-sect .abt-col1:before {
+  height: 2px;
+  left: 7%;
+  top: -5%;
+  width: 40%;
+  width: 84%;
+
+}
+.tableware-art-sect .abt-col1:after {
+  height: 2px;
+  background: #95272b;
+  content: "";
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: absolute;
+  left: 55%;
+  /* top: -5%; */
+  width: 40%;
+  content: "";
+  left: 7%;
+    bottom: 0%;
+    width: 87%;
+    content: "";
+}
+.tableware-art-sect .abt-col2::before {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  width: 2px;
+  height: 293px;
+  background: rgb(149 39 43);
+  content: '';
+  position: absolute;
+  top: 28%;
+  left: 50%;
+}
+.image-col::before {
+  left: 50%;
+  height: 48%;
+  bottom: 10%;
+
+}
+
 
 
 
