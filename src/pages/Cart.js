@@ -11,6 +11,7 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { assignCartQty, assignOverlay } from '../redux/actions/navigation'
+import OrderSteps from './components/OrderSteps'
 
 
 
@@ -103,6 +104,7 @@ export default function Cart(){
   
   //Func to call cart data api
   async function getProducts(product_id_list){
+    try{
    var url = baseURL+"/products/getCartProducts";
    dispatch(assignOverlay(true));
    var res = await axios.post(url,{product_id_list},{
@@ -125,6 +127,10 @@ export default function Cart(){
 
   
   
+  }
+}
+  catch(e){
+    alert("Failed to load....")
   } 
 
   }
@@ -245,12 +251,12 @@ for(var i=0;i<data.length;++i){
     const [counter,setCounter] = useState(productDataQtyMapping[val._id]);
 
        return(
-          <div className='cart-prod-row' style={{display:"flex",justifyContent:"space-between",margin:"20px",alignItems:"center",borderBottom:"1px solid #c5c5c5"}}>
+          <div className='cart-prod-row finria-sans' style={{display:"flex",justifyContent:"space-between",margin:"20px",alignItems:"center",borderBottom:"1px solid rgb(216 216 216 / 57%)",paddingBottom:"37px"}}>
           <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
             <img src={val.image[0]} width={100} height={100} />
             <div className='cart-detail-col' style={{textAlign:"left",margin:"15px"}}>
             {/* <h3 className="category-text"><span className="category-label" style={{color:"#0d4471d1"}}>Category</span> - {val.category}</h3> */}
-           <h3 className="product-title replace-with-wrap "><b>{val.title}</b></h3>
+           <h3 className="product-title replace-with-wrap " style={{fontFamily:"'Inria Sans', sans-serif"}}><b>{val.title}</b></h3>
             <span style={{padding:"1px"}}><span><b>Price</b></span>: <b>&#x20b9; {(val.price).toFixed(2)}</b></span><span style={{fontWeight:"normal",textDecoration:"line-through"}}> &#x20b9; {(val.original_price).toFixed(2)} </span><br/>
             <br/>
             <span style={{background:"rgba(51, 240, 120, 0.14)",padding:"7px",borderRadius:"5px",color:"#06f05c",fontSize:"14px",marginTop:"10px",fontWeight:"bold"}}>You Save &#x20b9; {(val.original_price-val.price).toFixed(2)}</span>
@@ -279,18 +285,19 @@ for(var i=0;i<data.length;++i){
 
 
     return(
-      <div className='cart-mobile-main' style={{margin:"110px 0%",}}>
-          <div className='order-steps-header' style={{width:"100%",padding:"30px",margin:"0px auto",marginBottom:"50px",backgroundColor:"#f6f6f6c4"}} >
+      <div className='cart-mobile-main main-layout' style={{margin:"97px 0%",}}>
+          {/* <div className='order-steps-header' style={{width:"100%",padding:"30px",margin:"0px auto",marginBottom:"50px",backgroundColor:"#f6f6f6c4"}} >
              
-             <div style={{textAlign:"center"}}><div className='circle-1 active-circle'>1</div><span><b>Your Cart</b></span></div>
-             <div style={{textAlign:"center"}}><div className='circle-1 '>2</div><span><b>Checkout Details</b></span></div>
-             <div style={{textAlign:"center"}}><div className='circle-1'>3</div><span><b>Payment</b></span></div>
+             <div style={{textAlign:"center"}}><div className='circle-1 active-circle'><i class="bi bi-bag-check-fill"></i></div><span><b>Your Cart</b></span></div>
+             <div style={{textAlign:"center"}}><div className='circle-1 '><i class="bi bi-cart-check-fill"></i></div><span><b>Checkout Details</b></span></div>
+             <div style={{textAlign:"center"}}><div className='circle-1'><i class="bi bi-credit-card-2-back-fill"></i></div><span><b>Payment</b></span></div>
  
              
-           </div>
+           </div> */}
+           <OrderSteps step={1} />
        {cartData.length>0?<div className='cart-body-mobile-main' style={{margin:"20px 19px",}}>
            
-           <h1 className='ftr' style={{margin:"60px 0px",marginTop:"40px",textAlign:"left",fontWeight:"500",fontSize:"33px",borderBottom:"1px solid rgba(223, 223, 223, 0.48) ",paddingBottom:"30px"}}>My Cart<br/><span style={{fontSize:"19px",color:"#777"}}>Added items</span></h1>
+           <h1 className='finria-sans' style={{margin:"28px 0px",marginTop:"28px",textAlign:"left",fontWeight:"500",fontSize:"33px",borderBottom:"1px solid rgba(223, 223, 223, 0.48) ",paddingBottom:"30px"}}>My Cart<br/><span style={{fontSize:"19px",color:"#777"}}>Added items</span></h1>
           
           <div style={{display:"flex",justifyContent:"space-between",flexWrap:"wrap",/*backgroundColor: "#f5fbff36",boxShadow:" rgba(0, 0, 0, 0.24) 0px 3px 8px"*/}}>
            <div className='cart-col1-mobile' style={{display:"flex",flexDirection:"column",/*border:"1px solid #e0e0e0",*/width:"60%",minWidth:"470px"}}>

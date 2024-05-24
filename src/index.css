@@ -7,15 +7,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
  
 }
+/* Works on Firefox */
+* {
+  scrollbar-width: 4px;
+  scrollbar-color: rgba(234, 174, 91, 0.659) rgba(183, 183, 183, 0.336);
+}
 
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(234, 174, 91);
+  display: none;
+
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(183, 183, 183, 0.336);
+  box-shadow: inset 0 0 5px grey; 
+
+  border-radius: 6px;
+  border: 3px solid rgba(234, 174, 91, 0.692);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 :root {
- --background:#333;
- --maincolor:#fff;
+ --background:#f1f1f1;
+ /* --maincolor:#fff; */
 }
 
 
@@ -24,3 +47,104 @@ code {
   padding: 0;
 }
 
+
+.admin-sect-main .table thead th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #dee2e6;
+  border-bottom-color: #f0f2f5;
+  font-family: 'Inria Sans';
+  color: #b3b5c4;
+  background: #f1f1f1;
+}
+.admin-sect-main .table tbody td {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  font-family: 'Inria Sans';
+  color: #544d4d;
+  font-weight: 600;
+  vertical-align: middle;
+  text-align: left;
+  padding-left: 1.01rem;
+
+}
+
+.admin-sect-main .table tbody th {
+vertical-align: middle;
+}
+
+.global-admin-search{
+  margin-right: 3.3rem;
+  height: 31px !important;
+}
+.admin-navbar .right-col{
+  display: flex;
+  font-family: 'Inria Sans';
+  align-items: center;
+}
+
+.admin-navbar .right-col i:nth-last-child(){
+  display: flex;
+  font-family: 'Inria Sans';
+}
+
+.admin-tbl{
+  background-color: #fff;
+}
+
+.admin-sidebar{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+.admin-sidebar-links a{
+  color: rgb(62 56 56);
+
+}
+.admin-sidebar-links:hover a,.admin-sidebar-links:hover i {
+  color: #fff;
+}
+.links-sect-heading{
+  color: #999;
+  margin: 18px auto;
+  margin-left: 1.5rem;
+  margin-bottom: 21px;
+  font-family: 'Open Sans';
+  text-align: left;
+}
+.admin-sidebar-links i{
+  color: rgb(38 34 34); font-size: 21px; margin: 10px 30px; margin-left: 0;
+}
+.admin-logo-navbar{
+  padding: 15px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-bottom: 0px solid rgba(215, 214, 227, 0.26);
+    color: #333;
+    gap: 16px;
+    font-weight: bolder;
+    
+}
+.order-search-main{
+  width: 100%;
+
+}
+.order-search{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.3rem;
+}
+.order-search input{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.order-search .tbl-search-btn{
+   background-color: #ebb57f;
+   color:#fff;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+   padding:8px;
+   font-size: 16px;
+   border: none;
+}
+
+.contact-form-label{ margin: 10px; font-size: 18px; font-weight: normal;color:rgb(84 73 73) ; }
+.footer-form .contact-form-label{ margin: 10px; font-size: 18px; font-weight: normal;color:rgb(239, 236, 236); }

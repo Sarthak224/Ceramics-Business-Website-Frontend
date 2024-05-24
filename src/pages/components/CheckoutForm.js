@@ -22,6 +22,7 @@ export default function CheckoutForm(){
 	const [paymentAlert,setPaymentAlert] = useState("Payment Failed...");
 	const [cartData,setCartData] = useState([]);
 	const [orderType,setOrderType] = useState(null);
+
 	const [rerender,setReRender] = useState(false);
 
 
@@ -78,7 +79,7 @@ export default function CheckoutForm(){
         //    errors.password = "password should contain alphanumeric and special characters";
 
         //   }
-         if((values.phone.toString().length!=10)){
+         if(values.phone && (values.phone.toString().length!=10)){
 			errors.phone ='Phone Number is Invalid'
 		 }
           return errors;
@@ -270,14 +271,43 @@ export default function CheckoutForm(){
 	const handlePayment = async () => {
 		try {
 			var body; 
-		    if(product_id)
-			body = { product_id };
-			else
-			body = {product_id_list:productsOnCart.map(val=>val)}
-			const orderUrl = /*"http://localhost:3011"*/ baseURL+"/api/payment/orders";
-			const { data } = await axios.post(orderUrl, body);
+			var productsDataForApi = [...cartData]
+			productsDataForApi = productsDataForApi.map(val=>{
+				productsOnCart.map(val2=>{
+					 if(val._id==val2.product_id)
+					 val.qty=val2.qty
+					})
+					return val;
+			})
+			var dataObject = {
+				firstname:formik.values.firstname,
+				lastname:formik.values.lastname,
+				address:formik.values.address,
+				city:formik.values.city,
+				state:formik.values.state,
+				zipcode:formik.values.zipcode,
+				phone:formik.values.phone,
+				email:formik.values.email,
+				order_notes:formik.values.order_notes,
+				// subtotal:data.amount,
+				products:productsDataForApi,
+				product_id_list:[...productsOnCart]
+
+			}
+		    if(product_id){
+			//body = { product_id };
+		    dataObject.product_id_list = undefined;
+			dataObject.product_id = product_id	
+		}
+			// else
+			// body = {product_id_list:productsOnCart.map(val=>val)}
+			
+			const orderUrl = /*"http://localhost:3011"*/ baseURL+"/api/payment2/pay"//"/api/payment/orders";
+			const { data } = await axios.post(orderUrl, dataObject);
 			console.log(data);
-			initPayment(data.data);
+			//window.open(data.url, '_blank');
+			window.location.href = data.url
+			//initPayment(data.data);
 		} catch (error) {
 			console.log(error);
 		}
@@ -333,6 +363,7 @@ export default function CheckoutForm(){
 	useEffect(()=>{
 		try{
 			var billing = localStorage.getItem("billing_details")
+			var verifiedEmail = localStorage.getItem("verified-email-address")
 			if(billing){
 				
 				billing = JSON.parse(billing);
@@ -345,10 +376,14 @@ export default function CheckoutForm(){
 				formik.setFieldValue("address",billing.address)
 				formik.setFieldValue("zipcode",billing.zipcode)
 				formik.setFieldValue("phone",billing.phone)
+				if(verifiedEmail)
+				formik.setFieldValue("email",verifiedEmail)
+				else
 				formik.setFieldValue("email",billing.email)
+
 				formik.setFieldValue("state",billing.state)
 				formik.setFieldValue("city",billing.city)
-				formik.setErrors({})
+				//formik.setErrors({})
 			}
 			else
 			formik.validateForm();
@@ -450,7 +485,7 @@ export default function CheckoutForm(){
  <Input type="radio" name="radio1"onClick={()=>setOrderType("Cash on Delivery")} /><Label className='frs' style={{marginLeft:"23px"}}>Cash on Delivery</Label><br/>
  </div>
  <div style={{marginBottom:"20px"}}>
- <Input type="radio" name="radio1" onClick={()=>setOrderType("Online")}/><Label className='frs' style={{marginLeft:"23px"}}>Pay Online <img src={rzp} style={{width:"55px",marginLeft:"15px"}} /><img src={googlePayImg} style={{width:"32px",marginLeft:"15px"}} /><img src={ppImg} style={{width:"80px",marginLeft:"15px"}} /></Label>
+ <Input type="radio" name="radio1" onClick={()=>setOrderType("Online")}/><Label className='frs' style={{marginLeft:"23px"}}>Pay Online <img className='pay-type-img' src={rzp} style={{width:"55px",marginLeft:"15px"}} /><img className='pay-type-img' src={googlePayImg} style={{width:"32px",marginLeft:"15px"}} /><img className='pay-type-img' src={ppImg} style={{width:"80px",marginLeft:"15px"}} /></Label>
 </div>
 </div>
 <Button style={{backgroundColor:"#ce7e2ed4",border:"none",width:"90%",padding:"10px"}} className='button-7'  onClick={()=>{if(Object.keys(formik.errors).length>0 || orderType == null){alert("Please fill all details")}else {if(orderType=="Online")handlePayment();else placeCodOrder();}}}>{orderType=="Cash on Delivery"?"Place Order":<div>Pay  <b> &#x20b9; </b> {(productData.price?productData.price:totalPriceDetails.price).toFixed(2)}</div>}</Button>

@@ -5,6 +5,8 @@ import axios from 'axios';
 import {useState,useEffect} from 'react';
 import { useDispatch } from "react-redux";
 import { assignOverlay } from "../redux/actions/navigation";
+import OrderSteps from "./components/OrderSteps";
+import { handleVerifyEmail } from "../redux/actions/Footer";
 
 export default function Checkout(){
     const [searchParams, setSearchParams] = useSearchParams();
@@ -61,19 +63,22 @@ export default function Checkout(){
 
      verifyProductsOnCart();
 
+     dispatch(handleVerifyEmail(true));
+
 
     },[])
     
     return(
-      <div style={{marginTop:"120px"}}>
-          <div className='order-steps-header' style={{width:"100%",padding:"30px",margin:"0px auto",marginBottom:"50px",backgroundColor:"#f6f6f6c4"}} >
+      <div className='main-layout' style={{marginTop:"97px"}}>
+          {/* <div className='order-steps-header' style={{width:"100%",padding:"30px",margin:"0px auto",marginBottom:"50px",backgroundColor:"#f6f6f6c4"}} >
              
              <div style={{textAlign:"center"}}><div className='circle-1 '>1</div><span><b>Your Cart</b></span></div>
              <div style={{textAlign:"center"}}><div className='circle-1 active-circle'>2</div><span><b>Checkout Details</b></span></div>
              <div style={{textAlign:"center"}}><div className='circle-1'>3</div><span><b>Payment</b></span></div>
  
              
-           </div>
+           </div> */}
+           <OrderSteps step={2} />
            {/* <h3>Checkout</h3> */}
         <div className="checkout-message"><i class="fas fa-truck" style={{color:"white",margin:"0px 10px",fontSize:"21px"}}></i>Enter correct Billing Details</div>
        <div className="checkout-container-main frs">

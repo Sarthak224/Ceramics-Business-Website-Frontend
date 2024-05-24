@@ -1,21 +1,22 @@
 import { Button, Col, Input, Row } from "reactstrap";
+import ContactUsForm from "./components/ContactUsForm";
 
 export default function ContactUs() {
     return (
-        <div style={{marginTop:"90px",background:"#333"}}>
+        <div style={{marginTop:"90px",background:""}}>
             <Row>
                 <Col md="6">
                     <div className="liner-container" style={{ marginBottom: "49px" }}>
                         <div>
-                        <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "23px" }}>Contact Details</h4>
-                        <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "13px" }}>For all enquiries please use the form below to get in touch</h4>
+                        <h4 className="finria-sans" style={{ color: "#333", fontWeight: "normal", fontSize: "23px" }}>Contact Details</h4>
+                        <h4 className="finria-sans" style={{ color: "#333", fontWeight: "normal", fontSize: "13px" }}>For all enquiries please use the form below to get in touch</h4>
                         </div>
                     </div>
                 </Col>
                 <Col md="6">
                     <div className="liner-container" style={{ marginBottom: "29px",marginTop:"19px" }}>
 
-                        <h4 className="frs" style={{ color: "#666", fontWeight: "normal", fontSize: "23px" }}>General Inquiries</h4>
+                        <h4 className="finria-sans" style={{ color: "#333", fontWeight: "normal", fontSize: "23px" }}>General Inquiries</h4>
                     </div>
                 </Col>
             </Row>
@@ -25,9 +26,9 @@ export default function ContactUs() {
 
 
                     <div className="frs" style={{ marginTop: "0px", marginBottom: "0px", width: "60%", marginLeft: "auto", marginRight: "auto" }}>
-                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>***@mail.com</span></p>
-                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>**********</span></p>
-                        <p className="fminerva" style={{ textAlign: "left",color:"#f1f1f1" }}>Uttarakhand, Dehradun</p>
+                        <p className="finria-sans" style={{ textAlign: "left",color:"rgb(84 73 73)" }}><span><b>E-mail: </b></span><span style={{ color: "#2193bf", margin: "14px 0px" }}>***@mail.com</span></p>
+                        <p className="finria-sans" style={{ textAlign: "left",color:"rgb(84 73 73)" }}><span><b>Phone: </b></span><span style={{ color: "#2193bf" }}>**********</span></p>
+                        <p className="finria-sans" style={{ textAlign: "left",color:"rgb(84 73 73)" }}>Uttarakhand, Dehradun</p>
 
                     </div>
 
@@ -35,34 +36,9 @@ export default function ContactUs() {
                 <Col md="6" >
 
 
-                    <div className="contact-form-body frs" style={{marginTop:"0px"}}>
-                        <Row>
-                        <Col md="6">
-                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Firstname  <span style={{ color: "red" }}>*</span></h5>
-
-                        <Input type="text" />
-                        </Col>
-
-                        <Col md="6">
-                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Lastname <span style={{ color: "red" }}>*</span></h5>
-
-                        <Input type="text" />
-                        </Col>
-
-                         </Row>
-                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>E-mail <span style={{ color: "red" }}>*</span></h5>
-
-                        <Input type="email" />
-
-                        <h5 className="fminerva" style={{ margin: "10px", fontSize: "18px", fontWeight: "normal" }}>Your Message <span style={{ color: "red" }}>*</span></h5>
-
-                        <Input type="textarea" rows="5" />
-
-                        <Button className="button-7" color="" style={{margin:"10px 0px",width:"100%",backgroundColor:"#D5A372",color:"white",marginTop:"10%"}}> Send </Button>
-                    </div>
-
+                    <ContactUsForm />
                     <div class="social-links contact-footer-br">
-                    <span className="fminerva" style={{color:"#f1f1f1"}}>Follow us on</span><br/>
+                    <span className="finria-sans" style={{color:"#f1f1f1"}}>Follow us on</span><br/>
   	 				<a href="https://www.facebook.com/people/Vinkee-Bhasiin-Ceramics/100063774127500/" target="_blank"><i class="fab fa-facebook-f"></i></a>
   	 				<a href="https://www.instagram.com/vinkeebhasiin/" target="_blank"><i class="fab fa-instagram"></i></a>
   	 			</div>

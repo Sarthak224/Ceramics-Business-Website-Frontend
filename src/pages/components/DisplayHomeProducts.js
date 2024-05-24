@@ -98,16 +98,16 @@ return (
     
     {latestProducts.map(val=>{
       
-      return (<div className="carousel-product1" >
+      return (<div className="carousel-product1 finria-sans" >
       
       <img src={val.image} className='rel-product-img1'     />
        <p style={{color: "#665d5dd6",
           fontWeight: "normal",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}><b>{val.title}</b></p>
        <p>Rs : <b> &#x20b9; </b> {val.price} <span style={{textDecoration:"line-through",fontSize:"14px",margin:"0px 5px"}}> &#x20b9;{val.original_price}</span> <span style={{fontWeight:"bold",color:"rgb(29, 217, 23)"}}>{(((val.original_price-val.price)/val.original_price)*100).toFixed(2)} % Off</span> </p>
-        <p className='frs' style={{color: "#665d5dd6",
+        <p className='finria-sans' style={{color: "#665d5dd6",
           fontWeight: "normal",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>(Inc.. of all taxes)</p>
 
-       <button className="add-cart-btn carousel-purchase-btn" onClick={()=>window.location.href = ("/product-view?product_id="+val.detail_id+"&product="+val.title)} >Buy Now <i class="fas fa-shopping-cart buy-carousel-icn" style={{color: "#f5f5f5"}} ></i></button>
+       <button className="add-cart-btn carousel-purchase-btn finria-sans" onClick={()=>window.location.href = ("/product-view?product_id="+val.detail_id+"&product="+val.title)} >Buy Now <i class="fas fa-shopping-cart buy-carousel-icn" style={{color: "#f5f5f5"}} ></i></button>
        {/* <button className="add-cart-btn" style={{marginTop:"40px",padding:"10px 20px",width:"100%",fontSize:"15px"}}>Add to Whilist <Heart size={17} /> </button> */}
     </div>)
     })} 

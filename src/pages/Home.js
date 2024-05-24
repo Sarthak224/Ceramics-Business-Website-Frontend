@@ -1,7 +1,12 @@
 import { Button } from 'reactstrap'
 import about1 from '../home_about1.svg'
 import about from '../About.jpg'
-import topImg from '../top-img1.jpg'
+import topImg from '../home-img-10.jpeg'//'../home13.jpeg'
+import homeMain2 from '../home-img-15.jpeg'//'../home-main2.jpeg'
+import homeMain3 from '../home-img-16.jpeg'
+import homeMain1 from '../home-main.jpg'
+import homeMain4 from '../home-img-12.jpeg'
+
 import homeP1 from '../home-12.jpg'
 import homeP2 from '../home-c21.jpg'
 import homeP3 from '../home-c22.jpg'
@@ -26,6 +31,7 @@ import Categories from './components/Categories';
 import DisplayCarousel from './components/DisplayCarousel';
 import DisplayHomeProducts from './components/DisplayHomeProducts';
 import { Helmet } from 'react-helmet-async'
+import ContactUsForm from './components/ContactUsForm'
 
 export default function Home() {
 
@@ -108,7 +114,7 @@ export default function Home() {
     if (sect1Ref.current && sect2Ref.current) {
       observer.observe(sect1Ref.current)
       // observer.observe(sect2Ref.current)
-      observer.observe(sect3Ref.current)
+     // observer.observe(sect3Ref.current)
       //  observer.observe(sect4Ref.current)
 
     }
@@ -119,7 +125,7 @@ export default function Home() {
       if (sect1Ref.current && sect2Ref.current) {
         observer.unobserve(sect1Ref.current)
         //  observer.unobserve(sect2Ref.current)
-        observer.unobserve(sect3Ref.current)
+     //   observer.unobserve(sect3Ref.current)
         //  observer.observe(sect4Ref.current)
       }
     }
@@ -249,16 +255,10 @@ export default function Home() {
         <meta name="keywords" content="Ceramics, Pottery, vinkee bhasiin ceramics" />
 
       </Helmet>
-      <h1 className={'left-ttl-sticky fminerva ' + (titleHide?'hide-ttl':"")}>Vinkee Bhasiin Ceramics</h1>
-      {/* <div>
-        <div className="home-top-sect" style={{position:"relative"}}>
-        
-        </div>
-      
-        </div> */}
+
       <div className='home-top-sect2'>
         <div className="site-title-col" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "50%" }}>
-          <h2 className='fminerva' style={{ fontSize: "43px", color: "rgb(212 150 152)", minWidth: "242px" }}>Vinkee Bhasiin Ceramics</h2>
+          <h2 className='finria-sans home-top-lbl-ttl' style={{ fontSize: "43px", color: "rgb(212 150 152)", minWidth: "242px" }}>Vinkee Bhasiin Ceramics</h2>
 
         </div>
         <div className='image-col'>
@@ -267,58 +267,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <Categories/> */}
-      {/* Section 1 */}
-      {/* <div style={{display:"flex",flexDirection:"column",marginTop:"90px"}}>
-            
-        </div> */}
-
-      {/* <div className='sect-1' ref={sect3Ref} style={{justifyContent:"space-around",backgroundColor:"#ffffff",marginTop:"150px"}} >
-          <div className="col1 temp-col21"  style={{width:"47vw",display:"flex",justifyContent:"center",alignItems:"center" ,padding:"10px"}}>
-            <img loading='lazy'  src={homeP1} style={{width:"100%",height:"120%"}} />
-          </div>
-
-          <div className=" temp-col22" style={{backgroundColor:"#dbe3ea4a",width:"47vw",display:"flex",justifyContent:"center",alignItems:"center",flexDirection:"column",minWidth:"300px"}}>
-          <h2 className='ftr italic' style={{margin:"40px"}} >About Me</h2>
-            <p className="sect-font ftr italic" style={{margin:"40px",textAlign:"left",fontSize:"18px",fontWeight:"normal"}}>
-            Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity. From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation. Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.             </p>
-              </div>
-              </div>      */}
-
-
-      {/* <hr className='row-sep' /> */}
-
-      {/* <h1 className='down-top-animate delay-1 fminerva' style={{
-
-color: "rgb(153, 153, 153)",
-fontWeight: "normal",
-lineHeight: "3.8rem",
-marginBottom: "135px",
-
-
-
-            }}><span>Welcome </span><br/> <span style={{color: "rgb(226 143 23)",
-            fontWeight: "normal",fontSize:"31PX"}} className='ftr italic'>Creation with my hands</span></h1>
- */}
-
-
-      {/* <h1 className='down-top-animate delay-1 ftr' style={{
-
-color: "rgb(153, 153, 153)",
-fontWeight: "normal",
-lineHeight: "3.8rem",
-marginBottom: "100px",
-
-          
-
-            }}><span>Meet me Vinkee </span></h1> */}
+    
 
       <div className='tableware-art-sect intro-sect'>
         <div className='abt-col1'>
 
 
-          <div className='capt fminerva'>
-            <img loading='lazy' src={art} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "18%" }} />
+          <div className='capt fminerva intro-top-img'>
+            <img loading='lazy' src={homeMain2} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "0%" }} />
           </div>
 
 
@@ -328,14 +284,14 @@ marginBottom: "100px",
 
           <div className='capt fminerva'>
             {/* <h3>Art</h3> */}
-            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0" }}>
+            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "90vw",/*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0" }}>
               <div className='home-about-heading-sect'>
-                <h2 className='fminerva' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Welcome! <br /> <span style={{
+                <h2 className='finria-sans' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Welcome! <br /> <span style={{
                   color: "rgb(226 143 23)",
                   fontWeight: "normal", fontSize: "21PX"
                 }} className='ftr italic'>Creation with my hands</span></h2>
               </div>
-              <p className='para-mobile ftr' style={{ fontSize: "17px", fontWeight: "normal", fontStyle: "" }}>
+              <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "1.23rem", fontWeight: "normal", fontStyle: "" }}>
                 Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity.
                 From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation.
                 {/* Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.    */}
@@ -346,42 +302,70 @@ marginBottom: "100px",
         </div>
 
       </div>
-      {/* <div className='tableware-art-sect'>
-            <div className='tcol1'>
-               <div className='overlay'>
-               </div>
-               <div className='capt fminerva'>
-                <h3>Tableware</h3>
-               </div>
-            </div>
-            <div className='tcol2'>
-            <div className='overlay'>
-               </div>
-               <div className='capt fminerva'>
-                <h3>Art</h3>
-               </div>
+    
 
-            </div>
 
-          </div> */}
 
-      <div className='sect-1 remove-from-screen' ref={sect1Ref} style={{ justifyContent: "space-around", background: "", marginBottom: "100px", marginTop: "0px", marginBottom: "0px" }} >
-        <div className="col1 h-sect1-col1" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "58vw",/*height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding: "0px" }}>
-          <img loading='lazy' src={homeP1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
-        </div>
 
-        <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0" }}>
-          <div className='home-about-heading-sect'>
-            <h2 className='fminerva' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Embracing Challenges, Igniting Motivation <br /> <span style={{
-              color: "rgb(226 143 23)",
-              fontWeight: "normal", fontSize: "21PX"
-            }} className='ftr italic'> </span></h2>
+
+      <div className='intro-sect2'>
+        <div className='abt-col1'>
+
+
+          <div className='capt fminerva intro-top-img'>
+            <img loading='lazy' src={homeMain3} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "0%" }} />
           </div>
-          <p className='para-mobile ftr' style={{ fontSize: "17px", fontWeight: "normal", fontStyle: "" }}>
-          In this creative odyssey, every setback is a stepping stone. Challenges are not obstacles, but rather sparks that ignite a new wave of motivation. Each hurdle fuels the determination to transcend boundaries, resulting in creations that resonate with authenticity and resilience.{/* Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.    */}
-          </p>
+
+
         </div>
+
+
+
+
+        <div className='abt-col1'>
+
+
+          <div className='capt fminerva intro-top-img'>
+            <img loading='lazy' src={homeMain1} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "0%" }} />
+          </div>
+
+
+        </div>
+
+
+
+
+        <div className='abt-col1'>
+
+
+          <div className='capt fminerva intro-top-img'>
+            <img loading='lazy' src={homeMain4} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{ padding: "0%" }} />
+          </div>
+
+
+        </div>
+
+
       </div>
+
+      <div className='intro-sect-2-para'>
+      Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
+
+      </div>
+
+      <br/>
+      <br/>
+      <div className='intro-sect-2-para'>
+      The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
+
+      </div>
+
+
+
+
+
+
+
 
 
       <div className='sect-1' style={{ justifyContent: "space-around", background: "", marginBottom: "100px", marginTop: "0px", marginBottom: "0px" }} >
@@ -407,13 +391,7 @@ marginBottom: "100px",
       {/* <h2 className='' style={{color:"#333333",fontSize:"29px",fontWeight:"normal"}}>Our Delivery Partners</h2> */}
 
       <div className="sect1" ref={sect2Ref} >
-        {/* 
-              <div style={{display:'flex',justifyContent:"center",alignItems:"center",width:"100%",flexWrap:"wrap"}}>
-                <img loading='lazy'  src={logo1}  style={{width:"150px",height:"50px",margin:"50px"}}/>
-                <img loading='lazy'  src={logo2}  style={{width:"150px",height:"50px",margin:"50px"}}/>
-                <img loading='lazy'  src={logo3}  style={{width:"150px",height:"50px",margin:"50px"}}/>
-
-              </div> */}
+      
 
 
 
@@ -427,28 +405,13 @@ marginBottom: "100px",
       {/* <h2 className='' style={{color:"#333333",fontSize:"29px",fontWeight:"normal",lineHeight:"2.8rem"}}><b>Our Products!</b><br/>Check some of our top selling Products!</h2> */}
       <div className="liner-container">
 
-        <h4 className="frs" style={{ color: "#D5A372", fontWeight: "bold", fontSize: "30px" }}>Our Products</h4>
+        <h4 className="finria-sans" style={{ color: "#D5A372", fontWeight: "bold", fontSize: "30px" }}>Our Products</h4>
       </div>
       {<DisplayHomeProducts />}
+ 
 
-
-      <div className='sect-1 remove-from-screen show-background-home-bottom' ref={sect3Ref} style={{ justifyContent: "space-around", backgroundColor: "#ffffff", marginTop: "150px", backgroundColor: "", marginBottom: 0 }} >
-        <div className="col1 temp-col21" style={{ width: "47vw", display: "flex", justifyContent: "center", alignItems: "center",/*width:"40vw",height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding: "10px" }}>
-          <img loading='lazy' src={about1} style={{ width: "100%", height: "120%" }} />
-        </div>
-
-        <div className=" temp-col22" style={{ backgroundColor: "", width: "47vw", display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column",/*width:"40vw",height:"40vw",*/minWidth: "300px" }}>
-          {/* <h2 className='ftr italic' style={{margin:"40px"}} >Environmental Consciousness</h2> */}
-          <div className='home-about-heading-sect'>
-            <h2 className='fminerva' style={{
-              textAlign: "left", width: "100%", marginLeft: "66px",
-              fontSize: "23px", paddingRight: "30px"
-            }} >Environmental Consciousness</h2>
-          </div>
-          <p className="sect-font ftr  para-mobile" style={{ margin: "40px", textAlign: "left", fontSize: "18px", fontWeight: "normal" }}>
-            Our commitment extends beyond aesthetics; it encompasses environmental responsibility. We strive to leave a gentle footprint on the earth, consciously minimizing our impact. This dedication is woven into the very fabric of Vinkee Bhasiin Ceramics, reflecting a belief in sustainable artistry.                    </p>
-        </div>
-      </div>
+     
+    
     </div>
   )
 }

@@ -20,6 +20,7 @@ import ProductsAdmin from "../pages/components/AdminPages/Products";
 import Coupons from "../pages/components/AdminPages/Coupons";
 import AdminLogin from "../pages/components/AdminPages/Login";
 import ContactUs from "../pages/ContactUs";
+import Issues from "../pages/components/AdminPages/Issues";
 
 
 const About = React.lazy(()=>import("../pages/About"))
@@ -115,6 +116,10 @@ function LoadingPage(){
     {
       path:"/admin/coupons",
       element:<Coupons />
+    },
+    {
+      path:"/admin/user-issues",
+      element:<Issues />
     },
 
   ]);

@@ -1,5 +1,5 @@
 import { Button, Col, Input, Modal, ModalBody, ModalFooter, Row, Table } from 'reactstrap';
-import { baseURL } from '../../utils/utils';
+import { baseURL, categoryOptions, mainCategoryOptions as categoryMainOptions } from '../../utils/utils';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
@@ -8,6 +8,7 @@ import Select from 'react-select';
 import { useFormik } from 'formik';
 import NotificationPopup from '../NotificationPopup';
 import { ToastContainer, toast } from 'react-toastify';
+import AdminNavbar from './components/AdminNavbar';
 export default function ProductsAdmin(){
 
     var navigate = useNavigate();
@@ -25,6 +26,10 @@ export default function ProductsAdmin(){
     const [openCreateImgPopup,setOpenCreateImgPopup] = useState(false);
     const [openProductDetailsPopup,setOpenProductDetailsPopup] = useState(false);
     const [fileData,setCurrentFileData] = useState([])
+    const accessToken = localStorage.getItem("token")
+
+
+    
 
     const formik = useFormik({
       initialValues: {
@@ -33,6 +38,8 @@ export default function ProductsAdmin(){
           price:"",
           description: "",
           category: "",
+          mainCategory: "",
+
           originalPrice:"",
           qty:"",
           // zipcode:"",
@@ -61,6 +68,9 @@ export default function ProductsAdmin(){
         }
         if (!values.qty) {
           errors.qty = "Quantity is required";
+        }
+        if (!values.mainCategory) {
+          errors.mainCategory = "Main Category is required";
         }
   //       if (!values.lastname) {
   //         errors.lastname = "Lastname is required";
@@ -143,7 +153,11 @@ export default function ProductsAdmin(){
 
   async function getproducts(){
     try{
-    var res = await axios.get(baseURL+"/products/allProducts?page="+page,{});
+    var res = await axios.get(baseURL+"/products/allProducts?page="+page,{
+      headers:{
+        "Authorization":"bearer "+accessToken
+      }
+    },);
     console.log(res);
     if(res.status==200){
         setproducts(res.data)
@@ -159,6 +173,7 @@ export default function ProductsAdmin(){
 
   async function updateProduct(){
     try{
+      console.log(formik.values)
       var dataBody = {
         id:currentProduct.product._id,
         productData:{
@@ -166,11 +181,16 @@ export default function ProductsAdmin(){
         price:formik.values.price,
         description:formik.values.description,
         category:formik.values.category,
+        mainCategory:formik.values.mainCategory,
         original_price:formik.values.originalPrice,
         qty:formik.values.qty
         }
       }
-      var res = await axios.post(baseURL+"/products/updateProduct",dataBody);
+      var res = await axios.post(baseURL+"/products/updateProduct",dataBody,{
+        headers:{
+          "Authorization":"bearer "+accessToken
+        }
+      });
       console.log(res);
       if(res.status==200){
         //  alert("Updated")
@@ -186,7 +206,12 @@ export default function ProductsAdmin(){
   }
   async function deleteProduct(){
     try{
-      var resp = await axios.post(baseURL+"/products/deleteProduct",{id:currentProduct.product._id});
+      var resp = await axios.post(baseURL+"/products/deleteProduct",{id:currentProduct.product._id},
+    {
+      headers:{
+        "Authorization":"bearer "+accessToken
+      }
+    });
       if(resp.status==200 && resp.data.msg){
         setOpenDeletePopup(false);
         notifySuccess();
@@ -208,10 +233,15 @@ export default function ProductsAdmin(){
         price:formik.values.price,
         description:formik.values.description,
         category:formik.values.category,
+        mainCategory:formik.values.mainCategory,
         original_price:formik.values.originalPrice
         }
       
-      var res = await axios.post(baseURL+"/products/createProduct",dataBody);
+      var res = await axios.post(baseURL+"/products/createProduct",dataBody,{
+        headers:{
+          "Authorization":"bearer "+accessToken
+        }
+      });
       console.log(res);
       if(res.status==200){
         //  alert("Updated")
@@ -243,7 +273,11 @@ export default function ProductsAdmin(){
       }
       // formData.append('productImage',img);
       formData.append('p_id',currentProduct.product._id)
-      var res = await axios.post(baseURL+"/products/updateProductImage",formData);
+      var res = await axios.post(baseURL+"/products/updateProductImage",formData,{
+        headers:{
+          "Authorization":"bearer "+accessToken
+        }
+      });
       console.log(res);
       if(res.status==200){
         //  alert("Updated")
@@ -262,9 +296,11 @@ export default function ProductsAdmin(){
     return(
 
         <div className="admin-pages" style={{flexDirection:"column",padding:"20px",justifyContent:"start"}}>
+
+          <AdminNavbar />
             {/* <h>products page!</h1> */}
             <Button style={{marginRight:"auto",marginBottom:"20px"}} onClick={()=>setOpenCreatePopup(true)}>Create new Product + </Button>
-            <Table>
+            <Table className='admin-tbl'>
         <thead>
           <tr>
             <th>#</th>
@@ -290,7 +326,7 @@ export default function ProductsAdmin(){
                 <td>{val.title}</td>
                 <td><b>&#8377;</b> {val.price}</td>
                 {/* <td>{val.email}</td> */}
-                <td style={{display:"flex"}}><i class="fas fa-edit" style={{margin:"15px"}} onClick={()=>editProduct(val,i)}></i><i class="fas fa-trash-alt" onClick={()=>{setOpenDeletePopup(true);setCurrentProduct({product:val})}} style={{margin:"15px"}}></i>
+                <td style={{}}><i class="fas fa-edit" style={{margin:"15px"}} onClick={()=>editProduct(val,i)}></i><i class="fas fa-trash-alt" onClick={()=>{setOpenDeletePopup(true);setCurrentProduct({product:val})}} style={{margin:"15px"}}></i>
                 <i class='fas fa-clipboard-list' style={{margin:"15px"}} onClick={()=>{
                   setCurrentProduct({product:val});
                   setOpenProductDetailsPopup(true)
@@ -348,6 +384,7 @@ export default function ProductsAdmin(){
       description:currentProduct.product.description,
       category:currentProduct.product.category,
       originalPrice:currentProduct.product.original_price,
+      qty:currentProduct.product.qty,
 
     })
       }}    >
@@ -361,9 +398,23 @@ export default function ProductsAdmin(){
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Description <span style={{color:"red"}}>*</span></h5>
                     <Input type="textarea" rows="4" placeholder='Enter Description' value={formik.values.description}  name="description" onChange={formik.handleChange}/>{" "}
 					{formik.errors.description && <p style={{color:"red"}}>{formik.errors.description}</p>}
+
+          <h5 style={{margin:"10px",fontSize:"15px"}}>Main Category <span style={{color:"red"}}>*</span></h5>
+                    <Select type="text" placeholder={formik.values.mainCategory} options={categoryMainOptions}   name="category" onChange={(opt)=>{ formik.setFieldValue("mainCategory",opt.value);}}/>{" "}
+					{formik.errors.mainCategory && <p style={{color:"red"}}>{formik.errors.mainCategory}</p>}
+
+                   {formik.values.mainCategory && <div>
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Category <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Category' value={formik.values.category}  name="category" onChange={formik.handleChange}/>{" "}
+                    <Select type="text"  placeholder={formik.values.category} options={categoryOptions[formik.values.mainCategory]}  name="category" onChange={(opt)=>{console.log(opt.value);formik.setFieldValue("category",opt.value)}}/>{" "}
 					{formik.errors.category && <p style={{color:"red"}}>{formik.errors.category}</p>}
+          </div>}
+          
+         
+
+
+
+
+
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Original Price <span style={{color:"red"}}>*</span></h5>
                     <Input type="text" placeholder='Enter original price' value={formik.values.originalPrice}  name="originalPrice" onChange={formik.handleChange}/>{" "}
 					{formik.errors.originalPrice && <p style={{color:"red"}}>{formik.errors.originalPrice}</p>}
@@ -423,10 +474,26 @@ export default function ProductsAdmin(){
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Description <span style={{color:"red"}}>*</span></h5>
                     <Input type="textarea" rows="4" placeholder='Enter Description' value={formik.values.description}  name="description" onChange={formik.handleChange}/>{" "}
 					{formik.errors.description && <p style={{color:"red"}}>{formik.errors.description}</p>}
+         
+         
+
+
+
+          <h5 style={{margin:"10px",fontSize:"15px"}}>Main Category <span style={{color:"red"}}>*</span></h5>
+                    <Select type="text" placeholder={formik.values.mainCategory} options={categoryMainOptions}   name="category" onChange={(opt)=>{ formik.setFieldValue("mainCategory",opt.value);}}/>{" "}
+					{formik.errors.mainCategory && <p style={{color:"red"}}>{formik.errors.mainCategory}</p>}
+
+                   {formik.values.mainCategory && <div>
                     <h5 style={{margin:"10px",fontSize:"15px"}}>Category <span style={{color:"red"}}>*</span></h5>
-                    <Input type="text" placeholder='Enter Category' name="category" value={formik.values.category}  onChange={formik.handleChange}/>{" "}
+                    <Select type="text"  placeholder={formik.values.category} options={categoryOptions[formik.values.mainCategory]}  name="category" onChange={(opt)=>formik.setFieldValue("category",opt.value)}/>{" "}
 					{formik.errors.category && <p style={{color:"red"}}>{formik.errors.category}</p>}
-                    <h5 style={{margin:"10px",fontSize:"15px"}}>Original Price <span style={{color:"red"}}>*</span></h5>
+          </div>}
+
+
+         
+       
+          
+           <h5 style={{margin:"10px",fontSize:"15px"}}>Original Price <span style={{color:"red"}}>*</span></h5>
                     <Input type="text" placeholder='Enter original price' value={formik.values.originalPrice}  name="originalPrice" onChange={formik.handleChange}/>{" "}
 					{formik.errors.originalPrice && <p style={{color:"red"}}>{formik.errors.originalPrice}</p>}
           <h5 style={{margin:"10px",fontSize:"15px"}}>Product Quantity <span style={{color:"red"}}>*</span></h5>
@@ -452,6 +519,11 @@ export default function ProductsAdmin(){
         </ModalFooter>
 
       </Modal>
+     {/* Rest Popups are created here */}
+
+
+
+
 
       <Modal isOpen={openCreateImgPopup}>
         <ModalBody>

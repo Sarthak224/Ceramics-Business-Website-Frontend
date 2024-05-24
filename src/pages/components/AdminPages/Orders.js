@@ -1,4 +1,4 @@
-import { Button, Col, Modal, ModalBody, ModalFooter, Row, Table } from 'reactstrap';
+import { Button, Col, Input, Modal, ModalBody, ModalFooter, Row, Table } from 'reactstrap';
 import { baseURL } from '../../utils/utils';
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -7,16 +7,25 @@ import { useState } from 'react';
 import Select from 'react-select';
 import NotificationPopup from '../NotificationPopup';
 import { Edit, X } from 'react-feather';
+import AdminNavbar from './components/AdminNavbar';
+import { HashLoader } from 'react-spinners';
 export default function Orders(){
 
     
     const [searchParams, setSearchParams] = useSearchParams();
     var page = searchParams.get("page");
+
+    // var se = searchParams.get("page");
+
     const [orders,setOrders] = useState([]);
     const [currentOrder,setCurrentOrder] = useState(false);
     const [openSuccessPopup,setOpenSuccessPopup] = useState(false);
     const [openOrderDetailsPopup,setOpenOrderDetailsPopup] = useState(false);
+    const [searchQuery,setSearchQuery] = useState("")
     // const [openStatusDropdown,setOpenStatusDropdown] = useState(false)
+    const accessToken = localStorage.getItem("token")
+    const [loading,isLoading] = useState(false);
+
 
     const colourStyles = {
       control: (styles,{ data, isDisabled, isFocused, isSelected }) =>{ console.log(data); return { ...styles, backgroundColor: 'white'};   return ((data.label)=="Delivered"?{ ...styles, backgroundColor: 'black'}:data.label=="Confirmed"?{ ...styles, backgroundColor: 'grey'}:{ ...styles, backgroundColor: 'red'})},
@@ -31,9 +40,15 @@ export default function Orders(){
     };
 
 
+
+  
   async function getOrders(){
     try{
-    var res = await axios.get(baseURL+"/api/orders/getOrders?page="+page,{});
+    var res = await axios.get(baseURL+"/api/orders/getOrders?page="+page,{
+      headers:{
+        "Authorization":"bearer "+accessToken
+      }
+    });
     console.log(res);
     if(res.status==200){
         setOrders(res.data)
@@ -41,9 +56,30 @@ export default function Orders(){
 }catch(err){
     alert("Error")
 }
+isLoading(false)
+
   }
 
 
+  async function getFilteredOrders(tempSearch){
+    try{
+    var ordersUrl = baseURL+"/api/orders/getFilteredOrders?page="+page+"&searchedQuery="+searchQuery;
+    if(tempSearch)
+       ordersUrl = baseURL+"/api/orders/getFilteredOrders?page="+page+"&searchedQuery="+tempSearch;
+    var res = await axios.get(ordersUrl,{
+      headers:{
+        "Authorization":"bearer "+accessToken
+      }
+    });
+    console.log(res);
+    if(res.status==200){
+        setOrders(res.data)
+    }
+}catch(err){
+    alert("Error")
+}
+isLoading(false)
+  }
 
 
   async function updateOrder(status){
@@ -51,6 +87,10 @@ export default function Orders(){
     var res = await axios.post(baseURL+"/api/orders/updateOrder",{
       id:currentOrder._id,
       orderData:{...currentOrder,order_status:status}
+    },{
+      headers:{
+        "Authorization":"bearer "+accessToken
+      }
     });
     console.log(res);
     if(res.status==200){
@@ -65,11 +105,17 @@ export default function Orders(){
 }
 
   useEffect(()=>{
+    isLoading(true)
+    setSearchQuery(searchParams.get("searchedQuery"))
+    if(searchParams.get("searchedQuery"))
+    getFilteredOrders(searchParams.get("searchedQuery"));
+    else
     getOrders();
+
   },[])
 
 
-
+  
 
 
   function OrderStatusDropdown(props){
@@ -78,7 +124,7 @@ export default function Orders(){
 
     return(
         <div>
-               {!openStatusDropdown?<div style={{display:"flex",alignItems:"center"}}><Button color="" style={(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"blue","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundColor:"green",color:"#fff",borderRadius:"0px"}:val.order_status=="Failed"?{backgroundColor:"red",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"black",color:"white",height:"38px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div style={{display:"flex",alignItems:"center"}}><Select  options={[
+               {!openStatusDropdown?<div className='order-status-action-btn' style={{display:"flex",alignItems:"center"}}><Button color="" style={val.order_status=="Pending Payment"?{backgroundColor:"#c13e38","color":"#fff",borderRadius:"0px"}:(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"#22597d","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundImage: "linear-gradient(45deg, #2ae425, #cfcf27)",color:"#fff",borderRadius:"0px"}:val.order_status=="Failed"?{backgroundColor:"red",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"rgb(34 35 35 / 78%)",color:"white",height:"38px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div style={{display:"flex",alignItems:"center"}}><Select  options={[
             {
                 value:"Shipped",
                 label:"Shipped"
@@ -105,7 +151,7 @@ export default function Orders(){
             }}
         placeholder={val.order_status?val.order_status:"Confirmed"}
         />
-        <X size={20} style={{backgroundColor:"black",color:"white",height:"37px",width:"27px"}} onClick={()=>setOpenStatusDropdown(false)}/>
+        <X size={20} style={{backgroundColor:"black",color:"white",height:"55px",width:"27px"}} onClick={()=>setOpenStatusDropdown(false)}/>
         </div>
         }
         </div>
@@ -121,7 +167,20 @@ export default function Orders(){
 
         <div className="admin-pages" style={{flexDirection:"column",padding:"20px",justifyContent:"start",overflowX:"auto"}}>
             {/* <h>Orders page!</h1> */}
-            <Table>
+            <AdminNavbar />
+            <div className='order-search-main'>
+            <div className='order-search'>
+              <Input onChange={(e)=>setSearchQuery(e.target.value)} placeholder='Search something...'/>
+              <button className='tbl-search-btn' onClick={()=>{isLoading(true);getFilteredOrders()}}>
+                <i className='fas fa-search'/>
+              </button>
+            </div>
+            </div>
+            {loading && <HashLoader
+  color="#b95f1b"
+  size={60}
+/>}
+            {!loading && <Table className='admin-tbl'>
         <thead>
           <tr>
             <th>#</th>
@@ -178,14 +237,26 @@ export default function Orders(){
         
         <td colSpan={7}>
         <div style={{display:"flex",justifyContent:"space-between",width:"100%"}}>
-        <Button disabled={page<=1?true:false} onClick={()=>window.location.href = ("/admin/orders?page="+(--page))}>Prev</Button>
-        <Button disabled={orders.length<=0?true:false} onClick={()=>window.location.href = ("/admin/orders?page="+(++page))}>Next</Button>
+        <Button disabled={page<=1?true:false} onClick={()=>{
+          if(searchQuery){
+            window.location.href = ("/admin/orders?page="+(--page)+"&searchedQuery="+searchQuery)
+            return;
+          }
+          window.location.href = ("/admin/orders?page="+(--page))
+          }}>Prev</Button>
+        <Button disabled={orders.length<=0?true:false} onClick={()=>{
+          if(searchQuery){
+            window.location.href = ("/admin/orders?page="+(++page)+"&searchedQuery="+searchQuery)
+            return;
+          }
+          window.location.href = ("/admin/orders?page="+(++page))
+        }}>Next</Button>
         </div>
         
         </td>
         </tr>
         </tfoot>
-      </Table>
+      </Table>}
       <NotificationPopup open={openSuccessPopup} setOpen={setOpenSuccessPopup} message={"Updated Successfully"}/>
 
       <Modal className='coupon-popup-main' isOpen={openOrderDetailsPopup}>

@@ -15,6 +15,9 @@ import {HashLoader} from 'react-spinners'
 import Sidebar from './pages/components/AdminPages/components/Sidebar';
 import axios from 'axios';
 import { baseURL } from './pages/utils/utils';
+import MainLayout from './Layout/MainLayout';
+import BlankLayout from './Layout/BlankLayout';
+import AdminLayout from './Layout/AdminLayout';
 function App() {
 
   var navigate  = useNavigate();
@@ -91,8 +94,8 @@ function App() {
     </div>
   </div>}
     <div className={isAdmin?'admin-sect-main':''} style={openOverlay?{opacity:0.5}:{}} >
-    <LoadingBar progress={loadProgress} color='#f11946' onLoaderFinished={() => setProgress(0)} />
-
+     <LoadingBar progress={loadProgress} color='#f11946' onLoaderFinished={() => setProgress(0)} />
+{/*
    { !isAdmin ? <Navbar />:<Sidebar /> }
     <Routes>
      { routes.map((val)=>{
@@ -100,14 +103,11 @@ function App() {
      })
 }
     </Routes>
-    {/* <Routes>
-     { admin_routes.map((val)=>{
-      return <Route path={val.path} element={val.element} />
-     })
-}
-    </Routes>      */}
-    {!isAdmin && <Footer/>}
-    </div>
+   
+    {!isAdmin && <Footer/>}*/}
+        { !isAdmin ? <MainLayout />:<AdminLayout /> }
+
+    </div> 
     </div>
   );
 }

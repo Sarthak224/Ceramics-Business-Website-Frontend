@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import {useLocation} from 'react-router-dom';
 import { useDispatch,useSelector } from 'react-redux';
 import { assignOverlay } from '../../redux/actions/navigation';
+import GlobalNotification from './GlobalNotification';
 
 export default function Navbar(){
 
@@ -49,8 +50,11 @@ export default function Navbar(){
 });
 //    alert(navbarHide)
     return (
-        <div  >
+        <div className='navbar-parent-sticky' >
+                    <GlobalNotification text={"Worldwide delivery! 5-day Fedex Economy shipping available. Handmade with love in Latvia, EU."} />
+
         <div  className="navbar-layout-main"  style={navbarHide?{top:"-100px",transition:"0.3s ease"}:{justifyContent:"space-between",transition:"0.3s ease"}}>
+
             <div className='nav-comp nav-color' style={{width:"30%",justifyContent:"start"}}>
             <img className='nav-main-icn' loading='lazy' src={logo} width={122} height={122}  style={{marginTop:"-26px"}} />
             {/* <h2 className='fminerva' style={{fontSize: "18px",color: "#820c11",minWidth:"242px"}}>Vinkee Bhasiin Ceramics</h2> */}
@@ -63,9 +67,9 @@ export default function Navbar(){
         <Link className='nav-link' to={"/home"} onClick={applyOverlay}><span className='nav-link1'>{/*Home width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-home" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Home </span></Link>
         <Link className='nav-link' to={"/AboutUs"} onClick={applyOverlay}>  <span className='nav-link1'> {/*<User width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-user" style={{color: "#f3f7fe",marginRight:"5px"}} ></i>About</span></Link>
         
-        <Link className='nav-link' to={"/products"} onClick={applyOverlay}><span className='nav-link1'> {/*<ShoppingBag width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-shopping-bag" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Products</span></Link>
+        <Link className='nav-link' to={"/products"} onClick={applyOverlay}><span className='nav-link1'> {/*<ShoppingBag width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-shopping-bag" style={{color: "#f3f7fe",marginRight:"5px"}}></i> Shop</span></Link>
 
-        <Link className='nav-link' to={"/cart"} onClick={applyOverlay}><span className='nav-link1'>{/*<ShoppingCart width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-cart-arrow-down" style={{color: "#f3f7fe",marginRight:"5px",position:"relative"}}>{cartQty>0?<span className='frs' style={{position:"absolute",backgroundColor:"#f24242",width:"13px",height:"13px",borderRadius:"50%",top:"-10px",fontSize:"11px",fontWeight:"100",textAlign:"center"}}>{productsOnCart.length}</span>:null}</i>Cart </span></Link>
+        <Link className='nav-link' to={"/cart"} onClick={applyOverlay}><span className='nav-link1'>{/*<ShoppingCart width={16} height={16} className='nav-icon'/>*/}<i class="fas fa-cart-arrow-down" style={{color: "#f3f7fe",marginRight:"5px",position:"relative"}}>{cartQty>0?<span className='frs cart-notify' >{productsOnCart.length}</span>:null}</i>Cart </span></Link>
 
        
 
@@ -88,14 +92,14 @@ export default function Navbar(){
                <div className="navbar-layout-main-mobile">
      
                <div className='nav-comp nav-color nav-middle' >
-                   <img src={logo} width={122} height={122}  />
+                   <img src={logo} width={102} height={102} style={{margin:"4px"}}  />
                    {/* <span className='brand-text '>React Pottery</span> */}
                </div>
                <div   className='nav-comp nav-color' style={{width:"35%",justifyContent:"end",alignItems:"center",marginRight:"10px",}}>
              
                  
-               <h6  className='frs' style={{marginTop:"3px",marginRight:"10px",fontSize:"12px",color:"rgb(212 206 206)"}}>Menu</h6>
-               <Menu size={26} style={{cursor:"pointer",color:"rgb(212 206 206)"}} className='nav-icon' onClick={()=>setOpenMenu(true)}  />
+               <h6  className='finria-sans' style={{marginTop:"3px",marginRight:"10px",fontSize:"12px",color:"rgb(129 13 12)",fontWeight:"bold"}}>Menu</h6>
+               <Menu size={26} style={{cursor:"pointer",color:"rgb(129 13 12)"}} className='nav-icon' onClick={()=>setOpenMenu(true)}  />
                <Sidebar openMenu ={openMenu} setOpenMenu={setOpenMenu} />
                </div>
                </div>
