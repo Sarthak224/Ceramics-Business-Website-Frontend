@@ -84,3 +84,38 @@ export const mainCategoryOptions=[
         value:""
     }
 ]
+
+
+
+export function isToday(date){
+         
+    const today = new Date().getDate();
+    const tMonth = new Date().getMonth();
+    const tYear  = new Date().getFullYear();
+
+    const day = new Date(date).getDate();
+    const Month = new Date(date).getMonth();
+    const Year  = new Date(date).getFullYear();
+
+    if(today==day && Month==tMonth && Year == tYear)
+     return true;
+   return false;
+
+ }
+
+
+
+ export function isYesterday(date){
+ //   const today = new Date().getDate();
+ //   const tMonth = new Date().getMonth();
+ //   const tYear  = new Date().getFullYear();
+
+ //   const day = new Date(date).getDate();
+ //   const Month = new Date(date).getMonth();
+ //   const Year  = new Date(date).getFullYear();
+
+ //   if(today==day && Month==tMonth && Year == tYear)
+ //    return true;
+ //  return false;
+ return false
+ }

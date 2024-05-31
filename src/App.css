@@ -1550,7 +1550,7 @@ ul{
  /* background-color: /*#D5A372*/;
   background-color: /*#D5A372*/#ebb57f;
 
-  position: fixed;
+  /* position: fixed; */
   width: 100vw;
   top: 0;
   z-index: 10;
@@ -2241,7 +2241,32 @@ min-height: 380px;
   max-width: 186px;
 
 }
+.message-modal .user-body-main{
+  width:100%;
+  min-height:100%;
+  display: grid;
+  grid-template-columns: 38% 60%;
+  padding:1.1rem
 
+}
+
+.order-status-drpdwn-btn .css-v68sna-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.message-modal .user-body-main .user-info-cols .user-icon{
+  font-size: 6.78rem;
+  color: #737373;
+
+
+}
+.usr-detail{
+  font-weight: 600;
+  font-size: 14px;
+}
+.message-modal .modal-body{
+  flex-direction: column;
+}
 .contact-form-body input:focus {
   margin: 16px 10px;
   margin: 16px 10px;
@@ -2591,7 +2616,10 @@ padding: 0px 1px;
   margin-bottom: 0px !important;
 }
 
-
+.global-notification-main p{
+font-size: 0.67rem;
+    max-width: 72%;
+}
 
 
 

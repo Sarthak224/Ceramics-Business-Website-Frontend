@@ -13,6 +13,7 @@ export default function AdminLogin(){
    const navigate = useNavigate();
    const notifySuccess = () => toast.success("Logged in Successfully");
    const notifyFailed = () => toast.error("Login Failed");
+   const notifyManyReq = () => toast.error("Too many requests. please try again later");
 
    
 
@@ -72,6 +73,11 @@ export default function AdminLogin(){
       navigate("/admin/orders?page=1")
     }
     }catch(e){
+      console.log(e)
+      if(e.response.status==429){
+         notifyManyReq();
+      }
+      else
       notifyFailed();
     }
    }

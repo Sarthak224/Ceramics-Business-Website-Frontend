@@ -5,15 +5,16 @@ import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { baseURL } from '../../utils/utils';
 import { HashLoader } from 'react-spinners';
+import UserMessageModal from './components/UserMessageModal';
 
 const Issues = () => {
 
 
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const [currentOrder,setCurrentOrder] = useState(false);
-    const [openSuccessPopup,setOpenSuccessPopup] = useState(false);
-    const [openOrderDetailsPopup,setOpenOrderDetailsPopup] = useState(false);
+    const [currentMsg,setCurrentMsg] = useState(false);
+    // const [openSuccessPopup,setOpenSuccessPopup] = useState(false);
+    const [openMsgDetailsPopup,setOpenMsgDetailsPopup] = useState(false);
     const [searchQuery,setSearchQuery] = useState("")
     // const [openStatusDropdown,setOpenStatusDropdown] = useState(false)
     const accessToken = localStorage.getItem("token")
@@ -48,6 +49,40 @@ const Issues = () => {
         getUserMessages();
         isLoading(true);
       },[])
+
+
+      function isToday(date){
+         
+         const today = new Date().getDate();
+         const tMonth = new Date().getMonth();
+         const tYear  = new Date().getFullYear();
+
+         const day = new Date(date).getDate();
+         const Month = new Date(date).getMonth();
+         const Year  = new Date(date).getFullYear();
+
+         if(today==day && Month==tMonth && Year == tYear)
+          return true;
+        return false;
+
+      }
+
+
+
+      function isYesterday(date){
+      //   const today = new Date().getDate();
+      //   const tMonth = new Date().getMonth();
+      //   const tYear  = new Date().getFullYear();
+
+      //   const day = new Date(date).getDate();
+      //   const Month = new Date(date).getMonth();
+      //   const Year  = new Date(date).getFullYear();
+
+      //   if(today==day && Month==tMonth && Year == tYear)
+      //    return true;
+      //  return false;
+      return false
+      }
 
   return (
     <div className="admin-pages" style={{flexDirection:"column",padding:"20px",justifyContent:"start",overflowX:"auto"}}>
@@ -85,8 +120,12 @@ const Issues = () => {
         <tbody>
           {userMessages.map((val,i)=>{
             return (
-                <tr>
-                <th scope="row">{i+1}</th>
+                <tr className={isToday(val.createdAt) || isYesterday(val.createdAt)?'highlight-issue-row':null}>
+                <th scope="row">
+                {(isToday(val.createdAt) || isYesterday(val.createdAt)) && <span className='new-tag'>Received today</span>}
+
+                  {i+1}
+                  </th>
                 <td>{val._id}</td>
                 <td>{val.firstname}</td>
                 <td>{val.lastname}</td>
@@ -95,6 +134,8 @@ const Issues = () => {
                 <td><i class='fas fa-clipboard-list' style={{'font-size':'24px'}} onClick={()=>{
                 //   setCurrentOrder(val);
                 //   setOpenOrderDetailsPopup(true)
+                setCurrentMsg(val);
+                setOpenMsgDetailsPopup(true)
                 }}></i></td>
               </tr>  
             )
@@ -147,6 +188,9 @@ const Issues = () => {
         </tr>
         </tfoot>
       </Table>}
+
+      <UserMessageModal open={openMsgDetailsPopup} setOpen={setOpenMsgDetailsPopup} message={currentMsg} />
+
     </div>
   )
 }

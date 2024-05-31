@@ -113,6 +113,10 @@ vertical-align: middle;
 .admin-sidebar-links i{
   color: rgb(38 34 34); font-size: 21px; margin: 10px 30px; margin-left: 0;
 }
+.highlight-issue-row{
+  /* border: 3px solid #00a1ff; */
+  position: relative;
+}
 .admin-logo-navbar{
   padding: 15px;
     display: flex;
@@ -128,10 +132,43 @@ vertical-align: middle;
   width: 100%;
 
 }
+
+.user-info-cols{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .order-search{
   display: flex;
   align-items: center;
   margin-bottom: 1.3rem;
+}
+.new-tag{
+  position: absolute;
+  top: -14px;
+  font-size: 9px;
+  background-color: #007bff !important;
+  color: #fff;
+  font-weight: 600;
+  left: -15px;
+  border-radius: 999px;
+  padding: 7px;
+}
+
+button[disabled] {
+  background-color: #908477;
+}
+
+
+.message-modal .modal-title{
+  width:100%;
+}
+.message-modal .modal-title button{
+  float:right
+}
+.message-modal .modal-body {
+  min-height: 70vh;
+  display: flex;
 }
 .order-search input{
   border-top-right-radius: 0 !important;

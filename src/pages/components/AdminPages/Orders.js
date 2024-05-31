@@ -1,5 +1,5 @@
 import { Button, Col, Input, Modal, ModalBody, ModalFooter, Row, Table } from 'reactstrap';
-import { baseURL } from '../../utils/utils';
+import { baseURL, isToday, isYesterday } from '../../utils/utils';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -82,11 +82,11 @@ isLoading(false)
   }
 
 
-  async function updateOrder(status){
+  async function updateOrder(status,curOrder){
     try{
     var res = await axios.post(baseURL+"/api/orders/updateOrder",{
-      id:currentOrder._id,
-      orderData:{...currentOrder,order_status:status}
+      id:curOrder._id,
+      orderData:{...curOrder,order_status:status}
     },{
       headers:{
         "Authorization":"bearer "+accessToken
@@ -121,10 +121,9 @@ isLoading(false)
   function OrderStatusDropdown(props){
     const val = props.val
     const [openStatusDropdown,setOpenStatusDropdown] = useState(false)
-
     return(
         <div>
-               {!openStatusDropdown?<div className='order-status-action-btn' style={{display:"flex",alignItems:"center"}}><Button color="" style={val.order_status=="Pending Payment"?{backgroundColor:"#c13e38","color":"#fff",borderRadius:"0px"}:(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"#22597d","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundImage: "linear-gradient(45deg, #2ae425, #cfcf27)",color:"#fff",borderRadius:"0px"}:val.order_status=="Failed"?{backgroundColor:"red",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"rgb(34 35 35 / 78%)",color:"white",height:"38px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div style={{display:"flex",alignItems:"center"}}><Select  options={[
+               {!openStatusDropdown?<div className='order-status-action-btn' style={{display:"flex",alignItems:"center"}}><Button color="" style={val.order_status=="Pending Payment"?{backgroundColor:"#c13e38","color":"#fff",borderRadius:"0px"}:(val.order_status)=="Delivered"?{backgroundColor:"grey","color":"#fff",borderRadius:"0px"}:val.order_status=="Shipped"?{backgroundColor:"#22597d","color":"#fff",borderRadius:"0px"}:val.order_status=="Confirmed"?{backgroundImage: "linear-gradient(45deg, #2ae425, #cfcf27)",color:"#fff",borderRadius:"0px"}:val.order_status=="Failed"?{backgroundColor:"red",color:"#fff",borderRadius:"0px"}:{color:"#fff"}}>{val.order_status}</Button><Edit size={20} style={{backgroundColor:"rgb(34 35 35 / 78%)",color:"white",height:" 37.6px",width:"27px",padding:"6px"}} onClick={()=>setOpenStatusDropdown(true)}/></div>:<div className='order-status-drpdwn-btn' style={{display:"flex",alignItems:"center"}}><Select  options={[
             {
                 value:"Shipped",
                 label:"Shipped"
@@ -146,8 +145,10 @@ isLoading(false)
         ]}
         styles={colourStyles}
            onChange = {(opt)=>{
+            // console.log("Current Order",val)
+
               setCurrentOrder(val);
-              updateOrder(opt.value);
+              updateOrder(opt.value,val);
             }}
         placeholder={val.order_status?val.order_status:"Confirmed"}
         />
@@ -183,7 +184,7 @@ isLoading(false)
             {!loading && <Table className='admin-tbl'>
         <thead>
           <tr>
-            <th>#</th>
+            <th># </th>
             <th>Order ID</th>
 
             <th>First Name</th>
@@ -197,8 +198,8 @@ isLoading(false)
         <tbody>
           {orders.map((val,i)=>{
             return (
-                <tr>
-                <th scope="row">{i+1}</th>
+                <tr style={{position:"relative"}}>
+                <th scope="row"> {(isToday(val.createdAt) || isYesterday(val.createdAt)) && <span className='new-tag'>Received today</span>}{i+1}</th>
                 <td>{val._id}</td>
                 <td>{val.firstname}</td>
                 <td>{val.lastname}</td>
@@ -276,6 +277,9 @@ isLoading(false)
                  <div style={{marginLeft:"23px",marginTop:"23px"}}>
                  <p><b>Phone No: </b>{currentOrder.phone}</p>
                  <p><b>E-mail: </b>{currentOrder.email}</p>
+
+                 <p><b>Order Date: </b>{currentOrder.createdAt}</p>
+
                  </div>
                 </div>
               </Col>
