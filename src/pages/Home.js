@@ -32,6 +32,7 @@ import DisplayCarousel from './components/DisplayCarousel';
 import DisplayHomeProducts from './components/DisplayHomeProducts';
 import { Helmet } from 'react-helmet-async'
 import ContactUsForm from './components/ContactUsForm'
+import FeaturedCollections from './components/FeaturedCollections'
 
 export default function Home() {
 
@@ -256,9 +257,9 @@ export default function Home() {
 
       </Helmet>
 
-      <div className='home-top-sect2'>
+      <div className='home-top-sect2' style={{marginTop:"160px",backgroundColor:"#FFF"}}>
         <div className="site-title-col" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "50%" }}>
-          <h2 className='finria-sans home-top-lbl-ttl' style={{ fontSize: "43px", color: "rgb(212 150 152)", minWidth: "242px" }}>Vinkee Bhasiin Ceramics</h2>
+          <h2 className='finria-sans home-top-lbl-ttl' style={{ fontSize: "43px", color: "rgb(212 150 152)", minWidth: "242px" }}>VinkeeBhasiin Ceramics</h2>
 
         </div>
         <div className='image-col'>
@@ -284,18 +285,27 @@ export default function Home() {
 
           <div className='capt fminerva'>
             {/* <h3>Art</h3> */}
-            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "90vw",/*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0" }}>
+            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-around",gap:"19px", alignItems: "center", flexDirection: "column", textAlign: "left", /*width: "90vw",*//*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0",width:"auto" ,height:"auto"}}>
               <div className='home-about-heading-sect'>
-                <h2 className='finria-sans' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}Welcome! <br /> <span style={{
+                <h2 className='finria-sans' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}{/*Welcome! <br /> */}<span style={{
                   color: "rgb(226 143 23)",
-                  fontWeight: "normal", fontSize: "21PX"
+                  fontWeight: "normal", fontSize: "29PX"
                 }} className='ftr italic'>Creation with my hands</span></h2>
               </div>
-              <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "1.23rem", fontWeight: "normal", fontStyle: "" }}>
+              {/* <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "0.93rem", fontWeight: "normal", fontStyle: "" }}>
                 Welcome to Vinkee Bhasiin ceramics.I am a passionate artisan dedicated to crafting exquisite ceramic pieces that infuse artistry into everyday life. My journey began with a love for clay and a dream to create objects of beauty and utility. Each piece is a testament to meticulous craftsmanship, blending traditional techniques with a touch of modernity.
                 From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation.
-                {/* Sustainability is at the core of our ethos; we strive to leave a gentle footprint on the earth. We invite you to explore our world of ceramics, where each piece tells a story, and every touch evokes a sense of wonder. Thank you for being a part of our creative journey.    */}
-              </p>
+
+              </p> */}
+             <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "0.93rem", fontWeight: "600", fontStyle: "" }}>
+             Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
+             <br/><br/>The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
+
+              </p> 
+
+
+              <button  style={{ marginTop: "5px", marginBottom: "10px" }} className="add-cart-btn learn-more-btn finria-sans" ><span  style={{ color: "white", textDecoration: "none", }} >Shop Now <i class="fas fa-arrow-circle-right" style={{ color: "#f5f5f5" }}></i></span></button>
+
             </div>
           </div>
 
@@ -369,14 +379,16 @@ export default function Home() {
 
 
       <div className='sect-1' style={{ justifyContent: "space-around", background: "", marginBottom: "100px", marginTop: "0px", marginBottom: "0px" }} >
-        <div className="col1 h-sect1-col1" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "58vw",/*height:"40vw",minWidth:"300px",*//* borderRight:"2px solid #cac8ee",*/padding: "0px", height: "fit-content", minHeight: "fit-content" }}>
-        </div>
 
-        <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/height: "fit-content", minHeight: "fit-content", minWidth: "300px", padding: "44px", marginBottom: "0" }}>
-          <div className='home-about-heading-sect'>
+
+
+        <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/height: "fit-content", minHeight: "fit-content", minWidth: "300px", padding: "44px",paddingBottom:"4px", marginBottom: "0" }}>
+          {/* <div className='home-about-heading-sect'>
 
             <p className='para-mobile ftr italic' style={{ fontSize: "17px", fontWeight: "normal", color: "black", textDecoration: "underline" }}><Link to="https://www.instagram.com/vinkeebhasiin/">Follow me on instagram</Link></p>
-          </div>
+          </div> */}
+          <button className='transparentBtn w-full'><span>Follow Me on instagram</span>  <i className='fab fa-instagram' />  </button>
+          <button className='transparentBtn w-full'><span>Follow Me on Facebook</span>  <i className='fab fa-facebook' />  </button>
 
         </div>
       </div>
@@ -384,7 +396,7 @@ export default function Home() {
 
 
 
-      <div style={{ display: "flex", flexDirection: "column", marginTop: "90px" }}>
+      <div style={{ display: "flex", flexDirection: "column", marginTop: "0px" }}>
 
       </div>
 
@@ -399,6 +411,7 @@ export default function Home() {
 
 
 
+      <FeaturedCollections />
 
 
 
@@ -407,8 +420,11 @@ export default function Home() {
 
         <h4 className="finria-sans" style={{ color: "#D5A372", fontWeight: "bold", fontSize: "30px" }}>Our Products</h4>
       </div>
+
       {<DisplayHomeProducts />}
  
+
+
 
      
     

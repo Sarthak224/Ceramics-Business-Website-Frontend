@@ -37,7 +37,7 @@ code {
 }
 
 :root {
- --background:#f1f1f1;
+ --background:#FFF;
  /* --maincolor:#fff; */
 }
 
@@ -185,3 +185,24 @@ button[disabled] {
 
 .contact-form-label{ margin: 10px; font-size: 18px; font-weight: normal;color:rgb(84 73 73) ; }
 .footer-form .contact-form-label{ margin: 10px; font-size: 18px; font-weight: normal;color:rgb(239, 236, 236); }
+.category-carousel{
+  position: absolute;
+  top: 0;
+  left:0;
+}
+.carousel-caption h3{
+    font-size: 2.45rem;
+    margin-bottom: 5%;
+
+}
+
+@media screen  and (max-width: 768px) {
+  .category-carousel .carousel-caption.d-none{
+    display: initial !important;
+  }
+  .carousel-caption h3{
+    font-size: 1.86rem;
+    margin-bottom: 5%;
+
+}
+}
