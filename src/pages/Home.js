@@ -33,6 +33,7 @@ import DisplayHomeProducts from './components/DisplayHomeProducts';
 import { Helmet } from 'react-helmet-async'
 import ContactUsForm from './components/ContactUsForm'
 import FeaturedCollections from './components/FeaturedCollections'
+import FeaturedCollectionsTop from './components/FeaturedCollectionTop'
 
 export default function Home() {
 
@@ -41,7 +42,7 @@ export default function Home() {
   let sect2Ref = useRef(null)
   let sect3Ref = useRef(null)
   let sect4Ref = useRef(null)
-  const [titleHide,setTitleHide] = useState(true)
+  const [titleHide, setTitleHide] = useState(true)
 
 
   let prevScroll = useRef(0);
@@ -54,9 +55,9 @@ export default function Home() {
       console.log(prevScroll, currentScrollPos, window.scrollY, 80)
       if (currentScrollPos > 180) {
         setTitleHide(false);
-       // console.log(true);
+        // console.log(true);
       } else {
-       // console.log(false);
+        // console.log(false);
 
         setTitleHide(true);
       }
@@ -115,7 +116,7 @@ export default function Home() {
     if (sect1Ref.current && sect2Ref.current) {
       observer.observe(sect1Ref.current)
       // observer.observe(sect2Ref.current)
-     // observer.observe(sect3Ref.current)
+      // observer.observe(sect3Ref.current)
       //  observer.observe(sect4Ref.current)
 
     }
@@ -126,7 +127,7 @@ export default function Home() {
       if (sect1Ref.current && sect2Ref.current) {
         observer.unobserve(sect1Ref.current)
         //  observer.unobserve(sect2Ref.current)
-     //   observer.unobserve(sect3Ref.current)
+        //   observer.unobserve(sect3Ref.current)
         //  observer.observe(sect4Ref.current)
       }
     }
@@ -257,7 +258,7 @@ export default function Home() {
 
       </Helmet>
 
-      <div className='home-top-sect2' style={{marginTop:"160px",backgroundColor:"#FFF"}}>
+      {/* <div className='home-top-sect2' style={{marginTop:"160px",backgroundColor:"#FFF"}}>
         <div className="site-title-col" style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "50%" }}>
           <h2 className='finria-sans home-top-lbl-ttl' style={{ fontSize: "43px", color: "rgb(212 150 152)", minWidth: "242px" }}>VinkeeBhasiin Ceramics</h2>
 
@@ -266,9 +267,14 @@ export default function Home() {
           <img loading='lazy' src={topImg} alt={"https://www.freepik.com/free-vector/set-people-making-pottery-flat-design_4931770.htm#query=pottery&position=5&from_view=search&track=sph"} className="home-img1" style={{}} />
 
         </div>
+      </div> */}
+
+
+      <div className='home-top-sect2' style={{ marginTop: "0px", backgroundColor: "#FFF", justifyContent: "center" }}>
+        <FeaturedCollectionsTop />
       </div>
 
-    
+
 
       <div className='tableware-art-sect intro-sect'>
         <div className='abt-col1'>
@@ -285,7 +291,7 @@ export default function Home() {
 
           <div className='capt fminerva'>
             {/* <h3>Art</h3> */}
-            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-around",gap:"19px", alignItems: "center", flexDirection: "column", textAlign: "left", /*width: "90vw",*//*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0",width:"auto" ,height:"auto"}}>
+            <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-around", gap: "19px", alignItems: "center", flexDirection: "column", textAlign: "left", /*width: "90vw",*//*height:"40vw",*/minWidth: "300px", padding: "44px", marginBottom: "0", width: "auto", height: "auto" }}>
               <div className='home-about-heading-sect'>
                 <h2 className='finria-sans' style={{ textAlign: "left", width: "100%", marginLeft: "30PX" }} >{/*About us*/}{/*Welcome! <br /> */}<span style={{
                   color: "rgb(226 143 23)",
@@ -297,14 +303,14 @@ export default function Home() {
                 From functional tableware to sculptural marvels, our collection reflects a harmonious blend of form and function. We draw inspiration from nature, culture, and emotions, channeling them into every creation.
 
               </p> */}
-             <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "0.93rem", fontWeight: "600", fontStyle: "" }}>
-             Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
-             <br/><br/>The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
+              <p className='para-mobile finria-sans welcome-para' style={{ fontSize: "0.93rem", fontWeight: "600", fontStyle: "" }}>
+                Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
+                <br /><br />The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
 
-              </p> 
+              </p>
 
 
-              <button  style={{ marginTop: "5px", marginBottom: "10px" }} className="add-cart-btn learn-more-btn finria-sans" ><span  style={{ color: "white", textDecoration: "none", }} >Shop Now <i class="fas fa-arrow-circle-right" style={{ color: "#f5f5f5" }}></i></span></button>
+              <button style={{ marginTop: "5px", marginBottom: "10px" }} className="add-cart-btn learn-more-btn finria-sans" ><span style={{ color: "white", textDecoration: "none", }} >Shop Now <i class="fas fa-arrow-circle-right" style={{ color: "#f5f5f5" }}></i></span></button>
 
             </div>
           </div>
@@ -312,7 +318,7 @@ export default function Home() {
         </div>
 
       </div>
-    
+
 
 
 
@@ -359,14 +365,14 @@ export default function Home() {
       </div>
 
       <div className='intro-sect-2-para'>
-      Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
+        Finding joy and contentment in observing moment to moment, the expression of compassion, care and Kindness the feeling of warmth in a cup of tea with a delicious handmade cake!! This is what i seek in my routine for days and weekdays. The simple, secluded life with a pottery wheel in my garden got me into pottery.
 
       </div>
 
-      <br/>
-      <br/>
+      <br />
+      <br />
       <div className='intro-sect-2-para'>
-      The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
+        The value of making my own kitchen vessels and opt vouyage whether waky donky or weel crafted with bright colors. I bring this all to your table handmade by me.
 
       </div>
 
@@ -382,7 +388,7 @@ export default function Home() {
 
 
 
-        <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/height: "fit-content", minHeight: "fit-content", minWidth: "300px", padding: "44px",paddingBottom:"4px", marginBottom: "0" }}>
+        <div className="col1 h-sect1-col2 ftr " style={{ display: "flex", justifyContent: "space-evenly", alignItems: "center", flexDirection: "column", textAlign: "left", width: "40vw",/*height:"40vw",*/height: "fit-content", minHeight: "fit-content", minWidth: "300px", padding: "44px", paddingBottom: "4px", marginBottom: "0" }}>
           {/* <div className='home-about-heading-sect'>
 
             <p className='para-mobile ftr italic' style={{ fontSize: "17px", fontWeight: "normal", color: "black", textDecoration: "underline" }}><Link to="https://www.instagram.com/vinkeebhasiin/">Follow me on instagram</Link></p>
@@ -403,7 +409,7 @@ export default function Home() {
       {/* <h2 className='' style={{color:"#333333",fontSize:"29px",fontWeight:"normal"}}>Our Delivery Partners</h2> */}
 
       <div className="sect1" ref={sect2Ref} >
-      
+
 
 
 
@@ -411,7 +417,7 @@ export default function Home() {
 
 
 
-      <FeaturedCollections />
+      {/* <FeaturedCollections /> */}
 
 
 
@@ -422,12 +428,12 @@ export default function Home() {
       </div>
 
       {<DisplayHomeProducts />}
- 
 
 
 
-     
-    
+
+
+
     </div>
   )
 }

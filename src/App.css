@@ -3060,6 +3060,23 @@ transform: scale(0.8);
   height: 61vh;
   object-fit: cover;
 }
+.carousel-capt-cont{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.carousel-capt-cont .sub-detail{
+  width:60%;
+  font-family: 'Inria Sans';
+  font-size: 1.2rem !important;
+}
+.featured-collection-product-img-top {
+  width: 100vw;
+  height: 85vh;
+  min-height: 320px;
+  object-fit: cover;
+}
 
 .featured-list .featured-sect .category-text:hover + .featured-list .featured-sect img{
   scale: 1.4;
@@ -3084,6 +3101,10 @@ transform: scale(0.8);
 
 @media screen and (max-width:900px){
 
+  .carousel-capt-cont .sub-detail{
+    width:98%;
+    font-size: 0.89rem !important;
+  }
   .tableware-art-sect .abt-col1, .tableware-art-sect .abt-col2 {
     display: flex;
     justify-content: center;
@@ -3508,6 +3529,9 @@ html:out-of-range([data-scroll='0']) {
     min-height: 65vh;
   }
 
+  .transparentBtn.w-full{
+    font-size: 14px;
+  }
   .abt-para-col-1-img img{
     object-fit: contain;
   }

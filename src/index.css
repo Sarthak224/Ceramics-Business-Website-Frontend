@@ -189,12 +189,30 @@ button[disabled] {
   position: absolute;
   top: 0;
   left:0;
+  min-width: 100vw;
+    width: auto;
+    margin-left: -2vw;
 }
 .carousel-caption h3{
     font-size: 2.45rem;
     margin-bottom: 5%;
 
 }
+.category-carousel .carousel-caption {
+  position: absolute;
+  right: 15%;
+  /* bottom: 1.25rem; */
+  /* top: 36%; */
+  left: 15%;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+  margin: auto 0;
+  top: calc(50% - 87px);
+  font-family: 'Cinzel';
+}
+
 
 @media screen  and (max-width: 768px) {
   .category-carousel .carousel-caption.d-none{
