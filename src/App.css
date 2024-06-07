@@ -3073,11 +3073,28 @@ transform: scale(0.8);
 }
 .featured-collection-product-img-top {
   width: 100vw;
-  height: 85vh;
+  height: calc(100vh - 80px);
   min-height: 320px;
   object-fit: cover;
 }
+.category-shop-btn{
+  
+    margin-top: 5px;
+    margin-bottom: 10px;
+    z-index: 21;
+    background-color: transparent;
+    min-width: 275px;
+    border: 2px solid #fff;
+    font-family: 'Cinzel';
+    background-color: #965c22;
 
+
+}
+.category-shop-btn:hover{
+  background-color: #965c22;
+  background-color: transparent;
+
+}
 .featured-list .featured-sect .category-text:hover + .featured-list .featured-sect img{
   scale: 1.4;
 }

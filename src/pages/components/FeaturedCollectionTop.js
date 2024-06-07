@@ -77,7 +77,7 @@ function FeaturedCollectionsTop(args) {
            currentTarget.setAttribute("class",'error-img');
 }}  className='featured-collection-product-img-top'   src={item.src} alt={item.altText} />
         <CarouselCaption
-          captionText={<button  style={{ marginTop: "5px", marginBottom: "10px",zIndex:21 }} className="add-cart-btn learn-more-btn finria-sans" ><span  style={{ color: "white", textDecoration: "none", }} >Shop Now <i class="fas fa-arrow-circle-right" style={{ color: "#f5f5f5" }}></i></span></button>            }
+          captionText={<button  style={{ marginTop: "5px", marginBottom: "10px",zIndex:21,/*backgroundColor:"#b37536",*/minWidth:"275px" }} className="add-cart-btn learn-more-btn finria-sans category-shop-btn" ><span  style={{ color: "white", textDecoration: "none", }} >Shop Now <i class="fas fa-arrow-circle-right" style={{ color: "#f5f5f5" }}></i></span></button>            }
           captionHeader={<div className='carousel-capt-cont'><h3>{item.altText}</h3>
           <p className='sub-detail' style={{fontSize:"1.0rem"}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
           </div>}
